@@ -11,8 +11,18 @@ config_version=5
 [application]
 
 config/name="battle_hero"
+run/main_scene="res://scenes/world.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Stats="*res://scripts/stats.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
 
 [rendering]
 
