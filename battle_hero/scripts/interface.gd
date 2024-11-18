@@ -1,11 +1,17 @@
 extends Node2D
 
+# Start Screen
+@onready var start_screen:Control = $CanvasLayer/StartScreen
+@onready var start_button:Button = $CanvasLayer/StartScreen/Button
 # Health
+@onready var health:Control = $CanvasLayer/Health
 @onready var health_bar:ProgressBar = $CanvasLayer/Health/ProgressBar
 @onready var health_label:Label = $CanvasLayer/Health/Label
 # Coins
+@onready var coins:Control = $CanvasLayer/Coins
 @onready var coins_label:Label = $CanvasLayer/Coins/Label
 # Level
+@onready var level:Control = $CanvasLayer/Level
 @onready var level_label:Label = $CanvasLayer/Level/Label
 # Dialogue
 @onready var dialogue:Control = $CanvasLayer/Dialogue
@@ -19,20 +25,14 @@ extends Node2D
 
 
 func _ready() -> void:
-	# player status
-	health_bar.max_value = Stats.max_health
-	health_bar.value = Stats.health
-	health_label.text = str(Stats.health) + "/" + str(Stats.max_health)
-	coins_label.text = str(Stats.coins)
-	level_label.text = "Level: " + str(Stats.level)
-	
+	# start screen
+	start_screen.visible = true
+	start_button.pressed.connect(_on_start_screen)
 	# dialogue
 	confirm.pressed.connect(_on_confirm_pressed)
 	cancel.pressed.connect(_on_cancel_pressed)
-	
 	# shop
 	shop_close.pressed.connect(_on_shop_close)
-	
 	# initiate upgrades in shop
 	for item in Stats.upgrades:
 		var new_item = upgrade_item.duplicate()
@@ -44,13 +44,20 @@ func _ready() -> void:
 		new_item.get_node("Button").pressed.connect(func(): _on_upgrade(new_item))
 		
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	# update player status
 	health_bar.value = Stats.health
+	health_bar.max_value = Stats.max_health
 	health_label.text = str(Stats.health) + "/" + str(Stats.max_health)
 	coins_label.text = str(Stats.coins)
 	level_label.text = "Level: " + str(Stats.level)
 
+func _on_start_screen():
+	start_screen.visible = false
+	health.visible = true 
+	coins.visible = true
+	level.visible = true
+	dialogue.visible= true
 
 func _on_confirm_pressed():
 	dialogue.visible = false
@@ -70,7 +77,7 @@ func _on_upgrade(item):
 	var cost = 100 + Stats.upgrades[item.name] * 100
 	if (Stats.upgrades[item.name] >= 10 || cost > Stats.coins):
 		return
-	Stats.coins -= int(item.get_node("Cost").text)
+	Stats.coins -= cost
 	Stats.upgrades[item.name] += 1
 	
 	# update max health
