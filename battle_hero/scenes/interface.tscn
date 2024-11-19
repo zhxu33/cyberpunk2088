@@ -14,9 +14,9 @@ bg_color = Color(1, 0.151344, 0.108333, 1)
 [node name="Interface" type="Node2D"]
 script = ExtResource("1_bsdsa")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="Canvas" type="CanvasLayer" parent="."]
 
-[node name="Health" type="Control" parent="CanvasLayer"]
+[node name="Health" type="Control" parent="Canvas"]
 visible = false
 layout_mode = 3
 anchors_preset = 5
@@ -27,7 +27,7 @@ offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Health"]
+[node name="ProgressBar" type="ProgressBar" parent="Canvas/Health"]
 layout_mode = 0
 offset_left = -122.0
 offset_top = 21.0
@@ -38,7 +38,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_h733y")
 value = 50.0
 show_percentage = false
 
-[node name="Border" type="ColorRect" parent="CanvasLayer/Health"]
+[node name="Border" type="ColorRect" parent="Canvas/Health"]
 z_index = -15
 layout_mode = 0
 offset_left = -128.0
@@ -47,7 +47,7 @@ offset_right = 176.0
 offset_bottom = 56.0
 color = Color(0, 0, 0, 1)
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Health"]
+[node name="TextureRect" type="TextureRect" parent="Canvas/Health"]
 layout_mode = 0
 offset_left = -151.0
 offset_top = 5.0
@@ -56,7 +56,7 @@ offset_bottom = 605.0
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("2_2e82t")
 
-[node name="Label" type="Label" parent="CanvasLayer/Health"]
+[node name="Label" type="Label" parent="Canvas/Health"]
 z_index = 2
 layout_mode = 0
 offset_left = -14.0
@@ -67,7 +67,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "100/100"
 
-[node name="Coins" type="Control" parent="CanvasLayer"]
+[node name="Coins" type="Control" parent="Canvas"]
 visible = false
 layout_mode = 3
 anchors_preset = 1
@@ -78,7 +78,7 @@ offset_bottom = 40.0
 grow_horizontal = 0
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="CanvasLayer/Coins"]
+[node name="Label" type="Label" parent="Canvas/Coins"]
 layout_mode = 2
 offset_left = -55.0
 offset_top = 10.0
@@ -88,7 +88,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 30
 text = "1000"
 
-[node name="TextureRect" type="TextureRect" parent="CanvasLayer/Coins"]
+[node name="TextureRect" type="TextureRect" parent="Canvas/Coins"]
 layout_mode = 0
 offset_left = -112.0
 offset_top = 8.0
@@ -97,7 +97,7 @@ offset_bottom = 520.0
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("3_mfahl")
 
-[node name="Level" type="Control" parent="CanvasLayer"]
+[node name="Level" type="Control" parent="Canvas"]
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -107,7 +107,7 @@ offset_right = 48.0
 offset_bottom = 46.0
 metadata/_edit_use_anchors_ = true
 
-[node name="Label" type="Label" parent="CanvasLayer/Level"]
+[node name="Label" type="Label" parent="Canvas/Level"]
 layout_mode = 2
 offset_right = 108.0
 offset_bottom = 42.0
@@ -116,7 +116,7 @@ theme_override_font_sizes/font_size = 30
 text = "Level: 0
 "
 
-[node name="Dialogue" type="Control" parent="CanvasLayer"]
+[node name="Dialogue" type="Control" parent="Canvas"]
 visible = false
 layout_mode = 3
 anchors_preset = 7
@@ -131,7 +131,7 @@ offset_bottom = -1.0
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="Title" type="Label" parent="CanvasLayer/Dialogue"]
+[node name="Title" type="Label" parent="Canvas/Dialogue"]
 z_index = 2
 layout_mode = 0
 offset_left = -202.0
@@ -142,7 +142,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Shop Owner"
 
-[node name="Text" type="Label" parent="CanvasLayer/Dialogue"]
+[node name="Text" type="Label" parent="Canvas/Dialogue"]
 z_index = 2
 layout_mode = 0
 offset_left = -203.0
@@ -153,7 +153,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 17
 text = "Welcome! You can purchase upgrades with coins here."
 
-[node name="Background" type="ColorRect" parent="CanvasLayer/Dialogue"]
+[node name="Background" type="ColorRect" parent="Canvas/Dialogue"]
 z_index = -10
 layout_mode = 0
 offset_left = -222.0
@@ -162,7 +162,7 @@ offset_right = 257.0
 offset_bottom = -33.0
 color = Color(0, 0.196078, 0.384314, 1)
 
-[node name="Border" type="ColorRect" parent="CanvasLayer/Dialogue"]
+[node name="Border" type="ColorRect" parent="Canvas/Dialogue"]
 z_index = -15
 layout_mode = 0
 offset_left = -228.0
@@ -171,7 +171,7 @@ offset_right = 263.0
 offset_bottom = -26.0
 color = Color(0.992157, 0.709804, 0.0823529, 1)
 
-[node name="Cancel" type="Button" parent="CanvasLayer/Dialogue"]
+[node name="Cancel" type="Button" parent="Canvas/Dialogue"]
 z_index = 2
 layout_mode = 0
 offset_left = 62.0
@@ -181,7 +181,7 @@ offset_bottom = -48.0
 focus_mode = 0
 text = "Cancel"
 
-[node name="Confirm" type="Button" parent="CanvasLayer/Dialogue"]
+[node name="Confirm" type="Button" parent="Canvas/Dialogue"]
 z_index = 2
 layout_mode = 0
 offset_left = 145.0
@@ -191,7 +191,7 @@ offset_bottom = -48.0
 focus_mode = 0
 text = "Confirm"
 
-[node name="Shop" type="Control" parent="CanvasLayer"]
+[node name="Shop" type="Control" parent="Canvas"]
 visible = false
 layout_mode = 3
 anchors_preset = 8
@@ -206,7 +206,7 @@ offset_bottom = 12.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="CanvasLayer/Shop"]
+[node name="Background" type="ColorRect" parent="Canvas/Shop"]
 z_index = -10
 layout_mode = 0
 offset_left = -235.0
@@ -215,7 +215,7 @@ offset_right = 225.0
 offset_bottom = 273.0
 color = Color(0, 0.196078, 0.384314, 1)
 
-[node name="Border" type="ColorRect" parent="CanvasLayer/Shop"]
+[node name="Border" type="ColorRect" parent="Canvas/Shop"]
 z_index = -15
 layout_mode = 0
 offset_left = -241.0
@@ -224,7 +224,7 @@ offset_right = 230.0
 offset_bottom = 279.0
 color = Color(0.992157, 0.709804, 0.0823529, 1)
 
-[node name="ScrollContainer" type="ScrollContainer" parent="CanvasLayer/Shop"]
+[node name="ScrollContainer" type="ScrollContainer" parent="Canvas/Shop"]
 custom_minimum_size = Vector2(400, 350)
 layout_mode = 0
 offset_left = -208.0
@@ -233,13 +233,13 @@ offset_right = 212.0
 offset_bottom = 232.0
 horizontal_scroll_mode = 0
 
-[node name="GridContainer" type="GridContainer" parent="CanvasLayer/Shop/ScrollContainer"]
+[node name="GridContainer" type="GridContainer" parent="Canvas/Shop/ScrollContainer"]
 layout_mode = 2
 theme_override_constants/h_separation = 15
 theme_override_constants/v_separation = 15
 columns = 4
 
-[node name="Title" type="Label" parent="CanvasLayer/Shop"]
+[node name="Title" type="Label" parent="Canvas/Shop"]
 z_index = 2
 layout_mode = 0
 offset_left = -47.0
@@ -250,7 +250,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 20
 text = "Upgrades"
 
-[node name="Close" type="TextureButton" parent="CanvasLayer/Shop"]
+[node name="Close" type="TextureButton" parent="Canvas/Shop"]
 layout_mode = 0
 offset_left = 193.0
 offset_top = -169.0
@@ -262,7 +262,7 @@ texture_hover = ExtResource("4_i723n")
 texture_disabled = ExtResource("4_i723n")
 texture_focused = ExtResource("4_i723n")
 
-[node name="UpgradeItem" type="Control" parent="CanvasLayer/Shop"]
+[node name="UpgradeItem" type="Control" parent="Canvas/Shop"]
 visible = false
 custom_minimum_size = Vector2(90, 90)
 layout_mode = 2
@@ -272,7 +272,7 @@ offset_top = -118.0
 offset_right = -118.0
 offset_bottom = -28.0
 
-[node name="Cost" type="Label" parent="CanvasLayer/Shop/UpgradeItem"]
+[node name="Cost" type="Label" parent="Canvas/Shop/UpgradeItem"]
 z_index = 12
 layout_mode = 0
 offset_left = 37.0
@@ -281,7 +281,7 @@ offset_right = 77.0
 offset_bottom = 88.0
 text = "100"
 
-[node name="CoinIcon" type="TextureRect" parent="CanvasLayer/Shop/UpgradeItem"]
+[node name="CoinIcon" type="TextureRect" parent="Canvas/Shop/UpgradeItem"]
 z_index = 12
 layout_mode = 0
 offset_left = 16.0
@@ -291,14 +291,14 @@ offset_bottom = 579.0
 scale = Vector2(0.04, 0.04)
 texture = ExtResource("3_mfahl")
 
-[node name="Button" type="Button" parent="CanvasLayer/Shop/UpgradeItem"]
+[node name="Button" type="Button" parent="Canvas/Shop/UpgradeItem"]
 z_index = 10
 layout_mode = 0
 offset_right = 90.0
 offset_bottom = 91.0
 focus_mode = 0
 
-[node name="Label" type="Label" parent="CanvasLayer/Shop/UpgradeItem"]
+[node name="Label" type="Label" parent="Canvas/Shop/UpgradeItem"]
 z_index = 12
 layout_mode = 0
 offset_right = 91.0
@@ -308,7 +308,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
-[node name="StartScreen" type="Control" parent="CanvasLayer"]
+[node name="StartScreen" type="Control" parent="Canvas"]
 visible = false
 layout_mode = 3
 anchors_preset = 8
@@ -323,7 +323,7 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" type="ColorRect" parent="CanvasLayer/StartScreen"]
+[node name="Background" type="ColorRect" parent="Canvas/StartScreen"]
 z_index = 100
 layout_mode = 0
 offset_left = -690.0
@@ -332,7 +332,7 @@ offset_right = 743.0
 offset_bottom = 439.0
 color = Color(0, 0.12549, 0.2, 1)
 
-[node name="Label" type="Label" parent="CanvasLayer/StartScreen"]
+[node name="Label" type="Label" parent="Canvas/StartScreen"]
 z_index = 111
 layout_mode = 0
 offset_left = -251.0
@@ -345,7 +345,7 @@ theme_override_colors/font_outline_color = Color(0.647757, 0.537671, 0.58942, 1)
 theme_override_font_sizes/font_size = 100
 text = "Battle Hero"
 
-[node name="Button" type="Button" parent="CanvasLayer/StartScreen"]
+[node name="Button" type="Button" parent="Canvas/StartScreen"]
 z_index = 122
 layout_mode = 0
 offset_left = -90.0
@@ -362,7 +362,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
 text = "Start Game"
 
-[node name="ButtonBackground" type="ColorRect" parent="CanvasLayer/StartScreen"]
+[node name="ButtonBackground" type="ColorRect" parent="Canvas/StartScreen"]
 z_index = 112
 layout_mode = 0
 offset_left = -88.0

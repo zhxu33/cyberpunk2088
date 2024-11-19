@@ -1,27 +1,27 @@
 extends Node2D
 
 # Start Screen
-@onready var start_screen:Control = $CanvasLayer/StartScreen
-@onready var start_button:Button = $CanvasLayer/StartScreen/Button
+@onready var start_screen:Control = $Canvas/StartScreen
+@onready var start_button:Button = $Canvas/StartScreen/Button
 # Health
-@onready var health:Control = $CanvasLayer/Health
-@onready var health_bar:ProgressBar = $CanvasLayer/Health/ProgressBar
-@onready var health_label:Label = $CanvasLayer/Health/Label
+@onready var health:Control = $Canvas/Health
+@onready var health_bar:ProgressBar = $Canvas/Health/ProgressBar
+@onready var health_label:Label = $Canvas/Health/Label
 # Coins
-@onready var coins:Control = $CanvasLayer/Coins
-@onready var coins_label:Label = $CanvasLayer/Coins/Label
+@onready var coins:Control = $Canvas/Coins
+@onready var coins_label:Label = $Canvas/Coins/Label
 # Level
-@onready var level:Control = $CanvasLayer/Level
-@onready var level_label:Label = $CanvasLayer/Level/Label
+@onready var level:Control = $Canvas/Level
+@onready var level_label:Label = $Canvas/Level/Label
 # Dialogue
-@onready var dialogue:Control = $CanvasLayer/Dialogue
-@onready var confirm:Button = $CanvasLayer/Dialogue/Confirm
-@onready var cancel:Button = $CanvasLayer/Dialogue/Cancel
+@onready var dialogue:Control = $Canvas/Dialogue
+@onready var confirm:Button = $Canvas/Dialogue/Confirm
+@onready var cancel:Button = $Canvas/Dialogue/Cancel
 # Shop
-@onready var shop:Control = $CanvasLayer/Shop
-@onready var shop_close:Control = $CanvasLayer/Shop/Close
-@onready var shop_container:GridContainer = $CanvasLayer/Shop/ScrollContainer/GridContainer
-@onready var upgrade_item:Control = $CanvasLayer/Shop/UpgradeItem
+@onready var shop:Control = $Canvas/Shop
+@onready var shop_close:Control = $Canvas/Shop/Close
+@onready var shop_container:GridContainer = $Canvas/Shop/ScrollContainer/GridContainer
+@onready var upgrade_item:Control = $Canvas/Shop/UpgradeItem
 
 
 func _ready() -> void:
@@ -52,12 +52,13 @@ func _process(_delta: float) -> void:
 	coins_label.text = str(Stats.coins)
 	level_label.text = "Level: " + str(Stats.level)
 
+
 func _on_start_screen():
 	start_screen.visible = false
 	health.visible = true 
 	coins.visible = true
 	level.visible = true
-	dialogue.visible= true
+
 
 func _on_confirm_pressed():
 	dialogue.visible = false

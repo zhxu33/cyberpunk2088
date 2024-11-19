@@ -1,12 +1,10 @@
-[gd_scene load_steps=40 format=4 uid="uid://dw5phcjow8smu"]
+[gd_scene load_steps=39 format=4 uid="uid://dw5phcjow8smu"]
 
 [ext_resource type="Texture2D" uid="uid://cv02adbd18y0y" path="res://assets/TileSet/1 Tiles/IndustrialTile_66.png" id="1_r1flb"]
 [ext_resource type="Texture2D" uid="uid://btwx5lwhgc8i8" path="res://assets/TileSet/3 Objects/Ladder2.png" id="2_t3j4r"]
-[ext_resource type="PackedScene" uid="uid://bma45d30tmgg7" path="res://scenes/character_body_2d.tscn" id="3_8fnsw"]
 [ext_resource type="Texture2D" uid="uid://p51jjxm6iw07" path="res://assets/TileSet/1 Tiles/IndustrialTile_05.png" id="4_2nn53"]
 [ext_resource type="Texture2D" uid="uid://dya7u3d67d3e8" path="res://assets/TileSet/3 Objects/Ladder3.png" id="4_5c167"]
 [ext_resource type="Texture2D" uid="uid://b1ndbfof3bvb2" path="res://assets/TileSet/3 Objects/Box1.png" id="4_impx4"]
-[ext_resource type="Script" path="res://scripts/player.gd" id="4_wkgfa"]
 [ext_resource type="Texture2D" uid="uid://c1gvl73mbg5dx" path="res://assets/TileSet/3 Objects/Pointer2.png" id="5_b5vlc"]
 [ext_resource type="Texture2D" uid="uid://bhot82vg58k0t" path="res://assets/TileSet/1 Tiles/IndustrialTile_13.png" id="5_wu50v"]
 [ext_resource type="Texture2D" uid="uid://bj4c08qspvlex" path="res://assets/TileSet/3 Objects/Ladder1.png" id="6_8tetd"]
@@ -18,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://e0j3v43vin3x" path="res://assets/TileSet/1 Tiles/IndustrialTile_61.png" id="11_xusv0"]
 [ext_resource type="Texture2D" uid="uid://cvxkog0vxvc2b" path="res://assets/TileSet/1 Tiles/IndustrialTile_79.png" id="12_3ygjn"]
 [ext_resource type="Texture2D" uid="uid://bipkohbdhmv5c" path="res://assets/TileSet/3 Objects/Locker4.png" id="13_bncvk"]
+[ext_resource type="PackedScene" uid="uid://dsudes4h5tahu" path="res://scenes/npc.tscn" id="17_2c3lv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0bv31"]
 texture = ExtResource("1_r1flb")
@@ -182,7 +181,7 @@ sources/12 = SubResource("TileSetAtlasSource_ngtxf")
 sources/13 = SubResource("TileSetAtlasSource_0t408")
 sources/14 = SubResource("TileSetAtlasSource_ksarm")
 
-[node name="World" type="Node2D"]
+[node name="Map" type="Node2D"]
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
 light_mask = 3
@@ -198,11 +197,5 @@ tile_map_data = PackedByteArray("AAAfABUAAAABAAAAAAAgABUAAAAAAAAAAAAhABUAAAABAAA
 tile_set = SubResource("TileSet_ekl35")
 collision_visibility_mode = 1
 
-[node name="player" parent="." instance=ExtResource("3_8fnsw")]
-position = Vector2(-10, 36)
-rotation = -0.000407182
-script = ExtResource("4_wkgfa")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(592, 236)
-zoom = Vector2(2.5, 2.5)
+[node name="Npc" parent="." instance=ExtResource("17_2c3lv")]
+position = Vector2(1010, 314)
