@@ -324,6 +324,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Background" type="ColorRect" parent="Canvas/StartScreen"]
+visible = false
 z_index = 100
 layout_mode = 0
 offset_left = -690.0
@@ -332,18 +333,20 @@ offset_right = 743.0
 offset_bottom = 439.0
 color = Color(0, 0.12549, 0.2, 1)
 
-[node name="Label" type="Label" parent="Canvas/StartScreen"]
+[node name="Title" type="Label" parent="Canvas/StartScreen"]
 z_index = 111
 layout_mode = 0
-offset_left = -251.0
-offset_top = -108.0
-offset_right = 300.0
-offset_bottom = 29.0
-theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_colors/font_shadow_color = Color(0.159321, 0.654202, 0.876115, 1)
+offset_left = -354.0
+offset_top = -111.0
+offset_right = 427.0
+offset_bottom = 26.0
+theme_override_colors/font_color = Color(0.775063, 0.775063, 0.775063, 1)
+theme_override_colors/font_shadow_color = Color(0, 0.12549, 0.2, 1)
 theme_override_colors/font_outline_color = Color(0.647757, 0.537671, 0.58942, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_outline_size = 5
 theme_override_font_sizes/font_size = 100
-text = "Battle Hero"
+text = "Cyberpunk 2088"
 
 [node name="Button" type="Button" parent="Canvas/StartScreen"]
 z_index = 122
@@ -365,9 +368,9 @@ text = "Start Game"
 [node name="ButtonBackground" type="ColorRect" parent="Canvas/StartScreen"]
 z_index = 112
 layout_mode = 0
-offset_left = -88.0
-offset_top = 67.0
-offset_right = 149.0
-offset_bottom = 125.0
+offset_left = -83.0
+offset_top = 72.0
+offset_right = 144.0
+offset_bottom = 120.0
 mouse_filter = 2
 color = Color(1, 0.839216, 0.0666667, 1)
