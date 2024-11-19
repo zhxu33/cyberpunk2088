@@ -154,6 +154,7 @@ offset = Vector2(10, -10)
 hframes = 4
 
 [node name="Jump" type="Sprite2D" parent="SpriteCollector"]
+position = Vector2(43, 3)
 texture = ExtResource("2_0i8pi")
 offset = Vector2(15, -10)
 hframes = 4
