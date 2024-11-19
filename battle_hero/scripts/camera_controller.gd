@@ -1,16 +1,12 @@
 class_name CameraController
 extends Camera2D
 
-@export var floating_offset:Vector2 = Vector2.ZERO
-
-@export var subject:Node2D :
-	set(value):
-		subject = value
-		global_position = subject.global_position + floating_offset
+@onready var player = get_node("/root/World/Player")  # Adjust this path to match your scene structure
 
 func _ready() -> void:
-	global_position = subject.global_position + floating_offset
-
+	if player:
+		global_position = player.global_position
 
 func _process(_delta: float) -> void:
-	global_position.x = subject.global_position.x + floating_offset.x
+	if player:
+		global_position = player.global_position
