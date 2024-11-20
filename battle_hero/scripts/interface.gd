@@ -1,5 +1,7 @@
 extends Node2D
 
+#connect player
+@onready var punk_player: Player = $"../Punk_Player"
 # Start Screen
 @onready var start_screen:Control = $Canvas/StartScreen
 @onready var start_button:Button = $Canvas/StartScreen/Button
@@ -23,8 +25,11 @@ extends Node2D
 @onready var shop_container:GridContainer = $Canvas/Shop/ScrollContainer/GridContainer
 @onready var upgrade_item:Control = $Canvas/Shop/UpgradeItem
 
+var current_player:Player
 
 func _ready() -> void:
+	# set current player
+	current_player = punk_player
 	# start screen
 	start_screen.visible = true
 	start_button.pressed.connect(_on_start_screen)
@@ -58,11 +63,14 @@ func _on_start_screen():
 	health.visible = true 
 	coins.visible = true
 	level.visible = true
+	current_player.bind_player_input_commands()
+	
 
 
 func _on_confirm_pressed():
 	dialogue.visible = false
 	shop.visible = true
+	current_player.unbind_player_input_commands()
 
 
 func _on_cancel_pressed():
@@ -71,7 +79,7 @@ func _on_cancel_pressed():
 	
 func _on_shop_close():
 	shop.visible = false
-
+	current_player.bind_player_input_commands()
 
 func _on_upgrade(item):
 	# purchase upgrade
