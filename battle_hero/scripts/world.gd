@@ -1,6 +1,7 @@
 class_name World
 extends Node2D
 
+@onready var interface:Interface = $Interface
 @onready var current_map:Node2D = $Map
 @onready var player:CharacterBody2D = $Punk_Player
 
@@ -62,9 +63,12 @@ func _compare_by_child_count(a: Node, b: Node) -> bool:
 
 
 func new_level():
+	# blackout screen
+	interface.black_out()
 	Stats.level += 1
 	# restore player health
 	Stats.health = Stats.max_health
 	# spawn random map
+	await get_tree().create_timer(0.5).timeout
 	_spawn_map()
 	

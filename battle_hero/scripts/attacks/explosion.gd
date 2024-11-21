@@ -5,6 +5,7 @@ extends Node2D
 @onready var particle: CPUParticles2D = $Particle
 
 var enemies_hit = {}
+var damage_text = preload("res://scenes/attacks/damage_text.tscn")
 
 func _ready() -> void:
 	var explosion_scale = 2 + 0.5 * Stats.upgrades["Exploding Bullet"]
@@ -20,8 +21,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	var overlaps = hitbox.get_overlapping_areas()
 	for hurtbox in overlaps:
-		print(hurtbox.get_owner())
 		if hurtbox.get_owner() is Enemy and not enemies_hit.has(hurtbox):
 			enemies_hit[hurtbox] = "hit"
 			var damage = 10 + 5 * Stats.upgrades["Exploding Bullet"]
 			hurtbox.get_owner().take_damage(damage)
+			var dmg_text = damage_text.instantiate()
+			dmg_text.global_position = hurtbox.global_position
+			dmg_text.damage = damage
+			get_tree().current_scene.add_child(dmg_text)
+			

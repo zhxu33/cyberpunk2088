@@ -29,6 +29,12 @@ extends Node2D
 @onready var shop_close:Control = $Canvas/Shop/Close
 @onready var shop_container:GridContainer = $Canvas/Shop/ScrollContainer/GridContainer
 @onready var upgrade_item:Control = $Canvas/Shop/UpgradeItem
+# Blackout 
+@onready var blackout:Control = $Canvas/Blackout
+@onready var blackout_bg:ColorRect = $Canvas/Blackout/Background
+# End Screen
+@onready var end_screen:Control = $Canvas/EndScreen
+@onready var new_game_button:Button = $Canvas/EndScreen/Button
 
 var current_player:Player
 var dialog_state:String
@@ -65,6 +71,12 @@ func _ready() -> void:
 		new_item.visible = true
 		shop_container.add_child(new_item)
 		new_item.get_node("Button").gui_input.connect(Callable(self, "_on_button_gui_input").bind(new_item))
+	# end screen
+	new_game_button.pressed.connect(_on_new_game)
+	
+	# test end screen
+	#await get_tree().create_timer(5).timeout 
+	#Stats.health = 0
 		
 
 func _process(_delta: float) -> void:
@@ -75,6 +87,27 @@ func _process(_delta: float) -> void:
 	health_label.text = str(Stats.health) + "/" + str(Stats.max_health)
 	coins_label.text = str(Stats.coins)
 	level_label.text = "Level: " + str(Stats.level)
+	for item in Stats.upgrades:
+		var shop_item = shop_container.get_node(str(item))
+		if (Stats.upgrades[str(item)] >= 10):
+			shop_item.get_node("Cost").text = "Max"
+		else:
+			var cost = 100 + Stats.upgrades[str(item)] * 100
+			shop_item.get_node("Cost").text = str(cost)
+	if Stats.health <= 0 and end_screen.visible == false:
+		end_screen.visible = true
+		current_player.unbind_player_input_commands()
+
+
+func black_out():
+	blackout.visible = true
+	var tween = get_tree().create_tween()
+	await tween.tween_property(blackout_bg, "modulate", Color(1,1,1,1), 0.5) 
+	await get_tree().create_timer(1).timeout
+	tween = get_tree().create_tween()
+	await tween.tween_property(blackout_bg, "modulate", Color(0,0,0,0), 1) 
+	await get_tree().create_timer(1).timeout
+	blackout.visible = false
 
 
 func _on_start_screen():
@@ -82,6 +115,21 @@ func _on_start_screen():
 	health.visible = true 
 	coins.visible = true
 	level.visible = true
+	current_player.bind_player_input_commands()
+	
+	
+func _on_new_game():
+	Stats.reset()
+	end_screen.visible = false
+	health.visible = false 
+	coins.visible = false
+	level.visible = false
+	black_out()
+	await get_tree().create_timer(0.5).timeout
+	health.visible = true 
+	coins.visible = true
+	level.visible = true
+	world.new_level()
 	current_player.bind_player_input_commands()
 	
 	
