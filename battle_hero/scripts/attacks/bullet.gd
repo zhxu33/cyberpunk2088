@@ -15,11 +15,11 @@ var bounced_amount:int = 0
 
 func _ready() -> void:
 	hitbox.area_entered.connect(_on_area_entered)
-	await get_tree().create_timer(1.5).timeout
+	await get_tree().create_timer(1.75).timeout
 	var tween = get_tree().create_tween()
 	var current_color = icon.modulate
 	var target_color = Color(current_color.r, current_color.g, current_color.b, 0.5)
-	tween.tween_property(icon, "modulate", target_color, 2)
+	tween.tween_property(icon, "modulate", target_color, 0.25)
 
 
 func _physics_process(delta):
