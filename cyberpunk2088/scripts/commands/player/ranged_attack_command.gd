@@ -1,4 +1,4 @@
-class_name AttackCommand
+class_name RangedAttackCommand
 extends Command
 
 const bullet_group = preload("res://scenes/attacks/bullet_group.tscn")
