@@ -16,3 +16,6 @@ mono_crash.*.json
 
 # Godot 3.x specific ignores
 .DS_Store
+
+# ignore all .import files
+*.import
