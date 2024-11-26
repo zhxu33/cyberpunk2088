@@ -10,17 +10,19 @@ var attack_cooldown:float
 var cooldown_elapsed:float
 var jump_amount:int
 
-@onready var animation_tree:AnimationTree = $AnimationTree
+@onready var animation_tree:AnimationTree = $AnimationTree_Hand
 
 func _ready():
 	animation_tree.active = true
 	unbind_player_input_commands()
 
 func _physics_process(delta: float):
-	# update player stats
+	if _dead:
+		return
+	
+	# update player stats (这个移到关闭商店的时候出发的function里）
 	jump_velocity = DEFAULT_JUMP_VELOCITY - Stats.upgrades["Jump Power"]*25
 	movement_speed = DEFAULT_MOVE_VELOCITY + Stats.upgrades["Movement Speed"]*20
-	health = Stats.health
 	attack_cooldown = 0.75 - 0.05 * Stats.upgrades["Attack Speed"]
 
 	# Process ranged attack
@@ -42,6 +44,7 @@ func _physics_process(delta: float):
 		elif jump_amount < Stats.upgrades["Double Jump"]:
 			jump_amount += 1
 			up_cmd.execute(self)
+			
 	# Process horizontal move
 	var move_input = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
 	if move_input > 0.1:
@@ -54,6 +57,21 @@ func _physics_process(delta: float):
 	# Process attack
 	_manage_animation_tree_state()
 	super(delta)
+	
+func take_damage(damage:int) -> void:
+	print("player suffer damage: ", damage)
+	print(health)
+	health -= damage
+	print(health)
+	_damaged = true
+	if 0 >= health:
+		#_play($Audio/defeat)
+		_dead = true
+		animation_tree.active = false
+		#animation_player.play("death")
+	else:
+		pass
+		#_play($Audio/hurt)
 	
 func _manage_animation_tree_state() -> void:
 	if !is_zero_approx(velocity.x):
@@ -80,11 +98,11 @@ func _manage_animation_tree_state() -> void:
 	else:
 		animation_tree["parameters/conditions/attacking"] = false
 
-	#if _damaged:
-		#animation_tree["parameters/conditions/damaged"] = true
-		#_damaged = false
-	#else:
-		#animation_tree["parameters/conditions/damaged"] = false
+	if _damaged:
+		animation_tree["parameters/conditions/damaged"] = true
+		_damaged = false
+	else:
+		animation_tree["parameters/conditions/damaged"] = false
 
 func bind_player_input_commands():
 	right_cmd = MoveRightCommand.new()

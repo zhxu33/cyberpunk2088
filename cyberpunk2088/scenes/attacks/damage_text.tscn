@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cwrjohd73e0qi"]
 
-[ext_resource type="Script" path="res://scripts/attacks/damage_text.gd" id="1_0f431"]
+[ext_resource type="Script" path="res://scripts/battle/damage_text.gd" id="1_0f431"]
+
 
 [node name="DamageText" type="Node2D"]
 script = ExtResource("1_0f431")
