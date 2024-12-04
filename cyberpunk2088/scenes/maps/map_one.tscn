@@ -207,6 +207,45 @@ position = Vector2(1668, 567)
 [node name="Spawn2" type="Node2D" parent="EnemySpawns"]
 position = Vector2(1308, 568)
 
+[node name="Spawn3" type="Node2D" parent="EnemySpawns"]
+position = Vector2(4078, 586)
+
+[node name="Spawn4" type="Node2D" parent="EnemySpawns"]
+position = Vector2(3293, 559)
+
+[node name="Spawn5" type="Node2D" parent="EnemySpawns"]
+position = Vector2(2330, 1191)
+
+[node name="Spawn6" type="Node2D" parent="EnemySpawns"]
+position = Vector2(2740, 973)
+
+[node name="Spawn7" type="Node2D" parent="EnemySpawns"]
+position = Vector2(2291, 967)
+
+[node name="Spawn8" type="Node2D" parent="EnemySpawns"]
+position = Vector2(4377, 951)
+
+[node name="Spawn9" type="Node2D" parent="EnemySpawns"]
+position = Vector2(3397, 335)
+
+[node name="Spawn10" type="Node2D" parent="EnemySpawns"]
+position = Vector2(3564, 775)
+
+[node name="Spawn11" type="Node2D" parent="EnemySpawns"]
+position = Vector2(2791, 415)
+
+[node name="Spawn12" type="Node2D" parent="EnemySpawns"]
+position = Vector2(2234, 679)
+
+[node name="Spawn13" type="Node2D" parent="EnemySpawns"]
+position = Vector2(3982, 951)
+
+[node name="Spawn14" type="Node2D" parent="EnemySpawns"]
+position = Vector2(2115, 496)
+
+[node name="Spawn15" type="Node2D" parent="EnemySpawns"]
+position = Vector2(2415, 400)
+
 [node name="BossSpawn" type="Node2D" parent="."]
 position = Vector2(707, 519)
 
