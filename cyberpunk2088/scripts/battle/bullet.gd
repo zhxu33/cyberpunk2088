@@ -2,8 +2,8 @@ class_name Bullet
 extends CharacterBody2D
 
 
-@export var damage: float = 25 + 5 * Stats.upgrades["Bullet Damage"]
-@export var velo:Vector2
+var damage: float = 25 + 5 * Stats.upgrades["Bullet Damage"]
+var velo:Vector2
 @onready var icon: TextureRect = $Icon
 @onready var hitbox: Area2D = $Hitbox
 @onready var hurtbox: Area2D = $Hurtbox

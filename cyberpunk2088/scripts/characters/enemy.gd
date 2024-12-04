@@ -73,5 +73,5 @@ func bind_commands():
 	right_cmd = MoveRightCommand.new()
 	left_cmd = MoveLeftCommand.new()
 	up_cmd = JumpCommand.new()
-	fire1 = RangedAttackCommand.new()
+	# fire1 = RangedAttackCommand.new()
 	idle = IdleCommand.new()

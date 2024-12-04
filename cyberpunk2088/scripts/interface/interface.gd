@@ -168,6 +168,12 @@ func _on_cancel_pressed():
 	
 	
 func _on_shop_close():
+	# Update player status
+	punk_player.jump_velocity = punk_player.DEFAULT_JUMP_VELOCITY - Stats.upgrades["Jump Power"]*25
+	punk_player.movement_speed = punk_player.DEFAULT_MOVE_VELOCITY + Stats.upgrades["Movement Speed"]*20
+	punk_player.attack_cooldown = 0.75 - 0.05 * Stats.upgrades["Attack Speed"]
+	punk_player.health = Stats.health
+	# Close UI, return control
 	shop.visible = false
 	current_player.bind_player_input_commands()
 	

@@ -4,11 +4,12 @@ extends CharacterBody2D
 @onready var hitbox:Area2D = $Hitbox 
 @onready var interface:Interface = get_tree().get_root().get_node("World/Interface")
 
-func _on_area_entered(hurtbox: Area2D) -> void:
+func _on_area_entered(hurtbox:HurtBox) -> void:
+	print("here!")
 	if hurtbox.get_owner() is Player:
 		interface.shop_dialog()
 		
-func _on_area_exited(hurtbox: Area2D) -> void:
+func _on_area_exited(hurtbox:HurtBox) -> void:
 	if hurtbox.get_owner() is Player:
 		interface.close_dialog()
 		

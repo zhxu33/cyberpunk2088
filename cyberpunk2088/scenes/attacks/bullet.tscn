@@ -3,7 +3,6 @@
 [ext_resource type="Script" path="res://scripts/battle/bullet.gd" id="1_0shnu"]
 [ext_resource type="Texture2D" uid="uid://c1s6jrg636wml" path="res://assets/attacks/bullet.png" id="2_kj7gp"]
 
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y40gt"]
 
 [node name="Bullet" type="CharacterBody2D"]

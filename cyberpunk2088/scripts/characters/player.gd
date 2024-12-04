@@ -11,19 +11,19 @@ var cooldown_elapsed:float
 var jump_amount:int
 
 @onready var animation_tree:AnimationTree = $AnimationTree_Hand
+@onready var projectile_spawner: Node2D = $ProjectileSpawner
 
 func _ready():
-	animation_tree.active = true
-	unbind_player_input_commands()
-
-func _physics_process(delta: float):
-	if _dead:
-		return
-	
-	# update player stats (这个移到关闭商店的时候出发的function里）
 	jump_velocity = DEFAULT_JUMP_VELOCITY - Stats.upgrades["Jump Power"]*25
 	movement_speed = DEFAULT_MOVE_VELOCITY + Stats.upgrades["Movement Speed"]*20
 	attack_cooldown = 0.75 - 0.05 * Stats.upgrades["Attack Speed"]
+	health = Stats.health
+	animation_tree.active = true
+	unbind_player_input_commands()
+	
+func _physics_process(delta: float):
+	if _dead:
+		return
 
 	# Process ranged attack
 	if Input.is_action_pressed("ranged_attack") and cooldown_elapsed >= attack_cooldown:

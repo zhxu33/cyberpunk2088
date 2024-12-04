@@ -350,8 +350,8 @@ states/run/position = Vector2(512, 100)
 transitions = ["idle", "jump", SubResource("AnimationNodeStateMachineTransition_vkuma"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_xiya2"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_ipj3c"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_oom8k"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_n7fn3"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_56200")]
 graph_offset = Vector2(-183, -47.6311)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_tsgc6"]
-size = Vector2(20, 34)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qag20"]
+size = Vector2(20, 35)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1im8o"]
 size = Vector2(27.8146, 33)
@@ -382,11 +382,14 @@ parameters/conditions/moving = false
 parameters/conditions/on_floor = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visibility_layer = 3
-position = Vector2(0, 7)
-shape = SubResource("RectangleShape2D_tsgc6")
+light_mask = 512
+visibility_layer = 512
+position = Vector2(0, 7.5)
+shape = SubResource("RectangleShape2D_qag20")
 
 [node name="Hitbox" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
 position = Vector2(0.499999, -8)
