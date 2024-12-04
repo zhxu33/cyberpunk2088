@@ -33,7 +33,7 @@ func _spawn_map():
 	# Spawn Enemies
 	var enemy_spawns: Node = current_map.get_node("EnemySpawns")
 	var spawn_points: Array = enemy_spawns.get_children()
-	var total_enemies = 3 + Stats.level * 2  # Number of enemies to spawn
+	var total_enemies = 20 + Stats.level * 2  # Number of enemies to spawn
 	
 	for i in range(total_enemies):
 		# Sort spawn points by the number of enemy children
