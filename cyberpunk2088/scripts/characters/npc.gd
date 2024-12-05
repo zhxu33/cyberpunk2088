@@ -6,7 +6,7 @@ extends CharacterBody2D
 
 func _on_area_entered(hurtbox:HurtBox) -> void:
 	print("here!")
-	if hurtbox.get_owner() is Player:
+	if hurtbox.get_owner() is Player: 
 		interface.shop_dialog()
 		
 func _on_area_exited(hurtbox:HurtBox) -> void:

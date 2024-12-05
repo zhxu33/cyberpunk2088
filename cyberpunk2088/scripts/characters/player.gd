@@ -10,6 +10,8 @@ var attack_cooldown:float
 var cooldown_elapsed:float
 var jump_amount:int
 
+var player: CharacterBody2D = self
+
 @onready var animation_tree:AnimationTree = $AnimationTree_Hand
 @onready var projectile_spawner: Node2D = $ProjectileSpawner
 @onready var state_machine:AnimationNodeStateMachinePlayback = $AnimationTree_Hand.get("parameters/playback")
@@ -119,3 +121,7 @@ func unbind_player_input_commands():
 	up_cmd = Command.new()
 	fire1 = Command.new()
 	idle = Command.new()
+
+
+func tell_them_who_you_are():
+	return player

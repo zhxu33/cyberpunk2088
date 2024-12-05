@@ -25,6 +25,10 @@ signals="*res://scripts/global/signals.gd"
 window/stretch/mode="viewport"
 window/stretch/aspect="expand"
 
+[global_group]
+
+enemy=""
+
 [input]
 
 jump={
