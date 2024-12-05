@@ -2,7 +2,7 @@ class_name BulletGroup
 extends Node2D
 
 @export var velo: Vector2
-@export var speed: float = 400 + Stats.upgrades["Bullet Speed"] * 40
+@export var speed: float = 200 + Stats.upgrades["Bullet Speed"] * 40
 @export var lifespan: float = 2
 
 func _ready():

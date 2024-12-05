@@ -11,7 +11,7 @@ var cooldown_elapsed:float
 var jump_amount:int
 
 @onready var animation_tree:AnimationTree = $AnimationTree_Hand
-@onready var projectile_spawner: Node2D = $ProjectileSpawner
+@onready var weapon:Weapon = $Weapon
 @onready var state_machine:AnimationNodeStateMachinePlayback = $AnimationTree_Hand.get("parameters/playback")
 
 
@@ -73,6 +73,9 @@ func take_damage(damage:int) -> void:
 	else:
 		pass
 		#_play($Audio/hurt)
+
+func ranged_attack():
+	weapon.fire()
 	
 func _manage_animation_tree_state() -> void:
 	if !is_zero_approx(velocity.x):
