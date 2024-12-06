@@ -6,7 +6,7 @@ extends Node2D
 @onready var player:CharacterBody2D = $Punk_Player
 
 var map_scenes:Array[PackedScene] = [preload("res://scenes/maps/map_one.tscn")]
-var enemy_scenes:Array[PackedScene] = [preload("res://scenes/characters/test_enemy.tscn")]
+var enemy_scenes:Array[PackedScene] = [preload("res://scenes/characters/enemy_dog.tscn")]
 var boss_scenes:Array[PackedScene] = [preload("res://scenes/characters/boss.tscn")]
 var npc_scenes:Array[PackedScene] = [preload("res://scenes/characters/test_merchant.tscn")]
 
