@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://baedl0dnfprbe"]
 
 [ext_resource type="Script" path="res://scripts/battle/bullet_linear.gd" id="1_c8thd"]
-[ext_resource type="Texture2D" uid="uid://de18j6li11w32" path="res://assets/player/free-guns-pack-2-for-main-characters-pixel-art/5 Bullets/3.png" id="1_xr4bj"]
+[ext_resource type="Texture2D" uid="uid://bjam3hmqov0t8" path="res://assets/player/free-guns-pack-2-for-main-characters-pixel-art/5 Bullets/3.png" id="1_xr4bj"]
 [ext_resource type="Script" path="res://scripts/battle/hit_box.gd" id="2_e0lbr"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i24nk"]

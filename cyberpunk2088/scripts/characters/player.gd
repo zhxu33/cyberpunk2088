@@ -23,6 +23,7 @@ func _ready():
 	attack_cooldown = 0.75 - 0.05 * Stats.upgrades["Attack Speed"]
 	health = Stats.health
 	animation_tree.active = true
+	signals.player_take_damage.connect(take_damage)
 	unbind_player_input_commands()
 	
 func _physics_process(delta: float):
@@ -67,10 +68,12 @@ func _physics_process(delta: float):
 func take_damage(damage:int) -> void:
 	health -= damage
 	_damaged = true
+	print("health: ", health)
 	if 0 >= health:
 		#_play($Audio/defeat)
 		_dead = true
 		animation_tree.active = false
+
 		#animation_player.play("death")
 	else:
 		pass
