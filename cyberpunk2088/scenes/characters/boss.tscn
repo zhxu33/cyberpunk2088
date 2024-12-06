@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://bciy50bbuapon"]
+[gd_scene load_steps=51 format=3 uid="uid://bciy50bbuapon"]
 
 [ext_resource type="Script" path="res://scripts/characters/boss.gd" id="1_jr70p"]
 [ext_resource type="Texture2D" uid="uid://bvtrtfwi1m1uv" path="res://assets/player/Free 3 Cyberpunk Sprites Pixel Art/2 Punk/Punk_attack3.png" id="2_j8jbh"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bq0hidhfd4fer" path="res://assets/player/Free 3 Cyberpunk Sprites Pixel Art/2 Punk/Punk_run.png" id="5_c6ix0"]
 [ext_resource type="Script" path="res://scripts/characters/character_facing.gd" id="6_le5ky"]
 [ext_resource type="Texture2D" uid="uid://do25ap0ds3hwk" path="res://assets/interface/heart.png" id="7_3h8xh"]
+[ext_resource type="Script" path="res://scripts/battle/hurt_box.gd" id="7_4plc4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6elts"]
 atlas = ExtResource("2_j8jbh")
@@ -394,6 +395,9 @@ position = Vector2(0, 7)
 shape = SubResource("RectangleShape2D_tsgc6")
 
 [node name="HurtBox" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+script = ExtResource("7_4plc4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(0, 7)
