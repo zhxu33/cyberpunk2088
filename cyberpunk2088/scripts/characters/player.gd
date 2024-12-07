@@ -25,7 +25,6 @@ func _ready():
 	animation_tree.active = true
 	signals.player_take_damage.connect(take_damage)
 	health = Stats.max_health
-	print ("health inital  is", health)
 	unbind_player_input_commands()
 	
 func _physics_process(delta: float):
@@ -69,6 +68,9 @@ func _physics_process(delta: float):
 	super(delta)
 	
 func take_damage(damage:int) -> void:
+	if _dead:
+		return
+	
 	# A TEMPERAL FIX on intial health is not 100/100 problem
 	if first_time : 
 		first_time = false 
@@ -79,16 +81,12 @@ func take_damage(damage:int) -> void:
 	print("health: ", health)
 	# need to update the stat.health so healthbar can change, cuz health is a copy
 	Stats.health = health
-	if 0 >= health:
-		#_play($Audio/defeat)
+	if health <= 0:
 		_dead = true
 		animation_tree.active = false
-		
-
-		#animation_player.play("death")
+		animation_player.play("death")
 	else:
 		pass
-		#_play($Audio/hurt)
 
 func ranged_attack():
 	weapon.fire()
@@ -131,13 +129,16 @@ func bind_player_input_commands():
 	fire1 = RangedAttackCommand.new()
 	fire2 = MeleeAttackCommand.new()
 	idle = IdleCommand.new()
+	weapon.rotating = true
 
 func unbind_player_input_commands():
 	right_cmd = Command.new()
 	left_cmd = Command.new()
 	up_cmd = Command.new()
 	fire1 = Command.new()
+	fire2 = Command.new()
 	idle = Command.new()
+	weapon.rotating = false
 
 func player_reset(): 
 	_damaged = false
