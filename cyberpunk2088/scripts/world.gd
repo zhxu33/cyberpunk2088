@@ -7,6 +7,7 @@ extends Node2D
 
 var map_scenes:Array[PackedScene] = [preload("res://scenes/maps/map_one.tscn")]
 var enemy_scenes:Array[PackedScene] = [preload("res://scenes/characters/enemy_dog.tscn")]
+#var enemy_scenes:Array[PackedScene] = [preload("res://scenes/characters/enemy_samurai.tscn")]
 var boss_scenes:Array[PackedScene] = [preload("res://scenes/characters/boss.tscn")]
 var npc_scenes:Array[PackedScene] = [preload("res://scenes/characters/test_merchant.tscn")]
 
@@ -57,7 +58,8 @@ func _spawn_map():
 	var npc = npc_scenes[randi() % npc_scenes.size()].instantiate()
 	npc.scale = Vector2(2,2)
 	npc_spawn.add_child(npc)
-		
+
+
 func _compare_by_child_count(a: Node, b: Node) -> bool:
 	return a.get_child_count() < b.get_child_count()
 

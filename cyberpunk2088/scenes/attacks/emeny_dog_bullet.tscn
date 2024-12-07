@@ -85,7 +85,7 @@ scale = Vector2(0.511, 0.5)
 sprite_frames = SubResource("SpriteFrames_bt2ts")
 animation = &"attack"
 autoplay = "attack"
-frame_progress = 0.333755
+frame_progress = 0.23228
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 

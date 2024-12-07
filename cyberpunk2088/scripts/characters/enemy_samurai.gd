@@ -1,10 +1,10 @@
-class_name Enemy
+class_name EnemySamurai
 extends Character 
 
 @export var health:int = 100 + Stats.level * 50
 @export var max_health:int = 100 + Stats.level * 50
 @export var coin_reward:int = 100 + Stats.level * 50
-@export var damage: int = 10
+@export var damage: float = 10
 
 @export var player: CharacterBody2D
 @export var SPEED: int = 50
@@ -22,7 +22,6 @@ var right_bounds: Vector2
 var left_bounds: Vector2
 
 var player_function: Node
-var projectile:PackedScene = preload("res://scenes/attacks/emeny_dog_bullet.tscn")
 
 
 @onready var animation_tree:AnimationTree = $AnimationTree
@@ -31,7 +30,7 @@ var projectile:PackedScene = preload("res://scenes/attacks/emeny_dog_bullet.tscn
 @onready var ray_cast:RayCast2D = $AnimatedSprite2D/RayCast2D
 @onready var timer:Timer = $ChaseTimer
 @onready var sprite1: AnimatedSprite2D = $AnimatedSprite2D
-@onready var bullet_timer: Timer = $BulletTimer
+@onready var animation_player1: AnimationPlayer = $AnimationPlayer
 
 
 enum States{
@@ -72,9 +71,7 @@ func _physics_process(delta: float):
 	if last_hit > 3:
 		health_node.visible = false
 	#_manage_animation_tree_state()
-	if attacking == true:
-		sprite1.play("attack")
-		# print("goes here")
+	print("goes here")
 	
 	super(delta)
 	
@@ -91,32 +88,17 @@ func take_damage(damage:float) -> void:
 		queue_free()
 	
 func _manage_animation_tree_state() -> void:
-	if !is_zero_approx(velocity.x):
-		animation_tree["parameters/conditions/idle"] = false
-		animation_tree["parameters/conditions/moving"] = true
-	else:
+	if (velocity == Vector2.ZERO):
 		animation_tree["parameters/conditions/idle"] = true
-		animation_tree["parameters/conditions/moving"] = false
-	
-	if is_on_floor():
-		animation_tree["parameters/conditions/jumping"] = false
-		animation_tree["parameters/conditions/on_floor"] = true
+		animation_tree["parameters/conditions/is_running"] = false
 	else:
-		animation_tree["parameters/conditions/jumping"] = true
-		animation_tree["parameters/conditions/on_floor"] = false
+		animation_tree["parameters/conditions/idle"] = false
+		animation_tree["parameters/conditions/is_running"] = true
 	
-	##toggles
-	#if attacking:
-		#animation_tree["parameters/conditions/attacking"] = true
-		#attacking = false
-	#else:
-		#animation_tree["parameters/conditions/attacking"] = false
-		#
-	#if _damaged:
-		#animation_tree["parameters/conditions/damaged"] = true
-		#_damaged = false
-	#else:
-		#animation_tree["parameters/conditions/damaged"] = false
+	if attacking:
+		animation_tree["parameters/conditions/is_attacking"] = true
+	else:
+		animation_tree["parameters/conditions/is_attacking"] = false
 
 func bind_commands():
 	right_cmd = MoveRightCommand.new()
@@ -193,23 +175,6 @@ func handle_gravity(delta: float) -> void:
 		velocity.y += gravity * delta
 
 
-func fire() -> void:
-	var new_projectile = projectile.instantiate() as EnemyDogBullet
-	if direction.x == 1:
-		$ProjectileSpawnRight.add_child(new_projectile)
-	else:
-		$ProjectileSpawnLeft.add_child(new_projectile)
-
-#func _on_area_2d_body_entered(body: Node2D) -> void:
-	#if body is Player:
-		#player = body
-#
-# position
-#func _on_area_2d_body_exited(body: Node2D) -> void:
-	#if body is Player:
-		#pass
-
-
 func _on_timer_timeout() -> void:
 	current_state = States.WANDER
 	left_bounds = self.global_position + Vector2(-125, 0)
@@ -227,10 +192,7 @@ func _on_hit_box_body_exited(body: Node2D) -> void:
 	attacking = false
 
 
-func _on_bullet_timer_timeout() -> void:
-	fire()
-
-
-func dog_facing_direction():
-	return direction
-	
+func _on_chase_timer_timeout() -> void:
+	current_state = States.WANDER
+	left_bounds = self.global_position + Vector2(-125, 0)
+	right_bounds = self.global_position + Vector2(125, 0)
