@@ -1,21 +1,21 @@
 [gd_scene load_steps=38 format=3 uid="uid://bciy50bbuapon"]
 
 [ext_resource type="Script" path="res://scripts/characters/boss.gd" id="1_jr70p"]
-[ext_resource type="Texture2D" uid="uid://crq3ouh0m8x08" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack1.png" id="2_j1fbb"]
-[ext_resource type="Texture2D" uid="uid://7et17704i4wt" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack2.png" id="3_qcv02"]
-[ext_resource type="Texture2D" uid="uid://b6odjqg7umjho" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack3.png" id="4_pw07k"]
-[ext_resource type="Texture2D" uid="uid://big2liaa3yt6b" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack4.png" id="5_ewvpv"]
+[ext_resource type="Texture2D" uid="uid://diguenqcvoqat" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack1.png" id="2_j1fbb"]
+[ext_resource type="Texture2D" uid="uid://csreovhax6kg7" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack2.png" id="3_qcv02"]
+[ext_resource type="Texture2D" uid="uid://b13chyo68mi8k" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack3.png" id="4_pw07k"]
+[ext_resource type="Texture2D" uid="uid://ei5o1qnuu58g" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack4.png" id="5_ewvpv"]
 [ext_resource type="Script" path="res://scripts/characters/character_facing.gd" id="6_le5ky"]
-[ext_resource type="Texture2D" uid="uid://dmdiyjqyfcuwl" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack5.png" id="6_vv2bh"]
+[ext_resource type="Texture2D" uid="uid://88wm35ifocgj" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack5.png" id="6_vv2bh"]
 [ext_resource type="Texture2D" uid="uid://do25ap0ds3hwk" path="res://assets/interface/heart.png" id="7_3h8xh"]
 [ext_resource type="Script" path="res://scripts/battle/hurt_box.gd" id="7_4plc4"]
-[ext_resource type="Texture2D" uid="uid://cs7jba7xya7eu" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack6.png" id="7_asiy1"]
-[ext_resource type="Texture2D" uid="uid://ccgdp2ll4yf7e" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_1.png" id="8_fuqir"]
-[ext_resource type="Texture2D" uid="uid://267iajuix70k" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_2.png" id="9_moh73"]
-[ext_resource type="Texture2D" uid="uid://d4dvxlxvpx7ca" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_3.png" id="10_0sxip"]
-[ext_resource type="Texture2D" uid="uid://3ucv5aa4e38j" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_4.png" id="11_2gvk1"]
-[ext_resource type="Texture2D" uid="uid://dcq4n5xy8b3q8" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_5.png" id="12_vflny"]
-[ext_resource type="Texture2D" uid="uid://bmlxiqpx212s6" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_6.png" id="13_135s4"]
+[ext_resource type="Texture2D" uid="uid://kafwdnuneexc" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack6.png" id="7_asiy1"]
+[ext_resource type="Texture2D" uid="uid://bli1tvjrtvx74" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_1.png" id="8_fuqir"]
+[ext_resource type="Texture2D" uid="uid://nfqn3b65c6x8" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_2.png" id="9_moh73"]
+[ext_resource type="Texture2D" uid="uid://b4r7dcu6xg6tg" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_3.png" id="10_0sxip"]
+[ext_resource type="Texture2D" uid="uid://ch8gkhb2agpgy" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_4.png" id="11_2gvk1"]
+[ext_resource type="Texture2D" uid="uid://blq4qhjl25cmb" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_5.png" id="12_vflny"]
+[ext_resource type="Texture2D" uid="uid://do2lmt8657fqt" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_6.png" id="13_135s4"]
 [ext_resource type="Script" path="res://scripts/battle/hit_box.gd" id="16_m8rq8"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5w2is"]
@@ -94,6 +94,35 @@ tracks/1/keys = {
 "values": [0]
 }
 
+[sub_resource type="Animation" id="Animation_4gyt5"]
+resource_name = "attack"
+length = 1.2
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"attack"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5]
+}
+
 [sub_resource type="Animation" id="Animation_tpiwx"]
 resource_name = "idle"
 length = 1.2
@@ -110,35 +139,6 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"idle"]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
-"update": 1,
-"values": [0, 1, 2, 3, 4, 5]
-}
-
-[sub_resource type="Animation" id="Animation_4gyt5"]
-resource_name = "attack"
-length = 1.2
-step = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"attack"]
 }
 tracks/1/type = "value"
 tracks/1/imported = false

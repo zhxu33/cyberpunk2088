@@ -9,7 +9,7 @@ var _dead:bool = false
 var attack_cooldown:float
 var cooldown_elapsed:float
 var jump_amount:int
-
+var first_time:bool = true
 var player: CharacterBody2D = self
 
 @onready var animation_tree:AnimationTree = $AnimationTree_Hand
@@ -21,9 +21,11 @@ func _ready():
 	jump_velocity = DEFAULT_JUMP_VELOCITY - Stats.upgrades["Jump Power"]*25
 	movement_speed = DEFAULT_MOVE_VELOCITY + Stats.upgrades["Movement Speed"]*20
 	attack_cooldown = 0.75 - 0.05 * Stats.upgrades["Attack Speed"]
-	health = Stats.health
+	
 	animation_tree.active = true
 	signals.player_take_damage.connect(take_damage)
+	health = Stats.max_health
+	print ("health inital  is", health)
 	unbind_player_input_commands()
 	
 func _physics_process(delta: float):
@@ -66,13 +68,21 @@ func _physics_process(delta: float):
 	super(delta)
 	
 func take_damage(damage:int) -> void:
+	# A TEMPERAL FIX on intial health is not 100/100 problem
+	if first_time : 
+		first_time = false 
+		return
+	
 	health -= damage
 	_damaged = true
 	print("health: ", health)
+	# need to update the stat.health so healthbar can change, cuz health is a copy
+	Stats.health = health
 	if 0 >= health:
 		#_play($Audio/defeat)
 		_dead = true
 		animation_tree.active = false
+		
 
 		#animation_player.play("death")
 	else:
