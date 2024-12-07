@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://dd7k8bc0p4kn3"]
+[gd_scene load_steps=8 format=3 uid="uid://dd7k8bc0p4kn3"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_5b1eu"]
 [ext_resource type="PackedScene" uid="uid://unu2udtc35ev" path="res://scenes/interface/interface.tscn" id="1_gq3uh"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d2kv3yjh1sopj" path="res://scenes/characters/punk_player.tscn" id="5_30c2q"]
 [ext_resource type="PackedScene" uid="uid://dogtmonf6vstv" path="res://scenes/characters/enemy_dog.tscn" id="5_n5f8p"]
 [ext_resource type="PackedScene" uid="uid://bciy50bbuapon" path="res://scenes/characters/boss.tscn" id="6_oh0ma"]
+[ext_resource type="Texture2D" uid="uid://csvwb3l8r5gdj" path="res://assets/TileSet/2 Background/city-backgrounds-pixel-art/city 1/10.png" id="7_p6xok"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_5b1eu")
@@ -26,3 +27,12 @@ player = NodePath("../Punk_Player")
 
 [node name="Boss" parent="." instance=ExtResource("6_oh0ma")]
 unique_name_in_owner = true
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2304, 1296)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(736, 55)
+texture = ExtResource("7_p6xok")
