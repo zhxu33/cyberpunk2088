@@ -40,7 +40,7 @@ var current_player:Player
 var dialog_state:String
 
 const DIALOG_TEXT = {
-	"Shop" = "Welcome! You can purchase upgrades with coins here. Press right click to refund upgrades!",
+	"Shop" = "All I got here are experimental cyberware—stuff the\naverage Joe can't afford.\nThe source? Trust me, you don't wanna know.",
 	"Portal" = "Do you want to enter the next level?",
 	"DefeatBoss" = "Please defeat boss before entering the next level!"
 }
@@ -142,7 +142,7 @@ func close_dialog():
 func shop_dialog():
 	dialogue.visible = true
 	dialog_state = "Shop"
-	dialogue_title.text = "Shop Owner"
+	dialogue_title.text = "Scavenger Trader - Biker"
 	dialogue_text.text = DIALOG_TEXT[dialog_state]
 
 

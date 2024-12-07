@@ -5,10 +5,13 @@ extends Node2D
 @export var max_angle: float = deg_to_rad(45)
 @export var bullet_group = preload("res://scenes/attacks/bullet_group.tscn")
 
+var rotating = false
+
 @onready var world:World = get_node("/root/World")
 @onready var end_point: Node2D = $EndPoint
 @onready var start_point: Node2D = $StartPoint
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var player: Player = $".."
 
 
 # Called when the node enters the scene tree for the first time.
@@ -18,6 +21,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if player._dead or !rotating:
+		return
+	
 	# Adjust Rotation based on mouse and direction
 	var mouse_position = get_global_mouse_position()
 	var angle = (mouse_position - global_position).angle()

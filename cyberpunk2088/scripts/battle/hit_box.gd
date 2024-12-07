@@ -8,6 +8,6 @@ extends Area2D
 func _init() -> void:
 	area_entered.connect(_on_area_entered)
 
-func _on_area_entered(hurtbox:HurtBox) -> void:
-	if hurtbox.get_owner().has_method("take_damage"):
-		hurtbox.owner.take_damage(damage)
+func _on_area_entered(area:Area2D) -> void:
+	if (area is HurtBox) and area.get_owner().has_method("take_damage"):
+		area.owner.take_damage(damage)
