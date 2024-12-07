@@ -138,6 +138,15 @@ func unbind_player_input_commands():
 	fire1 = Command.new()
 	idle = Command.new()
 
-
+func player_reset(): 
+	_damaged = false
+	_dead = false
+	first_time = true 
+	health = 100
+	animation_tree.active = true
+	jump_velocity = DEFAULT_JUMP_VELOCITY - Stats.upgrades["Jump Power"]*25
+	movement_speed = DEFAULT_MOVE_VELOCITY + Stats.upgrades["Movement Speed"]*20
+	attack_cooldown = 0.75 - 0.05 * Stats.upgrades["Attack Speed"]
+	
 func tell_them_who_you_are():
 	return player

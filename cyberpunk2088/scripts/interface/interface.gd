@@ -133,7 +133,7 @@ func _on_new_game():
 	level.visible = true
 	world.new_level()
 	current_player.bind_player_input_commands()
-	
+	current_player.player_reset()
 	
 func close_dialog():
 	dialogue.visible = false
