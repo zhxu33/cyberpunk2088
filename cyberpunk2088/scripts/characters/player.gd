@@ -30,6 +30,7 @@ func _ready():
 	
 func _physics_process(delta: float):
 	if _dead:
+		Stats.health = 0  # alwasy show 0 on health bar when died
 		return
 
 	# Process ranged attack
