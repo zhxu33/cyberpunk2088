@@ -11,7 +11,7 @@ var right_bounds: Vector2
 var left_bounds: Vector2
 
 
-@onready var ray_cast:RayCast2D = $RayCast2D
+@onready var ray_cast:RayCast2D = $PlayerDetectionRayCast
 @onready var timer:Timer = $ChaseTimer
 @onready var sprite1: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hit_box: Area2D = $HitBox
@@ -46,6 +46,7 @@ func _physics_process(delta: float):
 	handle_movement(delta)
 	change_direction()
 	look_for_player()
+	
 	
 	_manage_animation()
 	last_hit += delta
@@ -136,7 +137,7 @@ func change_direction() -> void:
 				sprite1.flip_h = true
 				direction = Vector2(-1, 0)
 				self.velocity = direction * -SPEED
-				ray_cast.target_position = Vector2(-40, 0)
+				ray_cast.target_position = Vector2(-60, 0)
 				collision_shape.position = Vector2(-25, 8)
 		else:
 			# moving left
@@ -144,7 +145,7 @@ func change_direction() -> void:
 				direction = Vector2(-1, 0)
 			else:
 				sprite1.flip_h = false
-				ray_cast.target_position = Vector2(40, 0)
+				ray_cast.target_position = Vector2(60, 0)
 				collision_shape.position = Vector2(25, 8)
 	else:
 		# States.CHASE
@@ -152,11 +153,11 @@ func change_direction() -> void:
 		direction = sign(direction)
 		if direction.x == 1:
 			sprite1.flip_h = false
-			ray_cast.target_position = Vector2(40, 0)
+			ray_cast.target_position = Vector2(60, 0)
 			collision_shape.position = Vector2(25, 8)
 		else:
 			sprite1.flip_h = true
-			ray_cast.target_position = Vector2(-40, 0)
+			ray_cast.target_position = Vector2(-60, 0)
 			collision_shape.position = Vector2(-25, 8)
 	
 
@@ -183,3 +184,11 @@ func _on_chase_timer_timeout() -> void:
 	current_state = States.WANDER
 	left_bounds = self.global_position + Vector2(-125, 0)
 	right_bounds = self.global_position + Vector2(125, 0)
+	var collider = ray_cast.get_collider()
+	if ray_cast.is_colliding() and collider is not Player:
+		if direction.x == 1:
+			left_bounds = self.global_position + Vector2(-270, 0)
+			right_bounds = self.global_position + Vector2(-20, 0)
+		elif direction.x == -1:
+			left_bounds = self.global_position + Vector2(20, 0)
+			right_bounds = self.global_position + Vector2(270, 0)
