@@ -430,7 +430,7 @@ tile_map_data = PackedByteArray("AABCABQAAwAAAAEAAABDABQAAwABAAEAAABCABUAAgAAAAA
 tile_set = SubResource("TileSet_578d0")
 
 [node name="NpcSpawn" type="Node2D" parent="."]
-position = Vector2(902, 296)
+position = Vector2(912, 284)
 
 [node name="Portal" parent="." instance=ExtResource("17_fjg8r")]
 position = Vector2(389, 552)
