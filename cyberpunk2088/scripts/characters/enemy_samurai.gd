@@ -137,6 +137,7 @@ func change_direction() -> void:
 				direction = Vector2(-1, 0)
 				self.velocity = direction * -SPEED
 				ray_cast.target_position = Vector2(-40, 0)
+				collision_shape.position = Vector2(-25, 8)
 		else:
 			# moving left
 			if self.global_position.x >= left_bounds.x:
@@ -144,6 +145,7 @@ func change_direction() -> void:
 			else:
 				sprite1.flip_h = false
 				ray_cast.target_position = Vector2(40, 0)
+				collision_shape.position = Vector2(25, 8)
 	else:
 		# States.CHASE
 		direction = (player.global_position - self.global_position).normalized()
@@ -151,9 +153,11 @@ func change_direction() -> void:
 		if direction.x == 1:
 			sprite1.flip_h = false
 			ray_cast.target_position = Vector2(40, 0)
+			collision_shape.position = Vector2(25, 8)
 		else:
 			sprite1.flip_h = true
 			ray_cast.target_position = Vector2(-40, 0)
+			collision_shape.position = Vector2(-25, 8)
 	
 
 func handle_gravity(delta: float) -> void:
@@ -165,7 +169,6 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body == player:
 		#attacking = true
 		signals.player_take_damage.emit(damage)
-		print("enter")
 
 
 #func _on_hit_box_body_exited(body: Node2D) -> void:
