@@ -14,17 +14,15 @@ var player_function: Node
 
 
 func _ready() -> void:
-	enemy_dog = get_node("/root/World/Enemy")
 	player_function = get_node("/root/World/Punk_Player")
 	player = player_function.tell_them_who_you_are()
-	direction = enemy_dog.dog_facing_direction()
 	$Timer.start()
 
 
 func _physics_process(delta: float) -> void:
 	#direction = 
 	#direction = sign(direction)
-	global_position += direction * speed * delta
+	global_position += Vector2(1, 0) * speed * delta
 	if direction == Vector2.LEFT:
 		animated_sprite.flip_h = true
 
@@ -32,10 +30,15 @@ func _physics_process(delta: float) -> void:
 func _on_body_entered(body: Node2D) -> void:
 	if body == player:
 		animated_sprite.play("hit")
-		speed = 50
+		speed = 0
 		signals.player_take_damage.emit(damage)
 		#queue_free()
 
 
 func _on_timer_timeout() -> void:
 	queue_free()
+
+
+func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+	if anim_name == "hit":
+		queue_free()

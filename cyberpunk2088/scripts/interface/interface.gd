@@ -83,7 +83,7 @@ func _process(_delta: float) -> void:
 	# update player status
 	Stats.max_health = 100 + Stats.upgrades["Maximum Health"]*40
 	health_bar.value = Stats.health
-	print ("healthBar value", health_bar.value)
+	#print ("healthBar value", health_bar.value)
 	health_bar.max_value = Stats.max_health
 	health_label.text = str(Stats.health) + "/" + str(Stats.max_health)
 	coins_label.text = str(Stats.coins)
