@@ -10,6 +10,7 @@ extends Enemy
 var direction: Vector2
 var right_bounds: Vector2
 var left_bounds: Vector2
+var sprite_facing: bool
 
 var projectile:PackedScene = preload("res://scenes/attacks/emeny_dog_bullet.tscn")
 
@@ -28,6 +29,17 @@ func _ready():
 
 
 func _physics_process(delta: float):
+	if sprite == null:
+		return
+	
+	
+	if sprite.flip_h:
+		sprite_facing = true
+	else:
+		sprite_facing = false
+	
+	
+	
 	if not self.is_on_floor():
 		_apply_gravity(delta)
 	last_hit += delta
@@ -59,7 +71,7 @@ func bind_commands():
 
 func fire() -> void:
 	var new_projectile = projectile.instantiate() as EnemyDogBullet
-	if facing == Facing.RIGHT:
+	if !sprite.flip_h:
 		$ProjectileSpawnRight.add_child(new_projectile)
 	else:
 		$ProjectileSpawnLeft.add_child(new_projectile)
@@ -84,3 +96,8 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "attack":
 		fire()
 		animation_player.play("idle")
+		sprite.flip_h = !sprite.flip_h
+
+
+func dog_facing():
+	return sprite_facing

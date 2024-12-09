@@ -3,6 +3,7 @@ class_name EnemyDogBullet
 
 @export var damage: int
 
+var dog_facing: bool
 var direction: Vector2
 var speed: float = 300
 var player: CharacterBody2D
@@ -13,18 +14,25 @@ var player_function: Node
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 
+
 func _ready() -> void:
 	player_function = get_node("/root/World/Punk_Player")
 	player = player_function.tell_them_who_you_are()
+	enemy_dog = get_parent()
+	dog_facing = enemy_dog.sprite_facing
+	if dog_facing == true:
+		direction = Vector2.LEFT
+	else:
+		direction = Vector2.RIGHT
 	$Timer.start()
 
 
 func _physics_process(delta: float) -> void:
-	#direction = 
-	#direction = sign(direction)
-	global_position += Vector2(1, 0) * speed * delta
+	global_position += direction * speed * delta
 	if direction == Vector2.LEFT:
 		animated_sprite.flip_h = true
+	else:
+		animated_sprite.flip_h = false
 
 
 func _on_body_entered(body: Node2D) -> void:

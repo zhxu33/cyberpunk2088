@@ -37,6 +37,8 @@ func _ready():
 	player = player_function.tell_them_who_you_are()
 	bind_commands()
 	
+	
+	
 
 func _physics_process(delta: float):
 	if ray_cast == null:
@@ -46,7 +48,6 @@ func _physics_process(delta: float):
 	handle_movement(delta)
 	change_direction()
 	look_for_player()
-	
 	
 	_manage_animation()
 	last_hit += delta
