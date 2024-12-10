@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://dju8s1guckxvh"]
 
-[ext_resource type="Texture2D" uid="uid://bg7gljkcqofci" path="res://assets/enemies/Dog/Dog.png" id="2_dqh4m"]
+[ext_resource type="Texture2D" uid="uid://bxcfwwyt1l6sj" path="res://assets/enemies/Dog/Dog.png" id="2_dqh4m"]
 
 [sub_resource type="GDScript" id="GDScript_rvhx8"]
 script/source = "extends CharacterBody2D

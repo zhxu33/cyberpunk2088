@@ -47,13 +47,15 @@ func _physics_process(delta: float):
 	#change_direction()
 	#look_for_player()
 	#
-	#last_hit += delta
-	#if last_hit > 3:
-		#health_node.visible = false
-	#super(delta)
+	last_hit += delta
+	if last_hit > 3:
+		health_node.visible = false
+	super(delta)
 	pass
 
 func take_damage(damage:float) -> void:
+	if _dead:
+		return
 	var dmg_text = damage_text.instantiate()
 	dmg_text.damage = damage
 	dmg_text.global_position = global_position

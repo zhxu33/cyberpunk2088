@@ -55,7 +55,6 @@ func _physics_process(delta: float) -> void:
 
 
 func take_damage(damage:float) -> void:
-	print(damage)
 	super(damage)
 	if 0 >= health:
 		_death = true

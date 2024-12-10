@@ -60,10 +60,7 @@ func _physics_process(delta: float):
 func take_damage(damage:float) -> void:
 	super(damage)
 	if health <= 0 and not _dead:
-		_dead = true
-		Stats.coins += coin_reward
 		animation_player.play("death")
-		queue_free()
 
 
 func _manage_animation() -> void:
