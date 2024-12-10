@@ -68,6 +68,8 @@ func take_damage(damage:float) -> void:
 	if health <= 0 and not _dead:
 		_dead = true
 		Stats.coins += coin_reward
+		if self is BossSlime: # await death animation
+			await get_tree().create_timer(2).timeout
 		queue_free()
 	
 
