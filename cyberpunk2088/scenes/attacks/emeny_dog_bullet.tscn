@@ -1,7 +1,7 @@
 [gd_scene load_steps=13 format=3 uid="uid://cynx8wly18kdh"]
 
 [ext_resource type="Script" path="res://scripts/battle/emeny_dog_bullet.gd" id="1_tl3pj"]
-[ext_resource type="Texture2D" uid="uid://bg7gljkcqofci" path="res://assets/enemies/Dog/Dog.png" id="2_qnbst"]
+[ext_resource type="Texture2D" uid="uid://bob3oo8nucy31" path="res://assets/enemies/Dog/Dog.png" id="2_qnbst"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qvg0n"]
 atlas = ExtResource("2_qnbst")

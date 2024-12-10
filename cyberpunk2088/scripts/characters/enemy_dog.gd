@@ -38,7 +38,7 @@ func _physics_process(delta: float):
 	else:
 		sprite_facing = false
 	
-	
+	change_direction()
 	
 	if not self.is_on_floor():
 		_apply_gravity(delta)
@@ -59,6 +59,15 @@ func bind_commands():
 	up_cmd = JumpCommand.new()
 	# fire1 = RangedAttackCommand.new()
 	idle = IdleCommand.new()
+
+
+func change_direction():
+	direction = (player.global_position - self.global_position).normalized()
+	direction = sign(direction)
+	if direction.x == 1:
+		sprite.flip_h = false
+	else:
+		sprite.flip_h = true
 
 
 func fire() -> void:
@@ -88,7 +97,6 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 	if anim_name == "attack":
 		fire()
 		animation_player.play("idle")
-		sprite.flip_h = !sprite.flip_h
 
 
 func dog_facing():
