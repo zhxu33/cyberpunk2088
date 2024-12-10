@@ -6,7 +6,7 @@ extends Node2D
 @onready var player:CharacterBody2D = $Punk_Player
 
 var map_scenes:Array[PackedScene] = [preload("res://scenes/maps/map_one.tscn")]
-var enemy_scenes:Array[PackedScene] = [preload("res://scenes/characters/enemy_dog.tscn")]
+var enemy_scenes:Array[PackedScene] = [preload("res://scenes/characters/enemy_dog.tscn"),preload("res://scenes/characters/enemy_samurai.tscn")]
 #var enemy_scenes:Array[PackedScene] = [preload("res://scenes/characters/enemy_samurai.tscn")]
 var boss_scenes:Array[PackedScene] = [preload("res://scenes/characters/boss_slime.tscn")]
 var npc_scenes:Array[PackedScene] = [preload("res://scenes/characters/merchant.tscn")]
@@ -24,7 +24,7 @@ func _spawn_map():
 	# choose random map from maps array to spawn:
 	if current_map:
 		current_map.queue_free()
-	current_map = map_scenes[randi() % enemy_scenes.size()].instantiate()
+	current_map = map_scenes[randi() % map_scenes.size()].instantiate()
 	add_child(current_map)
 	
 	# move player to spawn

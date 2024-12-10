@@ -255,7 +255,7 @@ bg_color = Color(0.226707, 0.226708, 0.226707, 1)
 bg_color = Color(1, 0.151344, 0.108333, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_as6ir"]
-size = Vector2(135, 35)
+size = Vector2(287.75, 35)
 
 [node name="BossSlime" type="CharacterBody2D"]
 collision_layer = 8
@@ -286,7 +286,7 @@ collision_layer = 2
 collision_mask = 0
 script = ExtResource("23_xislm")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+[node name="HurtBoxCollisionShape" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(20, 3)
 shape = SubResource("RectangleShape2D_ig6md")
 
@@ -296,7 +296,7 @@ shape = SubResource("RectangleShape2D_ig6md")
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("24_680pr")
-damage = 10
+damage = 20
 
 [node name="HitBoxCollisionShape" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-6.5, 9.5)
@@ -357,14 +357,18 @@ theme_override_font_sizes/font_size = 20
 text = "100/100"
 
 [node name="PlayerDetection" type="Area2D" parent="."]
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(17.5, 7.5)
+position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_as6ir")
 debug_color = Color(0.841998, 0.106654, 0.880724, 0.42)
 
 [node name="AttackTimer" type="Timer" parent="."]
+wait_time = 2.0
 
 [connection signal="CharacterDirectionChange" from="." to="HitBox/HitBoxCollisionShape" method="_on_character_body_2d_character_direction_change"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_player_detection_body_entered"]
+[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]

@@ -7,6 +7,9 @@ var distance: Vector2
 var _death:bool = false
 
 @onready var hit_box_collision_shape: CollisionShape2D = $HitBox/HitBoxCollisionShape
+@onready var hurt_box_collision_shape: CollisionShape2D = $HurtBox/HurtBoxCollisionShape
+@onready var collision_shape: CollisionShape2D = $CollisionShape2D
+@onready var attack_timer: Timer = $AttackTimer
 
 func _ready():
 	max_health = 200 + Stats.level * 100
@@ -20,12 +23,17 @@ func _ready():
 	player_function = get_node("/root/World/Punk_Player")
 	player = player_function.tell_them_who_you_are()
 	
-	hit_box_collision_shape.disabled = false
+	hit_box_collision_shape.disabled = true
+	
 	
 	super()
 
 func _physics_process(delta: float) -> void:
+	if boss_slime_fight_start == false:
+		return
+	
 	change_direction()
+	global_position = global_position.move_toward(player.global_position, delta * 50)
 	
 	if _death:
 		cmd_list.clear()
@@ -57,9 +65,13 @@ func change_direction() -> void:
 	direction = sign(direction)
 	if direction.x == 1:
 		sprite.flip_h = true
+		collision_shape.position = Vector2(-3, 7)
+		hurt_box_collision_shape.position = Vector2(-2, 3)
 		hit_box_collision_shape.position = Vector2(26.5, 9.5)
 	else:
 		sprite.flip_h = false
+		collision_shape.position = Vector2(20, 7)
+		hurt_box_collision_shape.position = Vector2(20, 3)
 		hit_box_collision_shape.position = Vector2(-6.5, 9.5)
 
 
@@ -81,7 +93,11 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 		attacking = false
 
 
-func _on_hit_box_body_entered(body: Node2D) -> void:
-	if body == player:
-		attacking = true
-		
+func _on_player_detection_body_entered(body: Node2D) -> void:
+	if body is Player:
+		boss_fight_start()
+		attack_timer.start()
+
+
+func _on_attack_timer_timeout() -> void:
+	attacking = true
