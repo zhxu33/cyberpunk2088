@@ -1,6 +1,9 @@
 class_name BossSlime
 extends Enemy 
 
+@export var SPEED: int = 100
+@export var ACCELERATION: int = 50
+
 var boss_slime_fight_start: bool = false
 var direction: Vector2
 var distance: Vector2
@@ -16,24 +19,24 @@ func _ready():
 	health = 200 + Stats.level * 100
 	coin_reward = 200 + Stats.level * 100
 	
-	health_node.visible = false
-	health_bar.max_value = max_health
-	health_bar.value = health
-	
 	player_function = get_node("/root/World/Punk_Player")
 	player = player_function.tell_them_who_you_are()
 	
 	hit_box_collision_shape.disabled = true
 	
-	
 	super()
+
 
 func _physics_process(delta: float) -> void:
 	if boss_slime_fight_start == false:
 		return
+	if _death:
+		return
 	
+	_apply_gravity(delta)
+	handle_movement(delta)
 	change_direction()
-	global_position = global_position.move_toward(player.global_position, delta * 50)
+	
 	
 	if _death:
 		cmd_list.clear()
@@ -49,10 +52,14 @@ func _physics_process(delta: float) -> void:
 			cmd_list.pop_front()
 	else:
 		_manage_animation()
-	
+
 
 func take_damage(damage:float) -> void:
+	last_hit = 0
+	health_node.visible = true
 	health -= damage
+	health_node.visible = true
+	health_bar.value = health
 
 	if 0 >= health:
 		_death = true
@@ -73,6 +80,11 @@ func change_direction() -> void:
 		collision_shape.position = Vector2(20, 7)
 		hurt_box_collision_shape.position = Vector2(20, 3)
 		hit_box_collision_shape.position = Vector2(-6.5, 9.5)
+
+
+func handle_movement(delta: float) -> void:
+	velocity = velocity.move_toward(direction * SPEED, ACCELERATION * delta)	
+	move_and_slide()
 
 
 func _manage_animation() -> void:

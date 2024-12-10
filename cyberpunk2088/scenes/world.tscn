@@ -1,15 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dd7k8bc0p4kn3"]
+[gd_scene load_steps=10 format=3 uid="uid://dd7k8bc0p4kn3"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_5b1eu"]
 [ext_resource type="PackedScene" uid="uid://unu2udtc35ev" path="res://scenes/interface/interface.tscn" id="1_gq3uh"]
 [ext_resource type="Script" path="res://scripts/camera/camera_controller.gd" id="3_k6uqh"]
 [ext_resource type="PackedScene" uid="uid://d2kv3yjh1sopj" path="res://scenes/characters/punk_player.tscn" id="5_30c2q"]
-[ext_resource type="PackedScene" uid="uid://bciy50bbuapon" path="res://scenes/characters/boss_slime.tscn" id="6_oh0ma"]
-[ext_resource type="Texture2D" uid="uid://bhyu1ayy8k0cm" path="res://assets/TileSet/2 Background/city-backgrounds-pixel-art/city 1/1.png" id="7_v1tdk"]
-[ext_resource type="Texture2D" uid="uid://ckxcecmc6gkhu" path="res://assets/TileSet/2 Background/city-backgrounds-pixel-art/city 1/2.png" id="8_n33iv"]
-[ext_resource type="Texture2D" uid="uid://dpso66l205bmy" path="res://assets/TileSet/2 Background/city-backgrounds-pixel-art/city 1/3.png" id="9_h3f1p"]
-[ext_resource type="Texture2D" uid="uid://cvq155sr4ls4e" path="res://assets/TileSet/2 Background/city-backgrounds-pixel-art/city 1/5.png" id="10_fx5ox"]
-[ext_resource type="Texture2D" uid="uid://b85j356dhm0lr" path="res://assets/TileSet/2 Background/city-backgrounds-pixel-art/city 1/4.png" id="10_pcs6u"]
+[ext_resource type="Texture2D" uid="uid://xh6s3300x87j" path="res://assets/TileSet/2 Background/city-backgrounds-pixel-art/city 1/1.png" id="7_v1tdk"]
+[ext_resource type="Texture2D" uid="uid://b84588l6h8blc" path="res://assets/TileSet/2 Background/city-backgrounds-pixel-art/city 1/2.png" id="8_n33iv"]
+[ext_resource type="Texture2D" uid="uid://jimampnxtk3c" path="res://assets/TileSet/2 Background/city-backgrounds-pixel-art/city 1/3.png" id="9_h3f1p"]
+[ext_resource type="Texture2D" uid="uid://ch5kw8u50i8vc" path="res://assets/TileSet/2 Background/city-backgrounds-pixel-art/city 1/5.png" id="10_fx5ox"]
+[ext_resource type="Texture2D" uid="uid://dtofp1dcl1cro" path="res://assets/TileSet/2 Background/city-backgrounds-pixel-art/city 1/4.png" id="10_pcs6u"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_5b1eu")
@@ -24,9 +23,6 @@ script = ExtResource("3_k6uqh")
 [node name="Punk_Player" parent="." instance=ExtResource("5_30c2q")]
 unique_name_in_owner = true
 scale = Vector2(2, 2)
-
-[node name="Boss" parent="." instance=ExtResource("6_oh0ma")]
-unique_name_in_owner = true
 
 [node name="Node2D" type="Node2D" parent="."]
 position = Vector2(0, 1)
