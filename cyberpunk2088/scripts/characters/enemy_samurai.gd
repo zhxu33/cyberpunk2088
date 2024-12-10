@@ -58,11 +58,7 @@ func _physics_process(delta: float):
 	
 
 func take_damage(damage:float) -> void:
-	last_hit = 0
-	health_node.visible = true
-	health -= damage
-	health_node.visible = true
-	health_bar.value = health
+	super(damage)
 	if health <= 0 and not _dead:
 		_dead = true
 		Stats.coins += coin_reward

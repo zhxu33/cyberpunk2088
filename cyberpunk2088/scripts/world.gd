@@ -67,9 +67,9 @@ func new_level():
 	# blackout screen
 	interface.black_out()
 	Stats.level += 1
-	# restore player health
-	Stats.health = Stats.max_health
 	# spawn random map
 	await get_tree().create_timer(0.5).timeout
 	_spawn_map()
+	# restore player health
+	Stats.health = Stats.max_health
 	

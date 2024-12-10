@@ -5,7 +5,6 @@ extends Node2D
 @onready var particle: CPUParticles2D = $Particle
 
 var enemies_hit = {}
-var damage_text = preload("res://scenes/attacks/damage_text.tscn")
 
 func _ready() -> void:
 	var explosion_scale = 2 + 0.5 * Stats.upgrades["Exploding Bullet"]
@@ -25,8 +24,3 @@ func _physics_process(delta: float) -> void:
 			enemies_hit[hurtbox] = "hit"
 			var damage = 10 + 5 * Stats.upgrades["Exploding Bullet"]
 			hurtbox.get_owner().take_damage(damage)
-			var dmg_text = damage_text.instantiate()
-			dmg_text.global_position = hurtbox.global_position
-			dmg_text.damage = damage
-			get_tree().current_scene.add_child(dmg_text)
-			

@@ -55,12 +55,8 @@ func _physics_process(delta: float) -> void:
 
 
 func take_damage(damage:float) -> void:
-	last_hit = 0
-	health_node.visible = true
-	health -= damage
-	health_node.visible = true
-	health_bar.value = health
-
+	print(damage)
+	super(damage)
 	if 0 >= health:
 		_death = true
 		velocity = Vector2.ZERO

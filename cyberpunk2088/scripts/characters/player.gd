@@ -11,6 +11,7 @@ var cooldown_elapsed:float
 var jump_amount:int
 var first_time:bool = true
 var player: CharacterBody2D = self
+var damage_text = preload("res://scenes/attacks/damage_text.tscn")
 
 @onready var animation_tree:AnimationTree = $AnimationTree_Hand
 @onready var weapon:Weapon = $Weapon
@@ -29,7 +30,6 @@ func _ready():
 	
 func _physics_process(delta: float):
 	if _dead:
-		Stats.health = 0  # alwasy show 0 on health bar when died
 		return
 
 	# Process ranged attack
@@ -75,10 +75,13 @@ func take_damage(damage:int) -> void:
 	if first_time : 
 		first_time = false 
 		return
-	
+
+	var dmg_text = damage_text.instantiate()
+	dmg_text.damage = damage
+	dmg_text.global_position = global_position
+	get_tree().current_scene.add_child(dmg_text)
 	health -= damage
 	_damaged = true
-	print("health: ", health)
 	# need to update the stat.health so healthbar can change, cuz health is a copy
 	Stats.health = health
 	if health <= 0:

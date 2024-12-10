@@ -7,7 +7,6 @@ var velo:Vector2
 @onready var icon: TextureRect = $Icon
 @onready var hitbox: Area2D = $Hitbox
 
-var damage_text = preload("res://scenes/attacks/damage_text.tscn")
 var explosion_particle:PackedScene = preload("res://scenes/attacks/explosion.tscn")
 var pierced_amount:int = 0
 var bounced_amount:int = 0
@@ -53,10 +52,6 @@ func _on_area_entered(hurtbox: Area2D) -> void:
 		if randf_range(1, 10) <= Stats.upgrades["Critical Chance"]:
 			crit_factor = 2
 		hurtbox.get_owner().take_damage(damage * crit_factor)
-		var dmg_text = damage_text.instantiate()
-		dmg_text.damage = damage * crit_factor
-		dmg_text.global_position = hurtbox.global_position
-		get_tree().current_scene.add_child(dmg_text)
 		_explode()
 		if pierced_amount > Stats.upgrades["Bullet Penetrate"]:
 			queue_free()

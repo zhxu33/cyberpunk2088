@@ -13,6 +13,7 @@ extends Character
 var cmd_list : Array[Command]
 var _damaged:bool = false
 var _dead:bool = false
+var damage_text = preload("res://scenes/attacks/damage_text.tscn")
 
 var player_function: Node
 
@@ -53,6 +54,10 @@ func _physics_process(delta: float):
 	pass
 
 func take_damage(damage:float) -> void:
+	var dmg_text = damage_text.instantiate()
+	dmg_text.damage = damage
+	dmg_text.global_position = global_position
+	get_tree().current_scene.add_child(dmg_text)
 	last_hit = 0
 	health_node.visible = true
 	health -= damage
