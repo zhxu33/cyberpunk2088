@@ -167,14 +167,6 @@ func handle_gravity(delta: float) -> void:
 		velocity.y += gravity * delta
 
 
-func _on_hit_box_body_entered(body: Node2D) -> void:
-	if body == player:
-		#attacking = true
-		signals.player_take_damage.emit(damage)
-
-
-#func _on_hit_box_body_exited(body: Node2D) -> void:
-	#attacking = false
 
 
 func _on_animation_player_animation_finished(anim_name: StringName) -> void:

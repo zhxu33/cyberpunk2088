@@ -697,8 +697,9 @@ shape = SubResource("RectangleShape2D_8khch")
 
 [node name="HitBox" type="Area2D" parent="."]
 collision_layer = 0
-collision_mask = 5
+collision_mask = 4
 script = ExtResource("9_7ll47")
+damage = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(25, 8)
@@ -762,5 +763,3 @@ text = "100/100"
 [connection signal="CharacterDirectionChange" from="." to="HitBox/CollisionShape2D" method="_on_character_body_2d_character_direction_change"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="ChaseTimer" to="." method="_on_chase_timer_timeout"]
-[connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]
-[connection signal="body_exited" from="HitBox" to="." method="_on_hit_box_body_exited"]
