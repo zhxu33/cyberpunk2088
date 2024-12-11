@@ -1,4 +1,4 @@
-[gd_scene load_steps=84 format=3 uid="uid://ch6vwmvausmi"]
+[gd_scene load_steps=85 format=3 uid="uid://ch6vwmvausmi"]
 
 [ext_resource type="Script" path="res://scripts/characters/enemy_samurai.gd" id="1_undia"]
 [ext_resource type="Texture2D" uid="uid://drxkoam0j4csq" path="res://assets/enemies/Cyberpunk Samurai/With Light/Attacks.png" id="2_yaq20"]
@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://scripts/characters/character_facing.gd" id="8_nwjwy"]
 [ext_resource type="Texture2D" uid="uid://do25ap0ds3hwk" path="res://assets/interface/heart.png" id="9_4wnkd"]
 [ext_resource type="Script" path="res://scripts/battle/hit_box.gd" id="9_7ll47"]
+[ext_resource type="Script" path="res://scripts/battle/hurt_box.gd" id="9_o35r4"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nrkst"]
 atlas = ExtResource("2_yaq20")
@@ -691,6 +692,7 @@ one_shot = true
 [node name="HurtBox" type="Area2D" parent="."]
 collision_layer = 2
 collision_mask = 0
+script = ExtResource("9_o35r4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(-0.5, 9)
