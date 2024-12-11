@@ -42,7 +42,7 @@ func _physics_process(delta: float):
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			up_cmd.execute(self)
-		elif jump_amount < Stats.upgrades["Double Jump"] && velocity.y >= 0:
+		elif jump_amount < Stats.upgrades["Double Jump"]:
 			jump_amount += 1
 			# Move to doublejump animation
 			state_machine.start("multi_jump", true)
@@ -149,7 +149,6 @@ func unbind_player_input_commands():
 func player_reset(): 
 	_damaged = false
 	_dead = false
-	first_time = true 
 	animation_tree.active = true
 	jump_velocity = DEFAULT_JUMP_VELOCITY - Stats.upgrades["Jump Power"]*25
 	movement_speed = DEFAULT_MOVE_VELOCITY + Stats.upgrades["Movement Speed"]*20
