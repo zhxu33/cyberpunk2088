@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://d1sbi12akmnlb"]
 
-[ext_resource type="Script" path="res://scenes/maps/portal.gd" id="1_r1l8g"]
+[ext_resource type="Script" path="res://scripts/interactables/portal.gd" id="1_r1l8g"]
 [ext_resource type="Texture2D" uid="uid://ck00e3okd8usa" path="res://assets/TileSet/4 Animated objects/portal.png" id="1_tef7n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bk8rb"]

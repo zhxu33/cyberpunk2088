@@ -17,7 +17,6 @@ var _death:bool = false
 func _ready():
 	max_health = 200 + Stats.level * 100
 	health = 200 + Stats.level * 100
-	coin_reward = 200 + Stats.level * 100
 	
 	player_function = get_node("/root/World/Punk_Player")
 	player = player_function.tell_them_who_you_are()

@@ -14,8 +14,8 @@ var cmd_list : Array[Command]
 var _damaged:bool = false
 var _dead:bool = false
 var damage_text = preload("res://scenes/attacks/damage_text.tscn")
-var coin_drop = preload("res://scenes/maps/coin_drop.tscn")
-# var health_drop = preload("res://scenes/maps/health_drop.tscn")
+var coin_drop = preload("res://scenes/interactables/coin_drop.tscn")
+var health_drop = preload("res://scenes/interactables/health_drop.tscn")
 
 var player_function: Node
 
@@ -63,19 +63,23 @@ func spawn_dmg_text(dmg:int):
 
 
 func spawn_coin():
-	# Calculate the number of coins to spawn
-	@warning_ignore("integer_division")
-	var num_coins = int(coin_reward / 100)
-
-	# Calculate the base reward for each coin
-	@warning_ignore("integer_division")
-	var reward_per_coin = coin_reward / num_coins
-
-	for i in range(num_coins):
-		var coin = coin_drop.instantiate()
-		coin.coin_reward = reward_per_coin
-		coin.global_position = global_position
-		get_tree().current_scene.add_child(coin)
+	var coin = coin_drop.instantiate()
+	coin.coin_reward = coin_reward
+	coin.global_position = global_position
+	get_tree().current_scene.call_deferred("add_child", coin)
+	
+	
+func spawn_health():
+	var hp = health_drop.instantiate()
+	hp.health_reward = randi_range(5,25)
+	hp.global_position = global_position
+	get_tree().current_scene.call_deferred("add_child", hp)
+	
+	
+func boss_bonus():
+	for i in range(5):
+		spawn_coin()
+		spawn_health()
 	
 
 func take_damage(dmg:int) -> void:
@@ -88,9 +92,14 @@ func take_damage(dmg:int) -> void:
 	if health <= 0 and not _dead:
 		_dead = true
 		spawn_coin()
+		# 10% chance to spawn health
+		if randi_range(1,10) == 1:
+			spawn_health()
 		if self is BossSlime: # await death animation
+			boss_bonus()
 			await get_tree().create_timer(2).timeout
 		if self is BossEx1: # await death animation
+			boss_bonus()
 			await get_tree().create_timer(3.5).timeout
 		queue_free()
 	

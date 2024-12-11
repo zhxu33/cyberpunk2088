@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://d344je2tyhjdn" path="res://assets/TileSet/3 Objects/Barrel1.png" id="14_nv1p0"]
 [ext_resource type="Texture2D" uid="uid://cf751vlaqtsbp" path="res://assets/TileSet/3 Objects/Flag.png" id="16_nc5qf"]
 [ext_resource type="Texture2D" uid="uid://hn5fpdlxnbt3" path="res://assets/TileSet/1 Tiles/IndustrialTile_74.png" id="16_w58hq"]
-[ext_resource type="PackedScene" uid="uid://d1sbi12akmnlb" path="res://scenes/maps/portal.tscn" id="17_fjg8r"]
+[ext_resource type="PackedScene" uid="uid://d1sbi12akmnlb" path="res://scenes/interactables/portal.tscn" id="17_fjg8r"]
 [ext_resource type="Texture2D" uid="uid://c7i8bwu5nbwrx" path="res://assets/TileSet/1 Tiles/IndustrialTile_75.png" id="17_l748r"]
 [ext_resource type="Texture2D" uid="uid://dvusna2abxv4l" path="res://assets/TileSet/3 Objects/Pointer1.png" id="17_lvsyy"]
 [ext_resource type="Texture2D" uid="uid://dya3kop2e1yw4" path="res://assets/TileSet/3 Objects/Board3.png" id="18_bnw5w"]

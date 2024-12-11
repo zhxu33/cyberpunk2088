@@ -1,12 +1,12 @@
 extends RigidBody2D
 
-@export var coin_reward:int
+@export var health_reward:int
 @onready var hitbox:Area2D = $Hitbox 
 
 
 func _on_area_entered(hurtbox: Area2D) -> void:
 	if hurtbox.get_owner() is Player:
-		Stats.coins += coin_reward
+		Stats.health = min(Stats.max_health * 0.1 + Stats.health, Stats.max_health)
 		queue_free()
 	
 		
@@ -18,8 +18,4 @@ func _ready() -> void:
 		randf_range(-250, 250)   # Random y offset
 	)
 	linear_velocity = random_offset
-
-
-func _physics_process(delta: float) -> void:
-	$Icon.rotation_degrees += delta*10
 	
