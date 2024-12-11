@@ -44,11 +44,11 @@ func _physics_process(delta: float):
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			up_cmd.execute(self)
-		elif jump_amount < Stats.upgrades["Double Jump"]:
+		elif jump_amount < Stats.upgrades["Double Jump"] && velocity.y >= 0:
 			jump_amount += 1
-			up_cmd.execute(self)
 			# Move to doublejump animation
 			state_machine.start("multi_jump", true)
+			up_cmd.execute(self)
 			
 	# Process horizontal move
 	var move_input = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")

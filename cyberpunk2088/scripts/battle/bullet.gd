@@ -47,7 +47,6 @@ func _destroy() -> void:
 func _on_area_entered(hurtbox: Area2D) -> void:
 	if hurtbox.get_owner() is Enemy and pierced_amount <= Stats.upgrades["Bullet Penetrate"]:
 		pierced_amount += 1
-		var crit = randf_range(1, 10)
 		var crit_factor = 1
 		if randf_range(1, 10) <= Stats.upgrades["Critical Chance"]:
 			crit_factor = 2
