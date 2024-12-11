@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://deybeam0i1i11"]
+[gd_scene load_steps=72 format=3 uid="uid://deybeam0i1i11"]
 
 [ext_resource type="Script" path="res://scripts/characters/boss_ex_1.gd" id="1_f8cso"]
 [ext_resource type="Texture2D" uid="uid://cacwpin45063d" path="res://assets/enemies/Bringer-Of-Death/Individual Sprite/Attack/Bringer-of-Death_Attack_1.png" id="2_n2ed2"]
@@ -55,6 +55,7 @@
 [ext_resource type="AudioStream" uid="uid://hr7gtu8cmwdy" path="res://assets/audio/sound_effects/bossex1_sounds/yell3.ogg" id="53_tl453"]
 [ext_resource type="AudioStream" uid="uid://bhqipxjdjktbt" path="res://assets/audio/sound_effects/bossex1_sounds/sad-yell.ogg" id="54_h4u5r"]
 [ext_resource type="AudioStream" uid="uid://c85ufhwkvnpiy" path="res://assets/audio/sound_effects/bossex1_sounds/Blast.ogg" id="55_48gjs"]
+[ext_resource type="Script" path="res://scripts/battle/player_detection_area.gd" id="56_tes0j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l0yy3"]
 animations = [{
@@ -457,6 +458,9 @@ clip_4/name = &"blast"
 clip_4/stream = ExtResource("55_48gjs")
 clip_4/auto_advance = 0
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_310dl"]
+size = Vector2(440.5, 34)
+
 [node name="BossEx1" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 2
@@ -495,6 +499,7 @@ script = ExtResource("47_y4g2m")
 collision_layer = 0
 collision_mask = 4
 script = ExtResource("3_6j6af")
+damage = 15
 
 [node name="Weapon" type="CollisionShape2D" parent="HitBox"]
 position = Vector2(-46, 4)
@@ -561,6 +566,14 @@ text = "100/100"
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 position = Vector2(0, -21)
 stream = SubResource("AudioStreamInteractive_tcn0n")
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+script = ExtResource("56_tes0j")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+position = Vector2(1, 7)
+shape = SubResource("RectangleShape2D_310dl")
+debug_color = Color(0.872703, 0.114441, 0.794707, 0.42)
 
 [connection signal="CharacterDirectionChange" from="." to="AnimatedSprite2D" method="_on_character_body_2d_character_direction_change"]
 [connection signal="CharacterDirectionChange" from="." to="HitBox/Weapon" method="_on_character_body_2d_character_direction_change"]

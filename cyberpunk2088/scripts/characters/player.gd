@@ -10,6 +10,9 @@ var jump_amount:int
 var first_time:bool = true
 var player: CharacterBody2D = self
 var damage_text = preload("res://scenes/attacks/damage_text.tscn")
+var teleport_effect = preload("res://scenes/interactables/teleport.tscn")
+var returning:bool = false
+var return_time:float = 1.0
 
 @onready var animation_tree:AnimationTree = $AnimationTree_Hand
 @onready var weapon:Weapon = $Weapon
@@ -29,7 +32,31 @@ func _ready():
 func _physics_process(delta: float):
 	if _dead:
 		return
-
+		
+	# Process return
+	if Input.is_action_pressed("return") and not returning:
+		var tp = teleport_effect.instantiate()
+		add_child(tp)
+		tp.global_position = global_position
+		returning = true
+	
+	if returning and not Input.is_action_pressed("return"):
+		# cancel teleport
+		if (find_child("Teleport", true, false)):
+			find_child("Teleport", true, false).queue_free()
+		returning = false
+	
+	if returning and return_time > 0:
+		return_time -= delta
+		if return_time <= 0:
+			if (find_child("Teleport", true, false)):
+				find_child("Teleport", true, false).queue_free()
+			if (get_parent().find_child("Map", true, false)):
+				global_position = get_parent().find_child("Map", true, false).find_child("PlayerSpawn").global_position
+	else:
+		return_time = 1.0
+		returning = false
+		
 	# Process ranged attack
 	if Input.is_action_pressed("ranged_attack") and cooldown_elapsed >= attack_cooldown:
 		fire1.execute(self)

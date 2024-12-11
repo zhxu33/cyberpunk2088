@@ -90,6 +90,7 @@ func take_damage(dmg:int) -> void:
 	health_node.visible = true
 	health -= dmg
 	if health <= 0 and not _dead:
+		health_node.visible = false
 		_dead = true
 		spawn_coin()
 		# 10% chance to spawn health
@@ -101,6 +102,8 @@ func take_damage(dmg:int) -> void:
 		if self is BossEx1: # await death animation
 			boss_bonus()
 			await get_tree().create_timer(3.5).timeout
+		if self is EnemySamurai:
+			await get_tree().create_timer(2).timeout
 		queue_free()
 	
 

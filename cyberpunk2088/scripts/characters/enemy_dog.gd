@@ -85,7 +85,7 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 		# print("enter")
 
 
-func _on_hit_box_body_exited(body: Node2D) -> void:
+func _on_hit_box_body_exited(_body: Node2D) -> void:
 	attacking = false
 
 
