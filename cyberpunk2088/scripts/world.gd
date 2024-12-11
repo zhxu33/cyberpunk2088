@@ -8,7 +8,8 @@ extends Node2D
 var map_scenes:Array[PackedScene] = [preload("res://scenes/maps/map_one.tscn")]
 var enemy_scenes:Array[PackedScene] = [preload("res://scenes/characters/enemy_dog.tscn"),preload("res://scenes/characters/enemy_samurai.tscn")]
 #var enemy_scenes:Array[PackedScene] = [preload("res://scenes/characters/enemy_samurai.tscn")]
-var boss_scenes:Array[PackedScene] = [preload("res://scenes/characters/boss_slime.tscn")]
+#var boss_scenes:Array[PackedScene] = [preload("res://scenes/characters/boss_slime.tscn")]
+var boss_scenes:Array[PackedScene] = [preload("res://scenes/characters/boss_ex1.tscn")]
 var npc_scenes:Array[PackedScene] = [preload("res://scenes/characters/merchant.tscn")]
 
 

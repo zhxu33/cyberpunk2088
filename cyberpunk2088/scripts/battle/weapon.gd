@@ -10,8 +10,8 @@ var rotating = false
 @onready var world:World = get_node("/root/World")
 @onready var end_point: Node2D = $EndPoint
 @onready var start_point: Node2D = $StartPoint
-@onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var player: Player = $".."
+@onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
 
 
 # Called when the node enters the scene tree for the first time.
