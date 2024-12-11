@@ -77,7 +77,7 @@ func spawn_health():
 	
 	
 func boss_bonus():
-	for i in range(5):
+	for i in range(4):
 		spawn_coin()
 		spawn_health()
 	
