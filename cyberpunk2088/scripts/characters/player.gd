@@ -10,7 +10,7 @@ var cooldown_elapsed2:float
 var jump_amount:int
 var first_time:bool = true
 var player: CharacterBody2D = self
-var damage_text = preload("res://scenes/attacks/damage_text.tscn")
+var damage_text = preload("res://scenes/attacks/player_damage_text.tscn")
 var teleport_effect = preload("res://scenes/interactables/teleport.tscn")
 var returning:bool = false
 var return_time:float = 1.0
