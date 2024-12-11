@@ -82,7 +82,6 @@ func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body == player:
 		attacking = true
 		signals.player_take_damage.emit(damage)
-		# print("enter")
 
 
 func _on_hit_box_body_exited(_body: Node2D) -> void:

@@ -22,7 +22,7 @@ func _physics_process(_delta: float) -> void:
 		return
 	var overlaps = hitbox.get_overlapping_areas()
 	for hurtbox in overlaps:
-		if hurtbox.get_owner() is Enemy and not enemies_hit.has(hurtbox):
+		if hurtbox.get_owner() is Enemy and not hurtbox.get_owner()._dead and not enemies_hit.has(hurtbox):
 			enemies_hit[hurtbox] = "hit"
 			var damage = 10 + 5 * Stats.upgrades["Exploding Attack"]
 			hurtbox.get_owner().take_damage(damage)

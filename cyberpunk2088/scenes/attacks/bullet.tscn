@@ -5,6 +5,7 @@
 [ext_resource type="Script" path="res://scripts/battle/hit_box.gd" id="3_s3cpf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y40gt"]
+size = Vector2(15, 6.5)
 
 [node name="Bullet" type="CharacterBody2D"]
 collision_layer = 0
@@ -27,9 +28,11 @@ collision_mask = 3
 script = ExtResource("3_s3cpf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hitbox"]
+position = Vector2(-0.5, -0.25)
 shape = SubResource("RectangleShape2D_y40gt")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 light_mask = 0
 visibility_layer = 0
+position = Vector2(2, 6.5)
 shape = SubResource("RectangleShape2D_y40gt")

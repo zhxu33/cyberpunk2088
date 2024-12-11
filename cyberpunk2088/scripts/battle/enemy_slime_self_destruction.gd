@@ -19,7 +19,6 @@ func _on_body_entered(body: Node2D) -> void:
 	if enemy_slime._dead:
 		return
 	if body is Player:
-		print("ayte")
 		enemy_slime.destruct()
 		_explode()
 		queue_free()

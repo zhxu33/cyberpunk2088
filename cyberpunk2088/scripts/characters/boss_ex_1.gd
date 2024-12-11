@@ -102,7 +102,6 @@ func change_direction() -> void:
 
 
 func boss_fight_start() -> void:
-	print("begin boss fight")
 	# Boss should behave differently each run
 	randomize()
 	var random_value = randf()
@@ -110,11 +109,9 @@ func boss_fight_start() -> void:
 	while _boss._death == false:
 		random_value = randf()
 		if random_value < (2.0/3.0):
-			print("Boss Trace")
 			_boss.cmd_list.push_back(DurativeTraceCommand.new(3, player))
 			await self.cmd_list_is_clean
 		elif random_value < (3.0/3.0):
-			print("Boss Jump")
 			# Measure the velocity that can jump onto the head of player
 			# Boss's float time in jump is 1.198s, consider the velocity of player
 			var expect_velocity:float = (player.global_position.x - _boss.global_position.x) / 1.198 + 0.5 * player.velocity.x
