@@ -55,7 +55,7 @@
 [ext_resource type="AudioStream" uid="uid://hr7gtu8cmwdy" path="res://assets/audio/sound_effects/bossex1_sounds/yell3.ogg" id="53_tl453"]
 [ext_resource type="AudioStream" uid="uid://bhqipxjdjktbt" path="res://assets/audio/sound_effects/bossex1_sounds/sad-yell.ogg" id="54_h4u5r"]
 [ext_resource type="AudioStream" uid="uid://c85ufhwkvnpiy" path="res://assets/audio/sound_effects/bossex1_sounds/Blast.ogg" id="55_48gjs"]
-[ext_resource type="Script" path="res://scripts/battle/player_detection_area.gd" id="56_tes0j"]
+[ext_resource type="Script" path="res://scripts/battle/boss_ex1_player_detection_area.gd" id="56_tes0j"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l0yy3"]
 animations = [{
