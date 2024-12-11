@@ -19,6 +19,10 @@ func update_bullets():
 	
 	max_bullets = clamp(Stats.upgrades["Bullet Count"], 1, 12)
 	
+	# give bonus 2 bullets at max level
+	if max_bullets == 10:
+		max_bullets = 12
+	
 	# Iterate over child nodes
 	for i in range(1, get_child_count()+1):
 		var bullet = find_child("Bullet"+str(i))

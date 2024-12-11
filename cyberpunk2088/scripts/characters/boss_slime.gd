@@ -28,6 +28,7 @@ func _ready():
 
 
 func _physics_process(delta: float) -> void:
+	super(delta)
 	if boss_slime_fight_start == false:
 		return
 	if _death:

@@ -518,10 +518,10 @@ position = Vector2(912, 284)
 [node name="Portal" parent="." instance=ExtResource("17_fjg8r")]
 position = Vector2(389, 552)
 
-[node name="Label" type="Label" parent="."]
-offset_left = 1159.0
-offset_top = 262.0
-offset_right = 1944.0
-offset_bottom = 293.0
+[node name="Controls" type="Label" parent="."]
+offset_left = 972.0
+offset_top = 260.0
+offset_right = 1984.0
+offset_bottom = 291.0
 theme_override_font_sizes/font_size = 22
-text = "Controls: WASD - Movement, Space - Jump, Click - Shoot, Right Click: Meele"
+text = "Controls: WASD - Movement, Space - Jump, Click - Shoot, Right Click: Meele,  R - Return to Spawn"
