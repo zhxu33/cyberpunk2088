@@ -14,7 +14,6 @@ var teleport_effect = preload("res://scenes/interactables/teleport.tscn")
 var returning:bool = false
 var return_time:float = 1.0
 var ladder_on = false
-var _climbing = false
 
 
 @onready var animation_tree:AnimationTree = $AnimationTree_Hand
@@ -35,12 +34,10 @@ func _ready():
 func _physics_process(delta: float):
 	if _dead:
 		return
-	# Process climb
-	if ladder_on and Input.is_action_pressed("jump"):
-		_climbing = true
-		velocity.y = -movement_speed
-	else:
-		_climbing = false
+		
+	if ladder_on:
+		if Input.is_action_pressed("jump"):
+			velocity.y = -movement_speed
 		
 	# Process return
 	if Input.is_action_pressed("return") and not returning:
@@ -113,7 +110,6 @@ func _physics_process(delta: float):
 func take_damage(damage:int) -> void:
 	if _dead:
 		return
-	_play($Audio/Hurt)
 	var dmg_text = damage_text.instantiate()
 	dmg_text.damage = damage
 	dmg_text.global_position = global_position
@@ -157,17 +153,6 @@ func _manage_animation_tree_state() -> void:
 		attacking = false
 	else:
 		animation_tree["parameters/conditions/attacking"] = false
-	
-	print(_climbing)
-	if _climbing:
-		animation_tree["parameters/conditions/climbing"] = true
-		animation_tree["parameters/conditions/multi_jump"] = false
-	else:
-		animation_tree["parameters/conditions/climbing"] = false
-		if ladder_on:
-			animation_tree["parameters/conditions/multi_jump"] = false
-		else:
-			animation_tree["parameters/conditions/multi_jump"] = true
 
 	if _damaged:
 		animation_tree["parameters/conditions/damaged"] = true
@@ -204,7 +189,3 @@ func player_reset():
 	
 func tell_them_who_you_are():
 	return player
-	
-func _play(player:AudioStreamPlayer) -> void:
-	if !player.playing:
-		player.play()
