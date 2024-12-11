@@ -13,6 +13,8 @@ var damage_text = preload("res://scenes/attacks/damage_text.tscn")
 var teleport_effect = preload("res://scenes/interactables/teleport.tscn")
 var returning:bool = false
 var return_time:float = 1.0
+var ladder_on = false
+
 
 @onready var animation_tree:AnimationTree = $AnimationTree_Hand
 @onready var weapon:Weapon = $Weapon
@@ -32,6 +34,10 @@ func _ready():
 func _physics_process(delta: float):
 	if _dead:
 		return
+		
+	if ladder_on:
+		if Input.is_action_pressed("jump"):
+			velocity.y = -movement_speed
 		
 	# Process return
 	if Input.is_action_pressed("return") and not returning:
