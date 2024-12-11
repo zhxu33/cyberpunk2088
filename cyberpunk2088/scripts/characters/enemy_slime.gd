@@ -1,7 +1,8 @@
 class_name EnemySlime
 extends Enemy
 
-@export var SPEED: int = 100
+@export var SPEED: int = 200
+@export var JUMP_POWER: int = -700
 @export var CHASE_SPEED: int = 200
 @export var ACCELERATION: int = 300
 
@@ -11,6 +12,7 @@ var right_bounds: Vector2
 var left_bounds: Vector2
 var start_moving: bool = false
 var _death: bool = false
+var jump: float = 2
 
 func _ready():
 	health_node.visible = false
@@ -25,6 +27,12 @@ func _ready():
 func _physics_process(delta: float):
 	if sprite == null:
 		return
+	
+	if jump <= 0 and start_moving:
+		jump = 2
+		velocity.y = JUMP_POWER
+	else:
+		jump -= delta
 	
 	change_direction()
 	
@@ -48,6 +56,22 @@ func take_damage(dmg:int) -> void:
 		#velocity = Vector2.ZERO
 		#animation_player.play("death")
 
+
+func destruct():
+	if _dead:
+		return
+	health = 0
+	if health <= 0 and not _dead:
+		_death = true
+		health_node.visible = false
+		_dead = true
+		spawn_coin()
+		# 10% chance to spawn health
+		if randi_range(1,10) == 1:
+			spawn_health()
+		await get_tree().create_timer(2).timeout
+		queue_free()
+	
 
 func bind_commands():
 	right_cmd = MoveRightCommand.new()

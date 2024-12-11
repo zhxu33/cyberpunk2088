@@ -5,7 +5,7 @@ class_name EnemyDogBullet
 
 var dog_facing: bool
 var direction: Vector2
-var speed: float = 300
+var speed: float = 500
 var player: CharacterBody2D
 var enemy_dog: Node
 var player_function: Node
@@ -24,6 +24,8 @@ func _ready() -> void:
 		direction = Vector2.LEFT
 	else:
 		direction = Vector2.RIGHT
+	direction = (player.global_position - global_position).normalized()
+	rotation = direction.angle()
 	$Timer.start()
 
 
@@ -33,6 +35,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.flip_h = true
 	else:
 		animated_sprite.flip_h = false
+		
 
 
 func _on_body_entered(body: Node2D) -> void:
@@ -40,7 +43,7 @@ func _on_body_entered(body: Node2D) -> void:
 		animated_sprite.play("hit")
 		speed = 0
 		signals.player_take_damage.emit(damage)
-		#queue_free()
+	queue_free()
 
 
 func _on_timer_timeout() -> void:
