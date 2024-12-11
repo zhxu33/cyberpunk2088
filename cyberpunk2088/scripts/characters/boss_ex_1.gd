@@ -10,9 +10,7 @@ var distance: Vector2
 var _death:bool = false
 
 @onready var audio_player:AudioStreamPlayer2D = $AudioStreamPlayer2D
-@onready var collision_shape: CollisionShape2D = $CollisionShape
-@onready var hurt_box_collision_shape: CollisionShape2D = $HurtBox/HurtBoxCollisionShape
-@onready var weapon: CollisionShape2D = $HitBox/Weapon
+
 
 func _ready() -> void:
 	max_health = 200 + Stats.level * 100
@@ -81,18 +79,19 @@ func bind_boss_input_commands():
 	idle = IdleCommand.new()
 
 
+func change_facing(new_facing:Facing) -> void:
+	facing = new_facing
+	emit_signal("CharacterDirectionChange", facing)
+
+
 func change_direction() -> void:
 	direction = (player.global_position  - self.global_position).normalized()
 	direction = sign(direction)
 	if direction.x == 1:
 		# facing left
+		change_facing(Character.Facing.LEFT)
 		sprite.flip_h = true
-		collision_shape.position = Vector2(-58, 0)
-		hurt_box_collision_shape.position = Vector2(-58, 0)
-		weapon.position = Vector2(-12, 4)
 	else:
 		# facing right
+		change_facing(Character.Facing.RIGHT)
 		sprite.flip_h = false
-		collision_shape.position = Vector2(0, 0)
-		hurt_box_collision_shape.position = Vector2(0, 0)
-		weapon.position = Vector2(-46, 4)
