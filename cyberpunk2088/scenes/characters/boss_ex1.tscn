@@ -463,11 +463,13 @@ collision_mask = 2
 script = ExtResource("1_f8cso")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-29, -13)
+position = Vector2(-28, -13)
 scale = Vector2(0.8, 0.8)
 sprite_frames = SubResource("SpriteFrames_l0yy3")
 animation = &"attack"
 script = ExtResource("47_y4g2m")
+unflipped_position = Vector2(-28, -13)
+flipped_position = Vector2(29, -13)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -500,6 +502,8 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_8hx2p")
 disabled = true
 script = ExtResource("47_y4g2m")
+unflipped_position = Vector2(-46, 4)
+flipped_position = Vector2(46, 4)
 
 [node name="Health" type="Control" parent="."]
 layout_mode = 3
@@ -515,10 +519,10 @@ scale = Vector2(0.1, 0.1)
 
 [node name="ProgressBar" type="ProgressBar" parent="Health"]
 layout_mode = 0
-offset_left = -490.0
-offset_top = -125.0
-offset_right = 90.0
-offset_bottom = -96.0
+offset_left = -260.0
+offset_top = -115.0
+offset_right = 320.0
+offset_bottom = -86.0
 theme_override_styles/background = SubResource("StyleBoxFlat_t1e6m")
 theme_override_styles/fill = SubResource("StyleBoxFlat_kwfuo")
 value = 50.0
@@ -527,18 +531,18 @@ show_percentage = false
 [node name="Border" type="ColorRect" parent="Health"]
 z_index = -15
 layout_mode = 0
-offset_left = -500.0
-offset_top = -135.0
-offset_right = 100.0
-offset_bottom = -93.0
+offset_left = -270.0
+offset_top = -125.0
+offset_right = 330.0
+offset_bottom = -83.0
 color = Color(0, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="Health"]
 layout_mode = 0
-offset_left = -580.0
-offset_top = -145.0
-offset_right = 19.9999
-offset_bottom = 455.0
+offset_left = -340.0
+offset_top = -135.0
+offset_right = 260.0
+offset_bottom = 465.0
 scale = Vector2(0.1, 0.1)
 texture = ExtResource("4_qk4xr")
 
@@ -559,3 +563,4 @@ position = Vector2(0, -21)
 stream = SubResource("AudioStreamInteractive_tcn0n")
 
 [connection signal="CharacterDirectionChange" from="." to="AnimatedSprite2D" method="_on_character_body_2d_character_direction_change"]
+[connection signal="CharacterDirectionChange" from="." to="HitBox/Weapon" method="_on_character_body_2d_character_direction_change"]
