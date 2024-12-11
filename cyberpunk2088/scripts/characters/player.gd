@@ -16,6 +16,7 @@ var damage_text = preload("res://scenes/attacks/damage_text.tscn")
 @onready var animation_tree:AnimationTree = $AnimationTree_Hand
 @onready var weapon:Weapon = $Weapon
 @onready var state_machine:AnimationNodeStateMachinePlayback = $AnimationTree_Hand.get("parameters/playback")
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 
 func _ready():
@@ -64,6 +65,14 @@ func _physics_process(delta: float):
 		fire2.execute(self)
 	if state_machine.get_current_node() == "melee_attack":
 		idle.execute(self)
+		
+		# Let character face the gun!
+	if weapon.scale.x == 1:
+		animated_sprite_2d.flip_h = false
+		change_facing(Character.Facing.RIGHT)
+	elif weapon.scale.x == -1:
+		animated_sprite_2d.flip_h = true
+		change_facing(Character.Facing.LEFT)
 
 	# Process attack
 	_manage_animation_tree_state()
@@ -98,6 +107,13 @@ func ranged_attack():
 	
 func _manage_animation_tree_state() -> void:
 	if !is_zero_approx(velocity.x):
+		
+		if (velocity.x > 0) == (facing == Facing.RIGHT):
+			# This is a ugly solution but I can't find better
+			animation_tree.get_tree_root().get_node("run").play_mode = AnimationNodeAnimation.PlayMode.PLAY_MODE_FORWARD
+		else:
+			animation_tree.get_tree_root().get_node("run").play_mode = AnimationNodeAnimation.PlayMode.PLAY_MODE_BACKWARD
+			
 		animation_tree["parameters/conditions/idle"] = false
 		animation_tree["parameters/conditions/moving"] = true
 	else:
