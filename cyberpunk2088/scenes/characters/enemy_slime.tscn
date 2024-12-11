@@ -244,7 +244,7 @@ bg_color = Color(1, 0.151344, 0.108333, 1)
 size = Vector2(303.938, 18.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnxb6"]
-size = Vector2(94, 77)
+size = Vector2(94, 51)
 
 [node name="EnemySlime" type="CharacterBody2D"]
 collision_layer = 8
@@ -345,10 +345,11 @@ shape = SubResource("RectangleShape2D_w1d3t")
 debug_color = Color(0.841998, 0.106654, 0.880724, 0.42)
 
 [node name="SelfDestruction" type="Area2D" parent="."]
+collision_layer = 0
 script = ExtResource("27_2bamo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SelfDestruction"]
-position = Vector2(11, -26.5)
+position = Vector2(11, -13.5)
 shape = SubResource("RectangleShape2D_gnxb6")
 debug_color = Color(0.0268862, 0.650751, 0, 0.42)
 
