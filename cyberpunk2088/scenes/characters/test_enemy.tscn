@@ -1,7 +1,7 @@
 [gd_scene load_steps=59 format=3 uid="uid://dogtmonf6vstv"]
 
 [ext_resource type="Script" path="res://scripts/characters/enemy.gd" id="1_tl4yn"]
-[ext_resource type="Texture2D" uid="uid://dxh1fpluwlglj" path="res://assets/enemies/Dog/Dog.png" id="3_c2rbj"]
+[ext_resource type="Texture2D" uid="uid://bob3oo8nucy31" path="res://assets/enemies/Dog/Dog.png" id="3_c2rbj"]
 [ext_resource type="Texture2D" uid="uid://do25ap0ds3hwk" path="res://assets/interface/heart.png" id="7_b4rmi"]
 [ext_resource type="Script" path="res://scripts/battle/hurt_box.gd" id="7_ohkv2"]
 

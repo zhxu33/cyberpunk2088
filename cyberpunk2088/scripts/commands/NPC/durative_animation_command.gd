@@ -3,7 +3,7 @@ extends Command
 
 var _timer:Timer
 
-func execute(character:Character) -> Status:
+func execute(_character:Character) -> Status:
 	return Status.ERROR
 
 
