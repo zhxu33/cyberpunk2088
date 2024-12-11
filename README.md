@@ -11,3 +11,12 @@
 |enemy                             |   1   |   1  |
 |enemy Melee HitBox                |   NA  |   3  |
 |enemy HurtBox                     |   2   |   NA |
+
+## bugs for fixing
+1. boss chase player far away and move out of boss room, need activation function
+2. ninja has unlimited velocity, need limitation
+
+## Job to do
+1. add merchant and guide near double jump position
+2. add attacking for boss (if we have time)
+3. add fragmanted story 
