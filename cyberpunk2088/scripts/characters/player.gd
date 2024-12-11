@@ -47,6 +47,8 @@ func _physics_process(delta: float):
 		elif jump_amount < Stats.upgrades["Double Jump"]:
 			jump_amount += 1
 			up_cmd.execute(self)
+			# Move to doublejump animation
+			state_machine.start("multi_jump", true)
 			
 	# Process horizontal move
 	var move_input = Input.get_action_strength("move_right") - Input.get_action_strength("move_left")
@@ -104,13 +106,9 @@ func _manage_animation_tree_state() -> void:
 	
 	if is_on_floor():
 		animation_tree["parameters/conditions/jumping"] = false
-		animation_tree["parameters/conditions/multi_jumping"] = false
 		animation_tree["parameters/conditions/on_floor"] = true
 	else:
-		if jump_amount > 0:
-			animation_tree["parameters/conditions/multi_jumping"] = true
-		else:
-			animation_tree["parameters/conditions/jumping"] = true
+		animation_tree["parameters/conditions/jumping"] = true
 		animation_tree["parameters/conditions/on_floor"] = false
 	
 	if attacking:

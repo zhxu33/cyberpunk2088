@@ -1,4 +1,4 @@
-[gd_scene load_steps=87 format=3 uid="uid://d2kv3yjh1sopj"]
+[gd_scene load_steps=86 format=3 uid="uid://d2kv3yjh1sopj"]
 
 [ext_resource type="Texture2D" uid="uid://bvtrtfwi1m1uv" path="res://assets/player/Free 3 Cyberpunk Sprites Pixel Art/2 Punk/Punk_attack3.png" id="1_5j260"]
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_l5uyy"]
@@ -621,10 +621,6 @@ advance_condition = &"moving"
 advance_mode = 2
 advance_condition = &"jumping"
 
-[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_ny4nh"]
-advance_mode = 2
-advance_condition = &"multi_jumping"
-
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_yi6b4"]
 advance_mode = 2
 advance_condition = &"on_floor"
@@ -684,8 +680,8 @@ states/multi_jump/node = SubResource("AnimationNodeAnimation_ii4eb")
 states/multi_jump/position = Vector2(222, -113)
 states/run/node = SubResource("AnimationNodeAnimation_l3mo8")
 states/run/position = Vector2(582, 100)
-transitions = ["idle", "jump", SubResource("AnimationNodeStateMachineTransition_vkuma"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_xiya2"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_ipj3c"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_oom8k"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_n7fn3"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_56200"), "jump", "multi_jump", SubResource("AnimationNodeStateMachineTransition_ny4nh"), "multi_jump", "idle", SubResource("AnimationNodeStateMachineTransition_yi6b4"), "idle", "melee_attack", SubResource("AnimationNodeStateMachineTransition_ftbyp"), "run", "melee_attack", SubResource("AnimationNodeStateMachineTransition_o68gn"), "melee_attack", "run", SubResource("AnimationNodeStateMachineTransition_2ucah"), "melee_attack", "idle", SubResource("AnimationNodeStateMachineTransition_vl1tr"), "multi_jump", "hurt", SubResource("AnimationNodeStateMachineTransition_5mwmm"), "jump", "hurt", SubResource("AnimationNodeStateMachineTransition_12pfi"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_fbg22"), "run", "hurt", SubResource("AnimationNodeStateMachineTransition_7hlfl"), "melee_attack", "hurt", SubResource("AnimationNodeStateMachineTransition_5ljyt"), "hurt", "jump", SubResource("AnimationNodeStateMachineTransition_phsmu")]
-graph_offset = Vector2(-83, -163.743)
+transitions = ["idle", "jump", SubResource("AnimationNodeStateMachineTransition_vkuma"), "Start", "idle", SubResource("AnimationNodeStateMachineTransition_xiya2"), "jump", "idle", SubResource("AnimationNodeStateMachineTransition_ipj3c"), "run", "idle", SubResource("AnimationNodeStateMachineTransition_oom8k"), "idle", "run", SubResource("AnimationNodeStateMachineTransition_n7fn3"), "run", "jump", SubResource("AnimationNodeStateMachineTransition_56200"), "multi_jump", "idle", SubResource("AnimationNodeStateMachineTransition_yi6b4"), "idle", "melee_attack", SubResource("AnimationNodeStateMachineTransition_ftbyp"), "run", "melee_attack", SubResource("AnimationNodeStateMachineTransition_o68gn"), "melee_attack", "run", SubResource("AnimationNodeStateMachineTransition_2ucah"), "melee_attack", "idle", SubResource("AnimationNodeStateMachineTransition_vl1tr"), "multi_jump", "hurt", SubResource("AnimationNodeStateMachineTransition_5mwmm"), "jump", "hurt", SubResource("AnimationNodeStateMachineTransition_12pfi"), "idle", "hurt", SubResource("AnimationNodeStateMachineTransition_fbg22"), "run", "hurt", SubResource("AnimationNodeStateMachineTransition_7hlfl"), "melee_attack", "hurt", SubResource("AnimationNodeStateMachineTransition_5ljyt"), "hurt", "jump", SubResource("AnimationNodeStateMachineTransition_phsmu")]
+graph_offset = Vector2(-228, -142.743)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rcwni"]
 size = Vector2(22, 34)
@@ -720,7 +716,6 @@ parameters/conditions/damaged = false
 parameters/conditions/idle = false
 parameters/conditions/jumping = false
 parameters/conditions/moving = false
-parameters/conditions/multi_jumping = false
 parameters/conditions/on_floor = false
 
 [node name="Weapon" parent="." instance=ExtResource("9_b3lsu")]
