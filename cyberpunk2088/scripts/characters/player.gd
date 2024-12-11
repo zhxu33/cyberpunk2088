@@ -157,8 +157,7 @@ func _manage_animation_tree_state() -> void:
 		attacking = false
 	else:
 		animation_tree["parameters/conditions/attacking"] = false
-	
-	print(_climbing)
+
 	if _climbing:
 		animation_tree["parameters/conditions/climbing"] = true
 		animation_tree["parameters/conditions/multi_jump"] = false

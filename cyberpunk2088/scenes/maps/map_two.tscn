@@ -1,4 +1,4 @@
-[gd_scene load_steps=102 format=4 uid="uid://oo2nllyis65a"]
+[gd_scene load_steps=102 format=4 uid="uid://cyp4xgis4vnv3"]
 
 [ext_resource type="Texture2D" uid="uid://cv02adbd18y0y" path="res://assets/TileSet/1 Tiles/IndustrialTile_66.png" id="1_agic8"]
 [ext_resource type="Texture2D" uid="uid://p51jjxm6iw07" path="res://assets/TileSet/1 Tiles/IndustrialTile_05.png" id="2_vkf3t"]
