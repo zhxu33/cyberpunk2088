@@ -2,7 +2,7 @@ class_name Bullet
 extends CharacterBody2D
 
 
-var damage: float = 25 + 5 * Stats.upgrades["Bullet Damage"]
+var damage: float = 25 + 5 * Stats.upgrades["Attack Damage"]
 var velo:Vector2
 @onready var icon: TextureRect = $Icon
 @onready var hitbox: Area2D = $Hitbox
@@ -33,7 +33,7 @@ func _physics_process(delta):
 	global_position += velo * delta
 
 func _explode() -> void:
-	if Stats.upgrades["Exploding Bullet"] > 0:
+	if Stats.upgrades["Exploding Attack"] > 0:
 		var explosion = explosion_particle.instantiate()
 		explosion.global_position = global_position
 		get_tree().current_scene.add_child(explosion)

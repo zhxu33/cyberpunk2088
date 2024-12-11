@@ -7,10 +7,10 @@ extends Node2D
 var enemies_hit = {}
 
 func _ready() -> void:
-	var explosion_scale = 2 + 0.5 * Stats.upgrades["Exploding Bullet"]
+	var explosion_scale = 2 + 0.5 * Stats.upgrades["Exploding Attack"]
 	hitbox.scale = Vector2(explosion_scale, explosion_scale)
-	particle.initial_velocity_max = 75 + 10 * Stats.upgrades["Exploding Bullet"]
-	particle.amount = 10 + 1 * Stats.upgrades["Exploding Bullet"]
+	particle.initial_velocity_max = 75 + 10 * Stats.upgrades["Exploding Attack"]
+	particle.amount = 10 + 1 * Stats.upgrades["Exploding Attack"]
 	particle.emitting = true
 	await get_tree().create_timer(0.15).timeout
 	hitbox.monitoring = true
@@ -22,5 +22,5 @@ func _physics_process(_delta: float) -> void:
 	for hurtbox in overlaps:
 		if hurtbox.get_owner() is Enemy and not enemies_hit.has(hurtbox):
 			enemies_hit[hurtbox] = "hit"
-			var damage = 10 + 5 * Stats.upgrades["Exploding Bullet"]
+			var damage = 10 + 5 * Stats.upgrades["Exploding Attack"]
 			hurtbox.get_owner().take_damage(damage)
