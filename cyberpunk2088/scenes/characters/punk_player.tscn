@@ -795,6 +795,7 @@ size = Vector2(17, 22)
 size = Vector2(20, 34)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 2
 script = ExtResource("1_l5uyy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
