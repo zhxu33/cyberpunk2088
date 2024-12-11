@@ -6,6 +6,7 @@ var _damaged:bool = false
 var _dead:bool = false
 var attack_cooldown:float
 var cooldown_elapsed:float
+var cooldown_elapsed2:float
 var jump_amount:int
 var first_time:bool = true
 var player: CharacterBody2D = self
@@ -90,10 +91,12 @@ func _physics_process(delta: float):
 		idle.execute(self)
 		
 	# melee attack
-	if Input.is_action_just_pressed("melee_attack"):
+	if Input.is_action_just_pressed("melee_attack") and cooldown_elapsed2 >= attack_cooldown*1.5:
+		cooldown_elapsed2 = 0
 		fire2.execute(self)
 	if state_machine.get_current_node() == "melee_attack":
 		idle.execute(self)
+	cooldown_elapsed2 += delta
 		
 		# Let character face the gun!
 	if weapon.scale.x == 1:
