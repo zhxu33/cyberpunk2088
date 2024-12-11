@@ -12,6 +12,7 @@ var rotating = false
 @onready var start_point: Node2D = $StartPoint
 @onready var player: Player = $".."
 @onready var animated_sprite_2d: AnimatedSprite2D = $"../AnimatedSprite2D"
+@onready var audio: Node2D = $"../Audio"
 
 
 # Called when the node enters the scene tree for the first time.
@@ -40,6 +41,7 @@ func _process(_delta: float) -> void:
 		rotation = angle - PI
 	
 func fire():
+	_play($"../Audio/GunFire")
 	# Measure direction
 	var spawn_position = end_point.global_position
 	var direction = (end_point.global_position - start_point.global_position).normalized()
@@ -49,4 +51,8 @@ func fire():
 	new_bullet_group.global_position = spawn_position
 	new_bullet_group.scale = Vector2(2,2)
 	world.current_map.add_child(new_bullet_group)
+	
+func _play(player:AudioStreamPlayer) -> void:
+	if !player.playing:
+		player.play()
 	
