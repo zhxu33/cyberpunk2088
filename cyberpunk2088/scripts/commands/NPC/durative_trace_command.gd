@@ -32,12 +32,12 @@ func execute(character:Character) -> Status:
 	if !_timer.is_stopped():
 		if _distance_x < -128: # Move left
 			character.velocity.x = -character.DEFAULT_MOVE_VELOCITY
-			character.sprite.flip_h = false
-			character.change_facing(Character.Facing.LEFT)
+			#character.sprite.flip_h = false
+			#character.change_facing(Character.Facing.LEFT)
 		elif _distance_x > 128: # Move right
 			character.velocity.x = character.DEFAULT_MOVE_VELOCITY
-			character.sprite.flip_h = true
-			character.change_facing(Character.Facing.RIGHT)
+			#character.sprite.flip_h = true
+			#character.change_facing(Character.Facing.RIGHT)
 		elif abs(_distance_x) < 23: # Too close to attack, give up this attack
 			return Status.DONE
 		else:

@@ -101,6 +101,8 @@ func take_damage(dmg:int) -> void:
 		if self is BossEx1: # await death animation
 			boss_bonus()
 			await get_tree().create_timer(3.5).timeout
+		if self is EnemySamurai:
+			await get_tree().create_timer(2).timeout
 		queue_free()
 	
 

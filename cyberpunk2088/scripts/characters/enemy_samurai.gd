@@ -19,7 +19,7 @@ var left_bounds: Vector2
 
 
 var current_state = States.WANDER
-
+var _death = false
 
 func _ready():
 	#animation_tree.active = true
@@ -44,6 +44,7 @@ func _physics_process(delta: float):
 	if ray_cast == null:
 		return
 	
+	
 	handle_gravity(delta)
 	handle_movement(delta)
 	change_direction()
@@ -59,18 +60,24 @@ func _physics_process(delta: float):
 
 func take_damage(dmg:int) -> void:
 	super(dmg)
-	if health <= 0 and not _dead:
+	if 0 >= health:
+		_death = true
+		velocity = Vector2.ZERO
 		animation_player.play("death")
 
 
 func _manage_animation() -> void:
-	if attacking:
-		animation_player.play("attack")	
+	if _death:
+		animation_player.play("death")
+		velocity = Vector2.ZERO
 	else:
-		if !is_zero_approx(velocity.x):
-			animation_player.play("move")
+		if attacking:
+			animation_player.play("attack")	
 		else:
-			animation_player.play("idle")
+			if !is_zero_approx(velocity.x):
+				animation_player.play("move")
+			else:
+				animation_player.play("idle")
 		
 	
 	#if not is_on_floor():
