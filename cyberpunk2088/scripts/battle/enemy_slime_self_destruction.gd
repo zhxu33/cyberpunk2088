@@ -12,8 +12,8 @@ func _ready() -> void:
 func _explode() -> void:
 	var explosion = explosion_particle.instantiate()
 	explosion.global_position = global_position
-	get_tree().current_scene.add_child(explosion)
-		
+	get_tree().current_scene.call_deferred("add_child", explosion)
+	
 
 func _on_body_entered(body: Node2D) -> void:
 	if enemy_slime._dead:

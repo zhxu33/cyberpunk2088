@@ -18,6 +18,8 @@ func _ready() -> void:
 	queue_free()
 
 func _physics_process(_delta: float) -> void:
+	if not hitbox.monitoring:
+		return
 	var overlaps = hitbox.get_overlapping_areas()
 	for hurtbox in overlaps:
 		if hurtbox.get_owner() is Player and not enemies_hit.has(hurtbox):

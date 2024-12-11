@@ -36,7 +36,7 @@ func _explode() -> void:
 	if Stats.upgrades["Exploding Attack"] > 0:
 		var explosion = explosion_particle.instantiate()
 		explosion.global_position = global_position
-		get_tree().current_scene.add_child(explosion)
+		get_tree().current_scene.call_deferred("add_child", explosion)
 	
 	
 func _destroy() -> void:
