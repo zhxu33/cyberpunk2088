@@ -90,6 +90,7 @@ func take_damage(dmg:int) -> void:
 	health_node.visible = true
 	health -= dmg
 	if health <= 0 and not _dead:
+		health_node.visible = false
 		_dead = true
 		spawn_coin()
 		# 10% chance to spawn health

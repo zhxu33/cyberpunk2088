@@ -51,7 +51,8 @@ func _physics_process(delta: float):
 		if return_time <= 0:
 			if (find_child("Teleport", true, false)):
 				find_child("Teleport", true, false).queue_free()
-			global_position = get_parent().find_child("Map", true, false).find_child("PlayerSpawn").global_position
+			if (get_parent().find_child("Map", true, false)):
+				global_position = get_parent().find_child("Map", true, false).find_child("PlayerSpawn").global_position
 	else:
 		return_time = 1.0
 		returning = false
