@@ -94,8 +94,6 @@ func _physics_process(delta: float):
 	if Input.is_action_just_pressed("melee_attack") and cooldown_elapsed2 >= attack_cooldown*1.6:
 		cooldown_elapsed2 = 0
 		fire2.execute(self)
-	if state_machine.get_current_node() == "melee_attack":
-		idle.execute(self)
 	cooldown_elapsed2 += delta
 		
 		# Let character face the gun!
