@@ -65,7 +65,7 @@ func _ready() -> void:
 		if (Stats.upgrades[str(item)] >= 10):
 			new_item.get_node("Cost").text = "Max"
 		else:
-			var cost = 100 + Stats.upgrades[str(item)] * 100
+			var cost = 2**Stats.upgrades[str(item)] * 100
 			new_item.get_node("Cost").text = str(cost)
 		new_item.get_node("Label").text = str(item)
 		new_item.visible = true
@@ -92,7 +92,7 @@ func _process(_delta: float) -> void:
 		if (Stats.upgrades[str(item)] >= 10):
 			shop_item.get_node("Cost").text = "Max"
 		else:
-			var cost = 100 + Stats.upgrades[str(item)] * 100
+			var cost = 2**Stats.upgrades[str(item)] * 100
 			shop_item.get_node("Cost").text = str(cost)
 	if Stats.health <= 0 and end_screen.visible == false:
 		end_screen.visible = true
@@ -102,10 +102,10 @@ func _process(_delta: float) -> void:
 func black_out():
 	blackout.visible = true
 	var tween = get_tree().create_tween()
-	await tween.tween_property(blackout_bg, "modulate", Color(1,1,1,1), 0.5) 
+	tween.tween_property(blackout_bg, "modulate", Color(1,1,1,1), 0.5) 
 	await get_tree().create_timer(1).timeout
 	tween = get_tree().create_tween()
-	await tween.tween_property(blackout_bg, "modulate", Color(0,0,0,0), 1) 
+	tween.tween_property(blackout_bg, "modulate", Color(0,0,0,0), 1) 
 	await get_tree().create_timer(1).timeout
 	blackout.visible = false
 
@@ -189,7 +189,7 @@ func _on_button_gui_input(event: InputEvent, item):
 
 func _on_upgrade(item):
 	# purchase upgrade
-	var cost = 100 + Stats.upgrades[item.name] * 100
+	var cost = 2**Stats.upgrades[item.name] * 100
 	if (Stats.upgrades[item.name] >= 10 || cost > Stats.coins):
 		return
 	Stats.coins -= cost
@@ -203,19 +203,19 @@ func _on_upgrade(item):
 	if (Stats.upgrades[item.name] >= 10):
 		item.get_node("Cost").text = "Max"
 	else:
-		item.get_node("Cost").text = str(100+Stats.upgrades[item.name]*100)
+		item.get_node("Cost").text = str(2**Stats.upgrades[item.name] * 100)
 		
 
 func _on_refund(item):
 	# refund upgrade
 	if Stats.upgrades[item.name] == 0:
 		return
-	var cost = Stats.upgrades[item.name] * 100
-	Stats.coins += cost
 	Stats.upgrades[item.name] -= 1
+	var cost = 2**Stats.upgrades[item.name] * 100
+	Stats.coins += cost
 	
 	# update max health
 	if (item.name == "Maximum Health"):
 		Stats.health = max(Stats.health-40, 1)
 
-	item.get_node("Cost").text = str(100+Stats.upgrades[item.name]*100)
+	item.get_node("Cost").text = str(2**Stats.upgrades[item.name] * 100)

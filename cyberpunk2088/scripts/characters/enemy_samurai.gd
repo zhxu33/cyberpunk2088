@@ -57,8 +57,8 @@ func _physics_process(delta: float):
 	super(delta)
 	
 
-func take_damage(damage:float) -> void:
-	super(damage)
+func take_damage(dmg:int) -> void:
+	super(dmg)
 	if health <= 0 and not _dead:
 		animation_player.play("death")
 

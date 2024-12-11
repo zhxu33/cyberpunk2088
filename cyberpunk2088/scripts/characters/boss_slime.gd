@@ -54,8 +54,8 @@ func _physics_process(delta: float) -> void:
 		_manage_animation()
 
 
-func take_damage(damage:float) -> void:
-	super(damage)
+func take_damage(dmg:int) -> void:
+	super(dmg)
 	if 0 >= health:
 		_death = true
 		velocity = Vector2.ZERO

@@ -17,7 +17,7 @@ func _ready() -> void:
 	await get_tree().create_timer(0.35).timeout
 	queue_free()
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var overlaps = hitbox.get_overlapping_areas()
 	for hurtbox in overlaps:
 		if hurtbox.get_owner() is Enemy and not enemies_hit.has(hurtbox):

@@ -49,8 +49,8 @@ func _physics_process(delta: float):
 	super(delta)
 
 
-func take_damage(damage:float) -> void:
-	super(damage)
+func take_damage(dmg:int) -> void:
+	super(dmg)
 
 
 func bind_commands():

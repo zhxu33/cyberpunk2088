@@ -53,23 +53,24 @@ func _physics_process(delta: float):
 	super(delta)
 	pass
 
-func take_damage(damage:float) -> void:
+func take_damage(dmg:int) -> void:
 	if _dead:
 		return
 	var dmg_text = damage_text.instantiate()
-	dmg_text.damage = damage
+	dmg_text.damage = dmg
 	dmg_text.global_position = global_position
 	get_tree().current_scene.add_child(dmg_text)
 	last_hit = 0
 	health_node.visible = true
-	health -= damage
-	health_node.visible = true
+	health -= dmg
 	health_bar.value = health
 	if health <= 0 and not _dead:
 		_dead = true
 		Stats.coins += coin_reward
 		if self is BossSlime: # await death animation
 			await get_tree().create_timer(2).timeout
+		if self is BossEx1: # await death animation
+			await get_tree().create_timer(3.5).timeout
 		queue_free()
 	
 
