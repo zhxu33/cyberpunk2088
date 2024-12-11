@@ -21,6 +21,9 @@ func _explode() -> void:
 func _on_area_entered(area:Area2D) -> void:
 	if (area is HurtBox) and area.get_owner().has_method("take_damage"):
 		if get_owner() is Enemy and get_owner()._dead: 
+			# enemy_slime self destruction damage
+			if get_owner() is EnemySlime:
+				area.owner.take_damage(damage)
 			# dead enemy
 			return
 		if damage == 0:

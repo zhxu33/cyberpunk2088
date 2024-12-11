@@ -13,8 +13,8 @@
 [ext_resource type="PackedScene" uid="uid://rcm2x757gab6" path="res://scenes/weapon/weapon_3.tscn" id="9_b3lsu"]
 [ext_resource type="Script" path="res://scripts/battle/hurt_box.gd" id="9_y8i1n"]
 [ext_resource type="Script" path="res://scripts/battle/hit_box.gd" id="10_lsxid"]
-[ext_resource type="AudioStream" uid="uid://cg8d8xud1unjf" path="res://assets/audio/sound_effects/player_sounds/LASRGun_Classic Blaster A Fire_03.wav" id="13_htu0x"]
-[ext_resource type="AudioStream" uid="uid://do3bvvqrddbcq" path="res://assets/audio/sound_effects/player_sounds/female_hurt.mp3" id="13_r8h3p"]
+[ext_resource type="AudioStream" uid="uid://dnq8r0y6lonqv" path="res://assets/audio/sound_effects/player_sounds/LASRGun_Classic Blaster A Fire_03.wav" id="13_htu0x"]
+[ext_resource type="AudioStream" uid="uid://cqjwxfvkedpol" path="res://assets/audio/sound_effects/player_sounds/female_hurt.mp3" id="13_r8h3p"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6elts"]
 atlas = ExtResource("1_5j260")
