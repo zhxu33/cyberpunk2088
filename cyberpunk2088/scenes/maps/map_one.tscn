@@ -580,43 +580,40 @@ theme_override_font_sizes/font_size = 22
 text = "Controls: WASD - Movement, Space - Jump, Click - Shoot, Right Click: Meele,  Hold R - Return to Spawn"
 
 [node name="ladder" type="Area2D" parent="."]
-position = Vector2(1119, 433)
+position = Vector2(1119, 477)
 script = ExtResource("42_okcoq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ladder"]
-position = Vector2(3, 45)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_pp20p")
 
 [node name="ladder4" type="Area2D" parent="."]
-position = Vector2(4917, 1433)
+position = Vector2(4926, 1419)
 script = ExtResource("42_okcoq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ladder4"]
-position = Vector2(8, -17)
 shape = SubResource("RectangleShape2D_dm5bj")
 
 [node name="ladder5" type="Area2D" parent="."]
-position = Vector2(4855, 864)
+position = Vector2(4767, 825)
 script = ExtResource("42_okcoq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ladder5"]
-position = Vector2(-87, -39)
 shape = SubResource("RectangleShape2D_dm5bj")
 
 [node name="ladder2" type="Area2D" parent="."]
-position = Vector2(1404, 1166)
+position = Vector2(1406, 1279)
 script = ExtResource("42_okcoq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ladder2"]
-position = Vector2(3, 117.625)
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_1n83q")
 
 [node name="ladder3" type="Area2D" parent="."]
-position = Vector2(1641, 1649)
+position = Vector2(1637, 1762)
 script = ExtResource("42_okcoq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ladder3"]
-position = Vector2(-9.5, 115.375)
 shape = SubResource("RectangleShape2D_ss436")
 
 [connection signal="body_entered" from="ladder" to="ladder" method="_on_body_entered"]
