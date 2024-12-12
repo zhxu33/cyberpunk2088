@@ -1,26 +1,26 @@
 [gd_scene load_steps=38 format=3 uid="uid://bciy50bbuapon"]
 
 [ext_resource type="Script" path="res://scripts/characters/boss_slime.gd" id="1_1ks83"]
-[ext_resource type="Texture2D" uid="uid://dl14yj24rqr4k" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack1.png" id="2_is0pv"]
-[ext_resource type="Texture2D" uid="uid://d4rp8kyha50w" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack2.png" id="3_2wkpy"]
-[ext_resource type="Texture2D" uid="uid://bshekpayiltel" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack3.png" id="4_d44ny"]
-[ext_resource type="Texture2D" uid="uid://q85jap1x6t0q" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack4.png" id="5_3fhmi"]
-[ext_resource type="Texture2D" uid="uid://bklujja0o1ijo" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack5.png" id="6_co61y"]
-[ext_resource type="Texture2D" uid="uid://df0nk2bhvncgt" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack6.png" id="7_3ies1"]
-[ext_resource type="Texture2D" uid="uid://dqasp6d77g44x" path="res://assets/enemies/CyberSlime/slime_death/silme_death_1.png" id="8_1rt4b"]
-[ext_resource type="Texture2D" uid="uid://cvtay2xuj27ie" path="res://assets/enemies/CyberSlime/slime_death/silme_death_2.png" id="9_r8roh"]
-[ext_resource type="Texture2D" uid="uid://bcbu1v0wp2a1r" path="res://assets/enemies/CyberSlime/slime_death/silme_death_3.png" id="10_gl3tv"]
-[ext_resource type="Texture2D" uid="uid://rafmpcdqms6b" path="res://assets/enemies/CyberSlime/slime_death/silme_death_4.png" id="11_a7wen"]
-[ext_resource type="Texture2D" uid="uid://bxhr3vu2iwmd1" path="res://assets/enemies/CyberSlime/slime_death/silme_death_5.png" id="12_75d57"]
-[ext_resource type="Texture2D" uid="uid://cc5xdacuiasta" path="res://assets/enemies/CyberSlime/slime_death/silme_death_6.png" id="13_cnenf"]
-[ext_resource type="Texture2D" uid="uid://chu7dysp344ka" path="res://assets/enemies/CyberSlime/slime_death/silme_death_7.png" id="14_s2rl3"]
-[ext_resource type="Texture2D" uid="uid://l4xadlmouxx1" path="res://assets/enemies/CyberSlime/slime_death/silme_death_8.png" id="15_5lle3"]
-[ext_resource type="Texture2D" uid="uid://bu27c0omeec2i" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_1.png" id="16_ov674"]
-[ext_resource type="Texture2D" uid="uid://c1lglji2lojc2" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_2.png" id="17_sxjwj"]
-[ext_resource type="Texture2D" uid="uid://quyydivlx72" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_3.png" id="18_qvhgf"]
-[ext_resource type="Texture2D" uid="uid://bs7i0apqmw4iw" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_4.png" id="19_qk1yu"]
-[ext_resource type="Texture2D" uid="uid://lfb3h1me7cdv" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_5.png" id="20_24unw"]
-[ext_resource type="Texture2D" uid="uid://bs4q4lwg55mf7" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_6.png" id="21_3numq"]
+[ext_resource type="Texture2D" uid="uid://cjqa6lp3nsip0" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack1.png" id="2_is0pv"]
+[ext_resource type="Texture2D" uid="uid://bg51u5f44wncw" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack2.png" id="3_2wkpy"]
+[ext_resource type="Texture2D" uid="uid://bmkvf3sipot8y" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack3.png" id="4_d44ny"]
+[ext_resource type="Texture2D" uid="uid://npmnrwju8fsj" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack4.png" id="5_3fhmi"]
+[ext_resource type="Texture2D" uid="uid://b0wv0iffkw6ym" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack5.png" id="6_co61y"]
+[ext_resource type="Texture2D" uid="uid://dvy5lt3jm7fb5" path="res://assets/enemies/CyberSlime/slime_attack/slime_attack6.png" id="7_3ies1"]
+[ext_resource type="Texture2D" uid="uid://dy15jemrtajkh" path="res://assets/enemies/CyberSlime/slime_death/silme_death_1.png" id="8_1rt4b"]
+[ext_resource type="Texture2D" uid="uid://bor3ehb15j5bl" path="res://assets/enemies/CyberSlime/slime_death/silme_death_2.png" id="9_r8roh"]
+[ext_resource type="Texture2D" uid="uid://bxjjtvublri80" path="res://assets/enemies/CyberSlime/slime_death/silme_death_3.png" id="10_gl3tv"]
+[ext_resource type="Texture2D" uid="uid://d2l2q8abu432d" path="res://assets/enemies/CyberSlime/slime_death/silme_death_4.png" id="11_a7wen"]
+[ext_resource type="Texture2D" uid="uid://dlcrxiq55s8sp" path="res://assets/enemies/CyberSlime/slime_death/silme_death_5.png" id="12_75d57"]
+[ext_resource type="Texture2D" uid="uid://b5v4xkco57y1u" path="res://assets/enemies/CyberSlime/slime_death/silme_death_6.png" id="13_cnenf"]
+[ext_resource type="Texture2D" uid="uid://cwwwrvro12c85" path="res://assets/enemies/CyberSlime/slime_death/silme_death_7.png" id="14_s2rl3"]
+[ext_resource type="Texture2D" uid="uid://d0vl31a3q53v3" path="res://assets/enemies/CyberSlime/slime_death/silme_death_8.png" id="15_5lle3"]
+[ext_resource type="Texture2D" uid="uid://c3di7mxe88lpj" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_1.png" id="16_ov674"]
+[ext_resource type="Texture2D" uid="uid://btxnjmyoo6qly" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_2.png" id="17_sxjwj"]
+[ext_resource type="Texture2D" uid="uid://dg75fm3fi7us0" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_3.png" id="18_qvhgf"]
+[ext_resource type="Texture2D" uid="uid://ch2w2hqo40xnm" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_4.png" id="19_qk1yu"]
+[ext_resource type="Texture2D" uid="uid://di01lll3owi2g" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_5.png" id="20_24unw"]
+[ext_resource type="Texture2D" uid="uid://di67bmm8jpthi" path="res://assets/enemies/CyberSlime/slime_idle/slime_idle_6.png" id="21_3numq"]
 [ext_resource type="Script" path="res://scripts/characters/character_facing.gd" id="22_853x2"]
 [ext_resource type="Script" path="res://scripts/battle/hurt_box.gd" id="23_xislm"]
 [ext_resource type="Script" path="res://scripts/battle/hit_box.gd" id="24_680pr"]
@@ -255,7 +255,7 @@ bg_color = Color(0.226707, 0.226708, 0.226707, 1)
 bg_color = Color(1, 0.151344, 0.108333, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_as6ir"]
-size = Vector2(287.75, 35)
+size = Vector2(517, 35)
 
 [node name="BossSlime" type="CharacterBody2D"]
 collision_layer = 8
@@ -361,7 +361,7 @@ text = "100/100"
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
-position = Vector2(0, 8)
+position = Vector2(18.5, 8)
 shape = SubResource("RectangleShape2D_as6ir")
 debug_color = Color(0.841998, 0.106654, 0.880724, 0.42)
 

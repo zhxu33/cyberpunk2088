@@ -43,7 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://d1sbi12akmnlb" path="res://scenes/interactables/portal.tscn" id="41_75fke"]
 [ext_resource type="Script" path="res://scenes/maps/ladder.gd" id="42_dcv7l"]
 [ext_resource type="PackedScene" uid="uid://dlemhiucjnush" path="res://scenes/characters/merchant.tscn" id="43_3wa2x"]
-[ext_resource type="AudioStream" uid="uid://btp3s7xskoocw" path="res://assets/audio/bgm_loop_music/default_bgm_choice/DavidKBD - Pink Bloom Pack - 07 - The Hidden One.ogg" id="44_1nsiv"]
+[ext_resource type="AudioStream" uid="uid://5mpl77h5cjjk" path="res://assets/audio/bgm_loop_music/default_bgm_choice/DavidKBD - Pink Bloom Pack - 07 - The Hidden One.ogg" id="44_1nsiv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w1ijh"]
 texture = ExtResource("1_agic8")
@@ -649,7 +649,7 @@ position = Vector2(2622, 587)
 position = Vector2(2231, 583)
 
 [node name="BossSpawn" type="Node2D" parent="."]
-position = Vector2(17227, 387)
+position = Vector2(17486, 348)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
 z_index = 20
@@ -679,12 +679,12 @@ scale = Vector2(2.5, 2.5)
 position = Vector2(17918, 154)
 
 [node name="Controls" type="Label" parent="."]
-offset_left = 972.0
+offset_left = 955.0
 offset_top = 260.0
-offset_right = 1984.0
+offset_right = 2140.0
 offset_bottom = 291.0
 theme_override_font_sizes/font_size = 22
-text = "Controls: WASD - Movement, Space - Jump, Click - Shoot, Right Click: Meele,  Hold R - Return to Spawn"
+text = "Controls: WASD - Movement, Space - Jump/Double Jump, Click - Shoot, Right Click: Meele,  Hold R - Return Spawn"
 
 [node name="ladder" type="Area2D" parent="."]
 position = Vector2(1119, 433)

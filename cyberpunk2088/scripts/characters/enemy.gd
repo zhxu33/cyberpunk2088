@@ -3,7 +3,7 @@ extends Character
 
 @export var health:int = 100 + Stats.level * 50
 @export var max_health:int = 100 + Stats.level * 50
-@export var coin_reward:int = 10 + Stats.level * 50
+@export var coin_reward:int = 20 + Stats.level * 10
 @export var damage: int = 10
 
 @export var player: CharacterBody2D
@@ -93,14 +93,16 @@ func take_damage(dmg:int) -> void:
 		health_node.visible = false
 		_dead = true
 		spawn_coin()
-		# 10% chance to spawn health
-		if randi_range(1,10) == 1:
+		# 20% chance to spawn health
+		if randi_range(1,5) == 1:
 			spawn_health()
 		if self is BossSlime: # await death animation
+			get_tree().current_scene.boss_dead = true
 			boss_bonus()
 			await get_tree().create_timer(2).timeout
 		if self is BossEx1: # await death animation
 			boss_bonus()
+			get_tree().current_scene.boss_dead = true
 			await get_tree().create_timer(3.5).timeout
 		if self is EnemySamurai:
 			await get_tree().create_timer(2).timeout

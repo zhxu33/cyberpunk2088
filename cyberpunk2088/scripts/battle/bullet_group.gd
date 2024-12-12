@@ -15,9 +15,7 @@ func _physics_process(delta: float) -> void:
 
 func update_bullets():
 	# Get the current bullet count level
-	var max_bullets = Stats.upgrades["Bullet Count"]
-	
-	max_bullets = clamp(Stats.upgrades["Bullet Count"], 1, 12)
+	var max_bullets = clamp(Stats.upgrades["Bullet Count"]+1, 1, 12)
 	
 	# give bonus 2 bullets at max level
 	if max_bullets == 10:

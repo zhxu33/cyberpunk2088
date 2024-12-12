@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://do25ap0ds3hwk" path="res://assets/interface/heart.png" id="2_2e82t"]
 [ext_resource type="Texture2D" uid="uid://1450nt2jd4k8" path="res://assets/interface/coin.png" id="3_mfahl"]
 [ext_resource type="Texture2D" uid="uid://ccqvwdd1nbtmw" path="res://assets/interface/x.png" id="4_i723n"]
-[ext_resource type="AudioStream" uid="uid://kyhw0nu6nm2o" path="res://assets/audio/sound_effects/npc_sounds/npc_purchase_done_audio/09. Carl - You Can't Afford That.wav" id="5_p8vna"]
-[ext_resource type="AudioStream" uid="uid://cqreovvoou0fs" path="res://assets/audio/sound_effects/npc_sounds/npc_purchase_done_audio/07. Carl - Be Careful With That.wav" id="6_h2w4c"]
-[ext_resource type="AudioStream" uid="uid://bcdgelbg4yo0o" path="res://assets/audio/sound_effects/npc_sounds/npc_purchase_done_audio/11. Carl - Come Back Any Time.wav" id="7_b8nxe"]
+[ext_resource type="AudioStream" uid="uid://ce6cmsfpkxtcl" path="res://assets/audio/sound_effects/npc_sounds/npc_purchase_done_audio/09. Carl - You Can't Afford That.wav" id="5_p8vna"]
+[ext_resource type="AudioStream" uid="uid://di73jlcqmmk4s" path="res://assets/audio/sound_effects/npc_sounds/npc_purchase_done_audio/07. Carl - Be Careful With That.wav" id="6_h2w4c"]
+[ext_resource type="AudioStream" uid="uid://crv24736f3dm8" path="res://assets/audio/sound_effects/npc_sounds/npc_purchase_done_audio/11. Carl - Come Back Any Time.wav" id="7_b8nxe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q32hf"]
 bg_color = Color(0.226707, 0.226708, 0.226707, 1)
@@ -331,10 +331,11 @@ grow_vertical = 2
 visible = false
 z_index = 100
 layout_mode = 0
-offset_left = -690.0
-offset_top = -392.0
-offset_right = 743.0
-offset_bottom = 439.0
+offset_left = -68297.0
+offset_top = -59708.0
+offset_right = -66864.0
+offset_bottom = -58877.0
+scale = Vector2(99.0729, 956.422)
 color = Color(0, 0.12549, 0.2, 1)
 
 [node name="Title" type="Label" parent="Canvas/StartScreen"]
@@ -393,6 +394,7 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
+scale = Vector2(98.9743, 672.317)
 
 [node name="Background" type="ColorRect" parent="Canvas/Blackout"]
 z_index = 100

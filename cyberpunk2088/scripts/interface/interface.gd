@@ -147,7 +147,7 @@ func shop_dialog():
 
 func portal_dialog():
 	dialogue.visible = true
-	if world.current_map.get_node("BossSpawn").get_child_count() == 0:
+	if world.boss_dead:
 		dialog_state = "Portal"
 	else: 
 		dialog_state = "DefeatBoss"

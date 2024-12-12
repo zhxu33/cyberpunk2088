@@ -1,13 +1,15 @@
 class_name BossSlime
 extends Enemy 
 
-@export var SPEED: int = 100
-@export var ACCELERATION: int = 50
+@export var SPEED: int = 200
+@export var ACCELERATION: int = 100
 
 var boss_slime_fight_start: bool = false
 var direction: Vector2
 var distance: Vector2
 var _death:bool = false
+var spawn:float = 3
+var enemy_slime = preload("res://scenes/characters/enemy_slime.tscn")
 
 @onready var hit_box_collision_shape: CollisionShape2D = $HitBox/HitBoxCollisionShape
 @onready var hurt_box_collision_shape: CollisionShape2D = $HurtBox/HurtBoxCollisionShape
@@ -15,8 +17,8 @@ var _death:bool = false
 @onready var attack_timer: Timer = $AttackTimer
 
 func _ready():
-	max_health = 200 + Stats.level * 100
-	health = 200 + Stats.level * 100
+	max_health *= 5
+	health = max_health
 	
 	player_function = get_node("/root/World/Punk_Player")
 	player = player_function.tell_them_who_you_are()
@@ -52,6 +54,21 @@ func _physics_process(delta: float) -> void:
 			cmd_list.pop_front()
 	else:
 		_manage_animation()
+		
+	if spawn < 0:
+		spawn = randf_range(2, 6)
+		var slime = enemy_slime.instantiate()
+		get_parent().add_child(slime)
+		slime.global_position = global_position
+		slime.scale = Vector2(2,2)
+		var target = player.global_position
+		target.y -= 500
+		var direction = (target - slime.global_position).normalized()
+		for i in range(100):
+			slime.global_position = slime.global_position + direction * 5
+			await get_tree().create_timer(0.005).timeout
+	else:
+		spawn -= delta
 
 
 func take_damage(dmg:int) -> void:

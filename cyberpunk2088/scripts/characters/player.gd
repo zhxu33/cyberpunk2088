@@ -65,7 +65,7 @@ func _physics_process(delta: float):
 		if return_time <= 0:
 			if (find_child("Teleport", true, false)):
 				find_child("Teleport", true, false).queue_free()
-			global_position = get_parent().find_child("Map", true, false).find_child("PlayerSpawn").global_position
+			global_position = get_tree().current_scene.current_map.find_child("PlayerSpawn").global_position
 	else:
 		return_time = 1.0
 		returning = false
@@ -82,7 +82,7 @@ func _physics_process(delta: float):
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			up_cmd.execute(self)
-		elif jump_amount < Stats.upgrades["Double Jump"] && velocity.y >= 0:
+		elif jump_amount <= Stats.upgrades["Double Jump"] && velocity.y >= 0:
 			jump_amount += 1
 			# Move to doublejump animation
 			state_machine.start("multi_jump", true)

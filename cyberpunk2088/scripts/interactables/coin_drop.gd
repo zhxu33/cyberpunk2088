@@ -1,3 +1,4 @@
+class_name CoinDrop
 extends RigidBody2D
 
 @export var coin_reward:int

@@ -1,3 +1,4 @@
+class_name HealthDrop
 extends RigidBody2D
 
 @export var health_reward:int

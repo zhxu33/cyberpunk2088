@@ -5,6 +5,8 @@ extends Node2D
 @onready var current_map:Node2D
 @onready var player:CharacterBody2D = $Punk_Player
 
+@export var boss_dead:bool = false
+
 
 var map_scenes:Array[PackedScene] = [
 	preload("res://scenes/maps/map_one.tscn"),
@@ -12,7 +14,7 @@ var map_scenes:Array[PackedScene] = [
 ]
 
 var enemy_scenes:Array[PackedScene] = [preload("res://scenes/characters/enemy_dog.tscn"),preload("res://scenes/characters/enemy_samurai.tscn"),preload("res://scenes/characters/enemy_slime.tscn")]
-var boss_scenes:Array[PackedScene] = [preload("res://scenes/characters/boss_ex1.tscn")]
+var boss_scenes:Array[PackedScene] = [preload("res://scenes/characters/boss_slime.tscn"), preload("res://scenes/characters/boss_ex1.tscn")]
 var npc_scenes:Array[PackedScene] = [preload("res://scenes/characters/merchant.tscn")]
 
 
@@ -35,7 +37,7 @@ func _spawn_map():
 	var enemy_spawns: Node = current_map.get_node("EnemySpawns")
 	var spawn_points: Array = enemy_spawns.get_children()
 	@warning_ignore("integer_division")
-	var total_enemies = spawn_points.size() + Stats.level * (spawn_points.size() / 2)  # Number of enemies to spawn
+	var total_enemies = spawn_points.size() + Stats.level * (spawn_points.size() / 10)  # Number of enemies to spawn
 	
 	for i in range(total_enemies):
 		# Sort spawn points by the number of enemy children
@@ -59,6 +61,11 @@ func _compare_by_child_count(a: Node, b: Node) -> bool:
 
 
 func new_level():
+	boss_dead = false
+	# remove all drops
+	for child in get_children():
+		if child is CoinDrop or child is HealthDrop:
+			child.queue_free()
 	# blackout screen
 	interface.black_out()
 	Stats.level += 1

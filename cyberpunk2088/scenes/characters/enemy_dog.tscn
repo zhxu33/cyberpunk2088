@@ -1,14 +1,14 @@
 [gd_scene load_steps=65 format=3 uid="uid://dogtmonf6vstv"]
 
 [ext_resource type="Script" path="res://scripts/characters/enemy_dog.gd" id="1_ai7e0"]
-[ext_resource type="Texture2D" uid="uid://byme8wctq26v5" path="res://assets/enemies/Dog/Dog.png" id="2_msjk1"]
+[ext_resource type="Texture2D" uid="uid://bxcfwwyt1l6sj" path="res://assets/enemies/Dog/Dog.png" id="2_msjk1"]
 [ext_resource type="Script" path="res://scripts/battle/hurt_box.gd" id="3_0qi0g"]
 [ext_resource type="Script" path="res://scripts/battle/hit_box.gd" id="4_vj7po"]
 [ext_resource type="Texture2D" uid="uid://do25ap0ds3hwk" path="res://assets/interface/heart.png" id="5_8btgg"]
 [ext_resource type="Script" path="res://scripts/battle/enemy_dog_projectile_spawn.gd" id="6_7yiuv"]
 [ext_resource type="PackedScene" uid="uid://cynx8wly18kdh" path="res://scenes/attacks/emeny_dog_bullet.tscn" id="6_nwuyl"]
-[ext_resource type="AudioStream" uid="uid://djxsasg7mykve" path="res://assets/audio/sound_effects/dog_sounds/LASRGun_Electron Impeller Fire_07.wav" id="8_vmhuq"]
-[ext_resource type="AudioStream" uid="uid://dnugs8uuur38p" path="res://assets/audio/sound_effects/dog_sounds/dog_death.mp3" id="9_2a30g"]
+[ext_resource type="AudioStream" uid="uid://c78o5ceyseraf" path="res://assets/audio/sound_effects/dog_sounds/LASRGun_Electron Impeller Fire_07.wav" id="8_vmhuq"]
+[ext_resource type="AudioStream" uid="uid://bqku2flciji4x" path="res://assets/audio/sound_effects/dog_sounds/dog_death.mp3" id="9_2a30g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tkwno"]
 atlas = ExtResource("2_msjk1")

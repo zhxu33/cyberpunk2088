@@ -1,21 +1,22 @@
 class_name BossEx1
 extends Enemy
 
-@export var SPEED: int = 100
-@export var ACCELERATION: int = 50
+@export var SPEED: int = 200
+@export var ACCELERATION: int = 100
 
 var boss_ex1_fight_start: bool = false
 var direction: Vector2
 var distance: Vector2
 var _death:bool = false
+var slashing:bool = false
 
 @onready var audio_player:AudioStreamPlayer2D = $AudioStreamPlayer2D
 @onready var _boss: BossEx1 = self
 signal cmd_list_is_clean
 
 func _ready() -> void:
-	max_health = 200 + Stats.level * 100
-	health = 200 + Stats.level * 100
+	max_health *= 5
+	health = max_health
 	
 	player_function = get_node("/root/World/Punk_Player")
 	player = player_function.tell_them_who_you_are()
@@ -75,6 +76,13 @@ func command_callback(command_name:String) -> void:
 		audio_player.stop()
 		audio_player["parameters/switch_to_clip"] = "blast"
 		audio_player.play()
+	if "slash" == command_name:
+		audio_player.stop()
+		audio_player["parameters/switch_to_clip"] = "blast"
+		audio_player.play()
+		slashing = true
+		await get_tree().create_timer(3).timeout
+		slashing = false
 
 
 func bind_boss_input_commands():
@@ -104,19 +112,21 @@ func change_direction() -> void:
 func boss_fight_start() -> void:
 	# Boss should behave differently each run
 	randomize()
-	var random_value = randf()
+	var random_value = randi_range(1,3)
 	_boss.sprite.visible = true
 	while _boss._death == false:
-		random_value = randf()
-		if random_value < (2.0/3.0):
-			_boss.cmd_list.push_back(DurativeTraceCommand.new(3, player))
+		random_value = randi_range(1,3)
+		if random_value == 1:
+			_boss.cmd_list.push_back(DurativeTraceCommand.new(1, player))
 			await self.cmd_list_is_clean
-		elif random_value < (3.0/3.0):
+		elif random_value == 2:
 			# Measure the velocity that can jump onto the head of player
 			# Boss's float time in jump is 1.198s, consider the velocity of player
 			var expect_velocity:float = (player.global_position.x - _boss.global_position.x) / 1.198 + 0.5 * player.velocity.x
 			_boss.cmd_list.push_back(DurativeJumpCommand.new(expect_velocity))
-			_boss.cmd_list.push_back(DurativeIdleCommand.new(0.75))
+			await self.cmd_list_is_clean
+		elif random_value == 3:
+			_boss.cmd_list.push_back(DurativeSlashCommand.new())
 			await self.cmd_list_is_clean
 			
 	# If you leave the loop, boss has died. Congradulation!
