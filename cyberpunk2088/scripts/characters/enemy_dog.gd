@@ -13,6 +13,7 @@ var left_bounds: Vector2
 var sprite_facing: bool
 
 var projectile:PackedScene = preload("res://scenes/attacks/emeny_dog_bullet.tscn")
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 @onready var bullet_timer: Timer = $BulletTimer
@@ -50,6 +51,7 @@ func _physics_process(delta: float):
 
 
 func take_damage(dmg:int) -> void:
+	_play($audio/hurt)
 	super(dmg)
 
 
@@ -71,6 +73,8 @@ func change_direction():
 
 
 func fire() -> void:
+	_play($audio/fire)
+	print(1)
 	var new_projectile = projectile.instantiate() as EnemyDogBullet
 	if !sprite.flip_h:
 		$ProjectileSpawnRight.add_child(new_projectile)
@@ -100,3 +104,7 @@ func _on_animation_player_animation_finished(anim_name: StringName) -> void:
 
 func dog_facing():
 	return sprite_facing
+	
+func _play(player:AudioStreamPlayer2D) -> void:
+	if !player.playing:
+		player.play()

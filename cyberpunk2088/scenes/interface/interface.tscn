@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://unu2udtc35ev"]
+[gd_scene load_steps=10 format=3 uid="uid://unu2udtc35ev"]
 
 [ext_resource type="Script" path="res://scripts/interface/interface.gd" id="1_bsdsa"]
 [ext_resource type="Texture2D" uid="uid://do25ap0ds3hwk" path="res://assets/interface/heart.png" id="2_2e82t"]
 [ext_resource type="Texture2D" uid="uid://1450nt2jd4k8" path="res://assets/interface/coin.png" id="3_mfahl"]
 [ext_resource type="Texture2D" uid="uid://ccqvwdd1nbtmw" path="res://assets/interface/x.png" id="4_i723n"]
+[ext_resource type="AudioStream" uid="uid://kyhw0nu6nm2o" path="res://assets/audio/sound_effects/npc_sounds/npc_purchase_done_audio/09. Carl - You Can't Afford That.wav" id="5_p8vna"]
+[ext_resource type="AudioStream" uid="uid://cqreovvoou0fs" path="res://assets/audio/sound_effects/npc_sounds/npc_purchase_done_audio/07. Carl - Be Careful With That.wav" id="6_h2w4c"]
+[ext_resource type="AudioStream" uid="uid://bcdgelbg4yo0o" path="res://assets/audio/sound_effects/npc_sounds/npc_purchase_done_audio/11. Carl - Come Back Any Time.wav" id="7_b8nxe"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q32hf"]
 bg_color = Color(0.226707, 0.226708, 0.226707, 1)
@@ -467,3 +470,14 @@ offset_right = 144.0
 offset_bottom = 120.0
 mouse_filter = 2
 color = Color(1, 0.839216, 0.0666667, 1)
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="09_Carl-YouCan\'tAffordThat" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("5_p8vna")
+
+[node name="07_Carl-BeCarefulWithThat" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("6_h2w4c")
+
+[node name="11_Carl-ComeBackAnyTime" type="AudioStreamPlayer" parent="Audio"]
+stream = ExtResource("7_b8nxe")

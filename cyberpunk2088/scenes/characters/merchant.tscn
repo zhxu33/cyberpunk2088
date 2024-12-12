@@ -1,7 +1,8 @@
-[gd_scene load_steps=10 format=3 uid="uid://dlemhiucjnush"]
+[gd_scene load_steps=11 format=3 uid="uid://dlemhiucjnush"]
 
 [ext_resource type="Script" path="res://scripts/characters/npc.gd" id="1_d8qts"]
 [ext_resource type="Texture2D" uid="uid://w56i07g5lhsk" path="res://assets/player/Free 3 Cyberpunk Sprites Pixel Art/1 Biker/Biker_idle.png" id="2_7nr5m"]
+[ext_resource type="AudioStream" uid="uid://cb2nt4nxf5vil" path="res://assets/audio/sound_effects/npc_sounds/npc_randi_greeting_audio_pool/01. Carl - Guns, Blades and Ammunition....wav" id="3_ehmgt"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dpmbp"]
 atlas = ExtResource("2_7nr5m")
@@ -64,6 +65,9 @@ light_mask = 512
 visibility_layer = 512
 position = Vector2(0, 7.5)
 shape = SubResource("RectangleShape2D_qag20")
+
+[node name="01_Carl-Guns,BladesAndAmmunition___" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_ehmgt")
 
 [node name="Hitbox" type="Area2D" parent="."]
 collision_layer = 0

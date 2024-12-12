@@ -11,9 +11,14 @@ func _ready() -> void:
 	animated_sprite_2d.play("idle") 
 	
 func _on_area_entered(hurtbox:HurtBox) -> void:
+	_play($"01_Carl-Guns,BladesAndAmmunition___")
 	if hurtbox.get_owner() is Player: 
 		interface.shop_dialog()
 		
 func _on_area_exited(hurtbox:HurtBox) -> void:
 	if hurtbox.get_owner() is Player:
 		interface.close_dialog()
+		
+func _play(player:AudioStreamPlayer) -> void:
+	if !player.playing:
+		player.play()

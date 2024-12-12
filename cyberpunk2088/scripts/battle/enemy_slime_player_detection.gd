@@ -8,6 +8,10 @@ func _ready() -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	if body is Player:
+		_play($"../Audio/Find_player")
 		enemy_slime.start_moving = true
 		queue_free()
-	
+
+func _play(player:AudioStreamPlayer2D) -> void:
+	if !player.playing:
+		player.play()

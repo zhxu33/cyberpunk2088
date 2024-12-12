@@ -169,6 +169,7 @@ func _on_cancel_pressed():
 	
 	
 func _on_shop_close():
+	_play($"Audio/11_Carl-ComeBackAnyTime")
 	# Update player status
 	punk_player.jump_velocity = punk_player.DEFAULT_JUMP_VELOCITY - Stats.upgrades["Jump Power"]*25
 	punk_player.movement_speed = punk_player.DEFAULT_MOVE_VELOCITY + Stats.upgrades["Movement Speed"]*20
@@ -187,10 +188,13 @@ func _on_button_gui_input(event: InputEvent, item):
 			
 
 func _on_upgrade(item):
+	
 	# purchase upgrade
 	var cost = 2**Stats.upgrades[item.name] * 100
 	if (Stats.upgrades[item.name] >= 10 || cost > Stats.coins):
+		_play($"Audio/09_Carl-YouCan'tAffordThat")
 		return
+	_play($"Audio/07_Carl-BeCarefulWithThat")
 	Stats.coins -= cost
 	Stats.upgrades[item.name] += 1
 	
@@ -218,3 +222,7 @@ func _on_refund(item):
 		Stats.health = max(Stats.health-40, 1)
 
 	item.get_node("Cost").text = str(2**Stats.upgrades[item.name] * 100)
+	
+func _play(player:AudioStreamPlayer) -> void:
+	if !player.playing:
+		player.play()

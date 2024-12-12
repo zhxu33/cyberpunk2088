@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=4 uid="uid://dw5phcjow8smu"]
+[gd_scene load_steps=112 format=4 uid="uid://dw5phcjow8smu"]
 
 [ext_resource type="Texture2D" uid="uid://cv02adbd18y0y" path="res://assets/TileSet/1 Tiles/IndustrialTile_66.png" id="1_r1flb"]
 [ext_resource type="Texture2D" uid="uid://btwx5lwhgc8i8" path="res://assets/TileSet/3 Objects/Ladder2.png" id="2_t3j4r"]
@@ -42,6 +42,8 @@
 [ext_resource type="Texture2D" uid="uid://g7mqnx1lerri" path="res://assets/TileSet/3 Objects/2.png" id="31_cngjj"]
 [ext_resource type="Texture2D" uid="uid://44r0smwc4yba" path="res://assets/TileSet/3 Objects/Box5.png" id="32_p65mh"]
 [ext_resource type="Script" path="res://scenes/maps/ladder.gd" id="42_okcoq"]
+[ext_resource type="PackedScene" uid="uid://dlemhiucjnush" path="res://scenes/characters/merchant.tscn" id="43_x6jue"]
+[ext_resource type="AudioStream" uid="uid://c76dg78sv6lhs" path="res://assets/audio/bgm_loop_music/default_bgm_choice/DavidKBD - Code injection Pack - 03 - Synthetic Whisper-loop.ogg" id="44_0no65"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w1ijh"]
 texture = ExtResource("1_r1flb")
@@ -513,7 +515,7 @@ sources/3 = SubResource("TileSetAtlasSource_n7cau")
 sources/4 = SubResource("TileSetAtlasSource_pvwws")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pp20p"]
-size = Vector2(46.75, 276)
+size = Vector2(44.375, 258)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dm5bj"]
 size = Vector2(39, 383)
@@ -546,7 +548,7 @@ tile_set = SubResource("TileSet_578d0")
 [node name="TileMapLayer3" type="TileMapLayer" parent="."]
 position = Vector2(8, -8)
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAiAAsAAAAAAAAAAAAiAAwAAAAAAAEAAAAjAAsAAAABAAAAAAAjAAwAAAABAAEAAAAiAA0AAAAAAAAAAAAiAA4AAAAAAAEAAAAjAA0AAAABAAAAAAAjAA4AAAABAAEAAAAiAA8AAAAAAAAAAAAiABAAAAAAAAEAAAAjAA8AAAABAAAAAAAjABAAAAABAAEAAAAiABEAAwAAAAAAAAAiABIAAwAAAAEAAAAjABEAAwABAAAAAAAjABIAAwABAAEAAAAiAAoAAgAAAAEAAAAjAAoAAgABAAEAAAAiABMABAAAAAAAAAAjABMABAABAAAAAAArACUAAgAAAAEAAAAsACUAAgABAAEAAAArACYAAAAAAAAAAAArACcAAAAAAAEAAAAsACYAAAABAAAAAAAsACcAAAABAAEAAAArACgAAAAAAAAAAAArACkAAAAAAAAAAAAsACgAAAABAAAAAAAsACkAAAABAAAAAAArACoAAAAAAAEAAAAsACoAAAABAAEAAAAyADMAAgAAAAEAAAAzADMAAgABAAEAAAAyADQAAAAAAAAAAAAyADUAAAAAAAEAAAAzADQAAAABAAAAAAAzADUAAAABAAEAAAAyADYAAAAAAAAAAAAyADcAAAAAAAEAAAAzADYAAAABAAAAAAAzADcAAAABAAEAAAAyADgAAAAAAAAAAAAyADkAAAAAAAAAAAAzADgAAAABAAAAAAAzADkAAAABAAAAAAAyADoAAAAAAAEAAAAzADoAAAABAAEAAACUABQAAAAAAAAAAACUABUAAAAAAAEAAACVABQAAAABAAAAAACVABUAAAABAAEAAACUABMAAgAAAAEAAACVABMAAgABAAEAAACUABYAAAAAAAAAAACUABcAAAAAAAEAAACVABYAAAABAAAAAACVABcAAAABAAEAAACUABgAAAAAAAAAAACUABkAAAAAAAEAAACVABgAAAABAAAAAACVABkAAAABAAEAAACUABsAAAAAAAEAAACVABoAAAABAAAAAACVABsAAAABAAEAAACUABwAAAAAAAAAAACUAB0AAAAAAAEAAACVABwAAAABAAAAAACVAB0AAAABAAEAAACUAB4AAAAAAAAAAACUAB8AAAAAAAEAAACVAB4AAAABAAAAAACVAB8AAAABAAEAAACZACcAAAAAAAEAAACZACgAAAAAAAEAAACaACcAAAABAAEAAACaACgAAAABAAEAAACaACYAAgABAAEAAACZACkAAAAAAAAAAACZACoAAAAAAAEAAACaACkAAAABAAAAAACaACoAAAABAAEAAACZACsAAAAAAAAAAACZACwAAAAAAAEAAACaACsAAAABAAAAAACaACwAAAABAAEAAACZAC0AAAAAAAAAAACZAC4AAAAAAAEAAACaAC0AAAABAAAAAACaAC4AAAABAAEAAACZAC8AAAAAAAAAAACZADAAAAAAAAEAAACaAC8AAAABAAAAAACaADAAAAABAAEAAACZADEAAAAAAAAAAACZADIABAAAAAAAAACaADEAAAABAAAAAACaADIABAABAAAAAACZACYAAgAAAAEAAACUABoAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAiAAsAAAAAAAAAAAAiAAwAAAAAAAEAAAAjAAsAAAABAAAAAAAjAAwAAAABAAEAAAAiAA0AAAAAAAAAAAAiAA4AAAAAAAEAAAAjAA0AAAABAAAAAAAjAA4AAAABAAEAAAAiAA8AAAAAAAAAAAAiABAAAAAAAAEAAAAjAA8AAAABAAAAAAAjABAAAAABAAEAAAAiABEAAwAAAAAAAAAiABIAAwAAAAEAAAAjABEAAwABAAAAAAAjABIAAwABAAEAAAAiAAoAAgAAAAEAAAAjAAoAAgABAAEAAAAiABMABAAAAAAAAAAjABMABAABAAAAAAArACUAAgAAAAEAAAAsACUAAgABAAEAAAArACYAAAAAAAAAAAArACcAAAAAAAEAAAAsACYAAAABAAAAAAAsACcAAAABAAEAAAArACgAAAAAAAAAAAArACkAAAAAAAAAAAAsACgAAAABAAAAAAAsACkAAAABAAAAAAArACoAAAAAAAEAAAAsACoAAAABAAEAAAAyADMAAgAAAAEAAAAzADMAAgABAAEAAAAyADQAAAAAAAAAAAAyADUAAAAAAAEAAAAzADQAAAABAAAAAAAzADUAAAABAAEAAAAyADYAAAAAAAAAAAAyADcAAAAAAAEAAAAzADYAAAABAAAAAAAzADcAAAABAAEAAAAyADgAAAAAAAAAAAAyADkAAAAAAAAAAAAzADgAAAABAAAAAAAzADkAAAABAAAAAAAyADoAAAAAAAEAAAAzADoAAAABAAEAAACUABQAAAAAAAAAAACUABUAAAAAAAEAAACVABQAAAABAAAAAACVABUAAAABAAEAAACUABMAAgAAAAEAAACVABMAAgABAAEAAACUABYAAAAAAAAAAACUABcAAAAAAAEAAACVABYAAAABAAAAAACVABcAAAABAAEAAACUABgAAAAAAAAAAACUABkAAAAAAAEAAACVABgAAAABAAAAAACVABkAAAABAAEAAACUABsAAAAAAAEAAACVABoAAAABAAAAAACVABsAAAABAAEAAACUABwAAAAAAAAAAACUAB0AAAAAAAEAAACVABwAAAABAAAAAACVAB0AAAABAAEAAACUAB4AAAAAAAAAAACUAB8AAAAAAAEAAACVAB4AAAABAAAAAACVAB8AAAABAAEAAACZACcAAAAAAAEAAACZACgAAAAAAAEAAACaACcAAAABAAEAAACaACgAAAABAAEAAACaACYAAgABAAEAAACZACkAAAAAAAAAAACZACoAAAAAAAEAAACaACkAAAABAAAAAACaACoAAAABAAEAAACZACsAAAAAAAAAAACZACwAAAAAAAEAAACaACsAAAABAAAAAACaACwAAAABAAEAAACZAC0AAAAAAAAAAACZAC4AAAAAAAEAAACaAC0AAAABAAAAAACaAC4AAAABAAEAAACZAC8AAAAAAAAAAACZADAAAAAAAAEAAACaAC8AAAABAAAAAACaADAAAAABAAEAAACZADEAAAAAAAAAAACZADIABAAAAAAAAACaADEAAAABAAAAAACaADIABAABAAAAAACZACYAAgAAAAEAAACUABoAAAAAAAAAAABAAC0AAAAAAAAAAABAAC4AAAAAAAEAAABBAC0AAAABAAAAAABBAC4AAAABAAEAAABAACsAAAAAAAEAAABAACwAAAAAAAEAAABBACsAAAABAAEAAABBACwAAAABAAEAAABAACoAAAAAAAAAAABBACoAAAABAAAAAABAACgAAAAAAAAAAABAACkAAAAAAAEAAABBACgAAAABAAAAAABBACkAAAABAAEAAABAACcAAwAAAAAAAABBACcAAwABAAAAAAA=")
 tile_set = SubResource("TileSet_7j5uq")
 
 [node name="EnemySpawns" type="Node2D" parent="."]
@@ -645,18 +647,25 @@ position = Vector2(2904, 587)
 position = Vector2(2700, 578)
 
 [node name="BossSpawn" type="Node2D" parent="."]
-position = Vector2(707, 519)
+position = Vector2(7888, 1123)
 
 [node name="PlayerSpawn" type="Node2D" parent="."]
 z_index = 20
 y_sort_enabled = true
 position = Vector2(560, 313)
 
-[node name="NpcSpawn" type="Node2D" parent="."]
-position = Vector2(912, 284)
+[node name="Npcs" type="Node" parent="."]
+
+[node name="Npc" parent="Npcs" instance=ExtResource("43_x6jue")]
+position = Vector2(911, 294)
+scale = Vector2(2, 2)
+
+[node name="Npc2" parent="Npcs" instance=ExtResource("43_x6jue")]
+position = Vector2(2005, 1432)
+scale = Vector2(-2.5, 2.5)
 
 [node name="Portal" parent="." instance=ExtResource("17_fjg8r")]
-position = Vector2(389, 552)
+position = Vector2(7549, 1136)
 
 [node name="Controls" type="Label" parent="."]
 offset_left = 972.0
@@ -674,42 +683,30 @@ script = ExtResource("42_okcoq")
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_pp20p")
 
-[node name="ladder4" type="Area2D" parent="."]
-position = Vector2(4926, 1419)
-script = ExtResource("42_okcoq")
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="ladder"]
+position = Vector2(959.188, 892)
+shape = SubResource("RectangleShape2D_pp20p")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder4"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ladder"]
+position = Vector2(3807, 942)
 shape = SubResource("RectangleShape2D_dm5bj")
 
-[node name="ladder5" type="Area2D" parent="."]
-position = Vector2(4767, 825)
-script = ExtResource("42_okcoq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder5"]
-shape = SubResource("RectangleShape2D_dm5bj")
-
-[node name="ladder2" type="Area2D" parent="."]
-position = Vector2(1406, 1279)
-script = ExtResource("42_okcoq")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder2"]
-position = Vector2(0, -1)
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ladder"]
+position = Vector2(287, 801)
 shape = SubResource("RectangleShape2D_1n83q")
 
-[node name="ladder3" type="Area2D" parent="."]
-position = Vector2(1637, 1762)
-script = ExtResource("42_okcoq")
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ladder"]
+position = Vector2(3648, 348)
+shape = SubResource("RectangleShape2D_dm5bj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder3"]
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="ladder"]
+position = Vector2(518, 1285)
 shape = SubResource("RectangleShape2D_ss436")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_0no65")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="ladder" to="ladder" method="_on_body_entered"]
 [connection signal="body_exited" from="ladder" to="ladder" method="_on_body_exited"]
-[connection signal="body_entered" from="ladder4" to="ladder4" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder4" to="ladder4" method="_on_body_exited"]
-[connection signal="body_entered" from="ladder5" to="ladder5" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder5" to="ladder5" method="_on_body_exited"]
-[connection signal="body_entered" from="ladder2" to="ladder2" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder2" to="ladder2" method="_on_body_exited"]
-[connection signal="body_entered" from="ladder3" to="ladder3" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder3" to="ladder3" method="_on_body_exited"]

@@ -12,8 +12,6 @@ var map_scenes:Array[PackedScene] = [
 ]
 
 var enemy_scenes:Array[PackedScene] = [preload("res://scenes/characters/enemy_dog.tscn"),preload("res://scenes/characters/enemy_samurai.tscn"),preload("res://scenes/characters/enemy_slime.tscn")]
-#var enemy_scenes:Array[PackedScene] = [preload("res://scenes/characters/enemy_samurai.tscn")]
-#var boss_scenes:Array[PackedScene] = [preload("res://scenes/characters/boss_slime.tscn")]
 var boss_scenes:Array[PackedScene] = [preload("res://scenes/characters/boss_ex1.tscn")]
 var npc_scenes:Array[PackedScene] = [preload("res://scenes/characters/merchant.tscn")]
 
@@ -55,12 +53,6 @@ func _spawn_map():
 	var boss = boss_scenes[randi() % boss_scenes.size()].instantiate()
 	boss.scale = Vector2(4,4)
 	boss_spawn.add_child(boss)
-		
-	# Spawn Shop NPC
-	var npc_spawn: Node = current_map.get_node("NpcSpawn")	
-	var npc = npc_scenes[randi() % npc_scenes.size()].instantiate()
-	npc.scale = Vector2(2.5,2.5)
-	npc_spawn.add_child(npc)
 		
 func _compare_by_child_count(a: Node, b: Node) -> bool:
 	return a.get_child_count() < b.get_child_count()

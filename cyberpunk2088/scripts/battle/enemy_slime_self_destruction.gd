@@ -19,7 +19,12 @@ func _on_body_entered(body: Node2D) -> void:
 	if enemy_slime._dead:
 		return
 	if body is Player:
+		_play($"../Audio/Boom")
 		enemy_slime.destruct()
 		_explode()
 		queue_free()
+		
+func _play(player:AudioStreamPlayer2D) -> void:
+	if !player.playing:
+		player.play()
 	

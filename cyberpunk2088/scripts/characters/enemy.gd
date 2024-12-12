@@ -3,7 +3,7 @@ extends Character
 
 @export var health:int = 100 + Stats.level * 50
 @export var max_health:int = 100 + Stats.level * 50
-@export var coin_reward:int = 100 + Stats.level * 50
+@export var coin_reward:int = 10 + Stats.level * 50
 @export var damage: int = 10
 
 @export var player: CharacterBody2D

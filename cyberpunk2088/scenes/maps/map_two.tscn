@@ -1,4 +1,4 @@
-[gd_scene load_steps=112 format=4 uid="uid://oo2nllyis65a"]
+[gd_scene load_steps=114 format=4 uid="uid://oo2nllyis65a"]
 
 [ext_resource type="Texture2D" uid="uid://cv02adbd18y0y" path="res://assets/TileSet/1 Tiles/IndustrialTile_66.png" id="1_agic8"]
 [ext_resource type="Texture2D" uid="uid://p51jjxm6iw07" path="res://assets/TileSet/1 Tiles/IndustrialTile_05.png" id="2_vkf3t"]
@@ -42,6 +42,8 @@
 [ext_resource type="Texture2D" uid="uid://bo5mkbkrupdqb" path="res://assets/TileSet/3 Objects/Barrel2.png" id="40_ffrhc"]
 [ext_resource type="PackedScene" uid="uid://d1sbi12akmnlb" path="res://scenes/interactables/portal.tscn" id="41_75fke"]
 [ext_resource type="Script" path="res://scenes/maps/ladder.gd" id="42_dcv7l"]
+[ext_resource type="PackedScene" uid="uid://dlemhiucjnush" path="res://scenes/characters/merchant.tscn" id="43_3wa2x"]
+[ext_resource type="AudioStream" uid="uid://btp3s7xskoocw" path="res://assets/audio/bgm_loop_music/default_bgm_choice/DavidKBD - Pink Bloom Pack - 07 - The Hidden One.ogg" id="44_1nsiv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w1ijh"]
 texture = ExtResource("1_agic8")
@@ -494,29 +496,29 @@ sources/17 = SubResource("TileSetAtlasSource_wh4ke")
 sources/18 = SubResource("TileSetAtlasSource_wrelg")
 sources/19 = SubResource("TileSetAtlasSource_rhbxx")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yak2e"]
+size = Vector2(32, 208)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pp20p"]
 size = Vector2(26, 266)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qce1y"]
-size = Vector2(19.5, 249.25)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y0m2q"]
 size = Vector2(33.5, 127)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qce1y"]
+size = Vector2(19.5, 249.25)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5cw1c"]
 size = Vector2(24, 176)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkbjh"]
-size = Vector2(26, 212)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5xmu4"]
 size = Vector2(22, 238)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hkbjh"]
+size = Vector2(26, 212)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhwhv"]
 size = Vector2(23, 317)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_yak2e"]
-size = Vector2(32, 208)
 
 [node name="Map" type="Node2D"]
 
@@ -663,8 +665,15 @@ position = Vector2(56, 8)
 tile_map_data = PackedByteArray("AAAhAAgACgAAAAAAAAAhAAkACgAAAAEAAAAhAAoACgAAAAIAAAAhAAsACgAAAAMAAAAiAAgACgABAAAAAAAiAAkACgABAAEAAAAiAAoACgABAAIAAAAiAAsACgABAAMAAAAoAAgACgAAAAAAAAAoAAkACgAAAAEAAAAoAAoACgAAAAIAAAAoAAsACgAAAAMAAAApAAgACgABAAAAAAApAAkACgABAAEAAAApAAoACgABAAIAAAApAAsACgABAAMAAAAxAAgACgAAAAAAAAAxAAkACgAAAAEAAAAxAAoACgAAAAIAAAAxAAsACgAAAAMAAAAyAAgACgABAAAAAAAyAAkACgABAAEAAAAyAAoACgABAAIAAAAyAAsACgABAAMAAAA9AAgACgAAAAAAAAA9AAkACgAAAAEAAAA9AAoACgAAAAIAAAA9AAsACgAAAAMAAAA+AAgACgABAAAAAAA+AAkACgABAAEAAAA+AAoACgABAAIAAAA+AAsACgABAAMAAABHAAgACgAAAAAAAABHAAkACgAAAAEAAABHAAoACgAAAAIAAABHAAsACgAAAAMAAABIAAgACgABAAAAAABIAAkACgABAAEAAABIAAoACgABAAIAAABIAAsACgABAAMAAABPAAgACgAAAAAAAABPAAkACgAAAAEAAABPAAoACgAAAAIAAABPAAsACgAAAAMAAABQAAgACgABAAAAAABQAAkACgABAAEAAABQAAoACgABAAIAAABQAAsACgABAAMAAABiAAgACgAAAAAAAABiAAkACgAAAAEAAABiAAoACgAAAAIAAABiAAsACgAAAAMAAABjAAgACgABAAAAAABjAAkACgABAAEAAABjAAoACgABAAIAAABjAAsACgABAAMAAABqAAgACgAAAAAAAABqAAkACgAAAAEAAABqAAoACgAAAAIAAABqAAsACgAAAAMAAABrAAgACgABAAAAAABrAAkACgABAAEAAABrAAoACgABAAIAAABrAAsACgABAAMAAABZABcACgAAAAAAAABZABgACgAAAAEAAABZABkACgAAAAIAAABZABoACgAAAAMAAABaABcACgABAAAAAABaABgACgABAAEAAABaABkACgABAAIAAABaABoACgABAAMAAAAxABYACgAAAAAAAAAxABcACgAAAAEAAAAxABgACgAAAAIAAAAxABkACgAAAAMAAAAyABYACgABAAAAAAAyABcACgABAAEAAAAyABgACgABAAIAAAAyABkACgABAAMAAABxABYACgAAAAAAAABxABcACgAAAAEAAABxABgACgAAAAIAAABxABkACgAAAAMAAAByABYACgABAAAAAAByABcACgABAAEAAAByABgACgABAAIAAAByABkACgABAAMAAAA8ACQADQAAAAAAAAA8ACUADQAAAAEAAAA9ACQADQABAAAAAAA9ACUADQABAAEAAAA2ACQADQAAAAEAAAA3ACQADQABAAEAAAA2ACMADQAAAAAAAAA3ACMADQABAAAAAAA0ACQADQABAAEAAAAzACMADQAAAAAAAAAzACQADQAAAAEAAAA0ACMADQABAAAAAAA3AAsAEQAAAAAAAAA3AAwAEQAAAAEAAAA4AAsAEQABAAAAAAA4AAwAEQABAAEAAABeAAsAEQAAAAAAAABeAAwAEQAAAAEAAABfAAsAEQABAAAAAABfAAwAEQABAAEAAAAqABkAEgAAAAAAAAAqABoAEgAAAAEAAAArABkAEgABAAAAAAArABoAEgABAAEAAAA6ABgAEgAAAAAAAAA6ABkAEgAAAAEAAAA7ABgAEgABAAAAAAA7ABkAEgABAAEAAABeABkAEgAAAAAAAABeABoAEgAAAAEAAABfABkAEgABAAAAAABfABoAEgABAAEAAABgACMAEwAAAAAAAABgACQAEwAAAAEAAABhACMAEwABAAAAAABhACQAEwABAAEAAAA4ACMAEwAAAAAAAAA4ACQAEwAAAAEAAAA5ACMAEwABAAAAAAA5ACQAEwABAAEAAABPACQAEwAAAAAAAABPACUAEwAAAAEAAABQACQAEwABAAAAAABQACUAEwABAAEAAABqACMAEwAAAAAAAABqACQAEwAAAAEAAABrACMAEwABAAAAAABrACQAEwABAAEAAABSAf//EAAAAAAAAABTAf//EAABAAAAAACCAf//EAAAAAAAAACDAf//EAABAAAAAACjAf//EAAAAAAAAACkAf//EAABAAAAAABnAf//EAAAAAAAAABoAf//EAABAAAAAACzAf//EAAAAAAAAAC0Af//EAABAAAAAABSAQAACgAAAAAAAABSAQEACgAAAAEAAABSAQIACgAAAAIAAABSAQMACgAAAAMAAABTAQAACgABAAAAAABTAQEACgABAAEAAABTAQIACgABAAIAAABTAQMACgABAAMAAABnAQAACgAAAAAAAABnAQEACgAAAAEAAABnAQIACgAAAAIAAABnAQMACgAAAAMAAABoAQAACgABAAAAAABoAQEACgABAAEAAABoAQIACgABAAIAAABoAQMACgABAAMAAACCAQAACgAAAAAAAACCAQEACgAAAAEAAACCAQIACgAAAAIAAACCAQMACgAAAAMAAACDAQAACgABAAAAAACDAQEACgABAAEAAACDAQIACgABAAIAAACDAQMACgABAAMAAACjAQAACgAAAAAAAACjAQEACgAAAAEAAACjAQIACgAAAAIAAACjAQMACgAAAAMAAACkAQAACgABAAAAAACkAQEACgABAAEAAACkAQIACgABAAIAAACkAQMACgABAAMAAACzAQAACgAAAAAAAACzAQEACgAAAAEAAACzAQIACgAAAAIAAACzAQMACgAAAAMAAAC0AQAACgABAAAAAAC0AQEACgABAAEAAAC0AQIACgABAAIAAAC0AQMACgABAAMAAAC8ARUADQAAAAAAAACpARQADQAAAAAAAACqARQADQABAAAAAABDAQAAEQAAAAAAAABDAQEAEQAAAAEAAABEAQAAEQABAAAAAABEAQEAEQABAAEAAABFAQAAEgAAAAAAAABFAQEAEgAAAAEAAABGAQAAEgABAAAAAABGAQEAEgABAAEAAAA=")
 tile_set = SubResource("TileSet_578d0")
 
-[node name="NpcSpawn" type="Node2D" parent="."]
-position = Vector2(912, 284)
+[node name="Npcs" type="Node" parent="."]
+
+[node name="Npc2" parent="Npcs" instance=ExtResource("43_3wa2x")]
+position = Vector2(914, 281)
+scale = Vector2(2.5, 2.5)
+
+[node name="Npc" parent="Npcs" instance=ExtResource("43_3wa2x")]
+position = Vector2(12446, -120)
+scale = Vector2(2.5, 2.5)
 
 [node name="Portal" parent="." instance=ExtResource("41_75fke")]
 position = Vector2(17918, 154)
@@ -681,89 +690,46 @@ text = "Controls: WASD - Movement, Space - Jump, Click - Shoot, Right Click: Mee
 position = Vector2(1119, 433)
 script = ExtResource("42_dcv7l")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="ladder"]
+position = Vector2(4900, -159)
+shape = SubResource("RectangleShape2D_yak2e")
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ladder"]
 position = Vector2(4, 48)
 shape = SubResource("RectangleShape2D_pp20p")
 
-[node name="ladder2" type="Area2D" parent="."]
-position = Vector2(1119, 433)
-script = ExtResource("42_dcv7l")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="ladder"]
+position = Vector2(6055.75, -122.5)
+shape = SubResource("RectangleShape2D_y0m2q")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder2"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="ladder"]
 position = Vector2(3765.5, 71.25)
 shape = SubResource("RectangleShape2D_qce1y")
 
-[node name="ladder3" type="Area2D" parent="."]
-position = Vector2(3416, 187)
-script = ExtResource("42_dcv7l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder3"]
-position = Vector2(3758.75, 123.5)
-shape = SubResource("RectangleShape2D_y0m2q")
-
-[node name="ladder5" type="Area2D" parent="."]
-position = Vector2(4375, 62)
-script = ExtResource("42_dcv7l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder5"]
-position = Vector2(3758, 99)
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="ladder"]
+position = Vector2(7014, -272)
 shape = SubResource("RectangleShape2D_5cw1c")
 
-[node name="ladder6" type="Area2D" parent="."]
-position = Vector2(9906, 465)
-script = ExtResource("42_dcv7l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder6"]
-position = Vector2(3668, 78)
-shape = SubResource("RectangleShape2D_hkbjh")
-
-[node name="ladder7" type="Area2D" parent="."]
-position = Vector2(9585, 258)
-script = ExtResource("42_dcv7l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder7"]
-position = Vector2(3668, 78)
-shape = SubResource("RectangleShape2D_hkbjh")
-
-[node name="ladder9" type="Area2D" parent="."]
-position = Vector2(13970, 272)
-script = ExtResource("42_dcv7l")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder9"]
-position = Vector2(3669, 65)
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="ladder"]
+position = Vector2(16520, -96)
 shape = SubResource("RectangleShape2D_5xmu4")
 
-[node name="ladder8" type="Area2D" parent="."]
-position = Vector2(10911, 368)
-script = ExtResource("42_dcv7l")
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="ladder"]
+position = Vector2(12134, -97)
+shape = SubResource("RectangleShape2D_hkbjh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder8"]
-position = Vector2(3669.5, 27.5)
+[node name="CollisionShape2D9" type="CollisionShape2D" parent="ladder"]
+position = Vector2(13461.5, -37.5)
 shape = SubResource("RectangleShape2D_mhwhv")
 
-[node name="ladder4" type="Area2D" parent="."]
-position = Vector2(1117, 435)
-script = ExtResource("42_dcv7l")
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="ladder"]
+position = Vector2(12455, 110)
+shape = SubResource("RectangleShape2D_hkbjh")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="ladder4"]
-position = Vector2(4902, -161)
-shape = SubResource("RectangleShape2D_yak2e")
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("44_1nsiv")
+autoplay = true
+parameters/looping = true
 
 [connection signal="body_entered" from="ladder" to="ladder" method="_on_body_entered"]
 [connection signal="body_exited" from="ladder" to="ladder" method="_on_body_exited"]
-[connection signal="body_entered" from="ladder2" to="ladder2" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder2" to="ladder2" method="_on_body_exited"]
-[connection signal="body_entered" from="ladder3" to="ladder3" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder3" to="ladder3" method="_on_body_exited"]
-[connection signal="body_entered" from="ladder5" to="ladder5" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder5" to="ladder5" method="_on_body_exited"]
-[connection signal="body_entered" from="ladder6" to="ladder6" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder6" to="ladder6" method="_on_body_exited"]
-[connection signal="body_entered" from="ladder7" to="ladder7" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder7" to="ladder7" method="_on_body_exited"]
-[connection signal="body_entered" from="ladder9" to="ladder9" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder9" to="ladder9" method="_on_body_exited"]
-[connection signal="body_entered" from="ladder8" to="ladder8" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder8" to="ladder8" method="_on_body_exited"]
-[connection signal="body_entered" from="ladder4" to="ladder4" method="_on_body_entered"]
-[connection signal="body_exited" from="ladder4" to="ladder4" method="_on_body_exited"]

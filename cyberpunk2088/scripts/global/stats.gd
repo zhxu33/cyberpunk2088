@@ -1,7 +1,7 @@
 class_name stats
 extends Node
 
-var coins:int = 900000
+var coins:int = 0
 var level:int = -1
 var health:int = 100
 var max_health:int = 100

@@ -15,6 +15,7 @@ var teleport_effect = preload("res://scenes/interactables/teleport.tscn")
 var returning:bool = false
 var return_time:float = 1.0
 var ladder_on = false
+var _climbing = false
 
 
 @onready var animation_tree:AnimationTree = $AnimationTree_Hand
@@ -36,9 +37,15 @@ func _physics_process(delta: float):
 	if _dead:
 		return
 		
-	if ladder_on:
-		if Input.is_action_pressed("jump"):
-			velocity.y = -movement_speed
+	if Input.is_action_just_pressed("tp_cheat"):
+		global_position = get_global_mouse_position()
+		
+	# Process climb
+	if ladder_on and Input.is_action_pressed("jump"):
+		_climbing = true
+		velocity.y = -movement_speed
+	else:
+		_climbing = false
 		
 	# Process return
 	if Input.is_action_pressed("return") and not returning:
@@ -122,7 +129,7 @@ func take_damage(damage:int) -> void:
 		animation_tree.active = false
 		animation_player.play("death")
 	else:
-		pass
+		_play($Audio/Hurt)
 
 func ranged_attack():
 	weapon.fire()
@@ -160,6 +167,16 @@ func _manage_animation_tree_state() -> void:
 		_damaged = false
 	else:
 		animation_tree["parameters/conditions/damaged"] = false
+		
+	if _climbing:
+		animation_tree["parameters/conditions/climbing"] = true
+		animation_tree["parameters/conditions/multi_jump"] = false
+	else:
+		animation_tree["parameters/conditions/climbing"] = false
+		if ladder_on:
+			animation_tree["parameters/conditions/multi_jump"] = false
+		else:
+			animation_tree["parameters/conditions/multi_jump"] = true
 
 func bind_player_input_commands():
 	right_cmd = MoveRightCommand.new()
@@ -190,3 +207,7 @@ func player_reset():
 	
 func tell_them_who_you_are():
 	return player
+	
+func _play(player:AudioStreamPlayer) -> void:
+	if !player.playing:
+		player.play()
