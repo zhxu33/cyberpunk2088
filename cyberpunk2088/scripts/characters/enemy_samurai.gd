@@ -73,6 +73,7 @@ func _manage_animation() -> void:
 	else:
 		if attacking:
 			animation_player.play("attack")	
+			_play($audio/sumari_attack)
 		else:
 			if !is_zero_approx(velocity.x):
 				animation_player.play("move")
@@ -185,3 +186,6 @@ func _on_chase_timer_timeout() -> void:
 		elif direction.x == -1:
 			left_bounds = self.global_position + Vector2(20, 0)
 			right_bounds = self.global_position + Vector2(270, 0)
+func _play(player:AudioStreamPlayer2D) -> void:
+	if !player.playing:
+		player.play()

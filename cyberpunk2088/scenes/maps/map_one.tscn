@@ -43,7 +43,7 @@
 [ext_resource type="Texture2D" uid="uid://44r0smwc4yba" path="res://assets/TileSet/3 Objects/Box5.png" id="32_p65mh"]
 [ext_resource type="Script" path="res://scenes/maps/ladder.gd" id="42_okcoq"]
 [ext_resource type="PackedScene" uid="uid://dlemhiucjnush" path="res://scenes/characters/merchant.tscn" id="43_x6jue"]
-[ext_resource type="AudioStream" uid="uid://b4cx541iae6pr" path="res://assets/audio/bgm_loop_music/default_bgm_choice/DavidKBD - Code injection Pack - 03 - Synthetic Whisper-loop.ogg" id="44_0no65"]
+[ext_resource type="AudioStream" uid="uid://4sue15pr4bnf" path="res://assets/audio/bgm_loop_music/default_bgm_choice/DavidKBD - Code injection Pack - 03 - Synthetic Whisper-loop.ogg" id="44_0no65"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w1ijh"]
 texture = ExtResource("1_r1flb")
