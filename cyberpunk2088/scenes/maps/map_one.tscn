@@ -557,9 +557,6 @@ position = Vector2(1668, 567)
 [node name="Spawn2" type="Node2D" parent="EnemySpawns"]
 position = Vector2(1308, 568)
 
-[node name="Spawn3" type="Node2D" parent="EnemySpawns"]
-position = Vector2(573, 546)
-
 [node name="Spawn4" type="Node2D" parent="EnemySpawns"]
 position = Vector2(759, 554)
 
@@ -567,19 +564,13 @@ position = Vector2(759, 554)
 position = Vector2(4282, 587)
 
 [node name="Spawn11" type="Node2D" parent="EnemySpawns"]
-position = Vector2(4164, 589)
-
-[node name="Spawn12" type="Node2D" parent="EnemySpawns"]
-position = Vector2(3910, 784)
+position = Vector2(4033, 592)
 
 [node name="Spawn13" type="Node2D" parent="EnemySpawns"]
 position = Vector2(4189, 791)
 
 [node name="Spawn14" type="Node2D" parent="EnemySpawns"]
-position = Vector2(4095, 788)
-
-[node name="Spawn15" type="Node2D" parent="EnemySpawns"]
-position = Vector2(3558, 781)
+position = Vector2(3919, 778)
 
 [node name="Spawn16" type="Node2D" parent="EnemySpawns"]
 position = Vector2(2887, 1227)
@@ -587,17 +578,11 @@ position = Vector2(2887, 1227)
 [node name="Spawn23" type="Node2D" parent="EnemySpawns"]
 position = Vector2(2555, 1229)
 
-[node name="Spawn26" type="Node2D" parent="EnemySpawns"]
-position = Vector2(2424, 1859)
-
 [node name="Spawn27" type="Node2D" parent="EnemySpawns"]
 position = Vector2(2666, 1851)
 
 [node name="Spawn28" type="Node2D" parent="EnemySpawns"]
 position = Vector2(2094, 1854)
-
-[node name="Spawn29" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1031, 1846)
 
 [node name="Spawn30" type="Node2D" parent="EnemySpawns"]
 position = Vector2(1303, 1854)
@@ -611,9 +596,6 @@ position = Vector2(2052, 1634)
 [node name="Spawn33" type="Node2D" parent="EnemySpawns"]
 position = Vector2(2604, 1631)
 
-[node name="Spawn34" type="Node2D" parent="EnemySpawns"]
-position = Vector2(3292, 1578)
-
 [node name="Spawn35" type="Node2D" parent="EnemySpawns"]
 position = Vector2(3632, 1573)
 
@@ -624,7 +606,7 @@ position = Vector2(4020, 1581)
 position = Vector2(4484, 1584)
 
 [node name="Spawn38" type="Node2D" parent="EnemySpawns"]
-position = Vector2(1249, 1194)
+position = Vector2(1168, 1194)
 
 [node name="Spawn39" type="Node2D" parent="EnemySpawns"]
 position = Vector2(771, 1186)
@@ -639,31 +621,25 @@ position = Vector2(846, 1344)
 position = Vector2(1205, 963)
 
 [node name="Spawn17" type="Node2D" parent="EnemySpawns"]
-position = Vector2(3818, 777)
+position = Vector2(3626, 782)
 
 [node name="Spawn18" type="Node2D" parent="EnemySpawns"]
-position = Vector2(4579, 977)
+position = Vector2(4470, 974)
 
 [node name="Spawn19" type="Node2D" parent="EnemySpawns"]
-position = Vector2(4354, 972)
+position = Vector2(4210, 977)
 
 [node name="Spawn20" type="Node2D" parent="EnemySpawns"]
-position = Vector2(4129, 978)
+position = Vector2(4004, 978)
 
 [node name="Spawn25" type="Node2D" parent="EnemySpawns"]
 position = Vector2(3455, 1180)
 
-[node name="Spawn10" type="Node2D" parent="EnemySpawns"]
-position = Vector2(4220, 585)
-
 [node name="Spawn6" type="Node2D" parent="EnemySpawns"]
-position = Vector2(3583, 604)
-
-[node name="Spawn7" type="Node2D" parent="EnemySpawns"]
-position = Vector2(3464, 604)
+position = Vector2(3483, 599)
 
 [node name="Spawn8" type="Node2D" parent="EnemySpawns"]
-position = Vector2(2771, 587)
+position = Vector2(2904, 587)
 
 [node name="Spawn9" type="Node2D" parent="EnemySpawns"]
 position = Vector2(2700, 578)
