@@ -198,10 +198,48 @@ The character system implements:
 7. [Weapons and Bullets](https://free-game-assets.itch.io/free-guns-for-cyberpunk-characters-pixel-art).|
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
-## Game Logic
+## Game Logic - Aaron Shan (shyshan@ucdavis.edu)
 
 **Document the game states and game data you managed and the design patterns you used to complete your task.**
-
+**World Management**
+The game [world](https://github.com/zhxu33/cyberpunk2088/blob/8d7a970efad04fd0dad5144f9eb6f5c1f833ce91/cyberpunk2088/scripts/world.gd#L1) is designed as a system of sub-systems providing for various aspects of the gameplay. Fundamentally, the world is the maps, enemies, bosses, and NPCs that go into making up the whole game.
+**Map Generation System**
+Randomly selectable are [two principal maps](https://github.com/zhxu33/cyberpunk2088/blob/1f936a282df19a1f0fc453156f62eb676ab69458/cyberpunk2088/scripts/world.gd#L27), which the world keeps; one can be selected for a new level. These maps already exist in the memory when the game begins and so can be accessed immediately when required. 
+![alt text](images/jx/preload_map.png)
+**Character Management**
+The world handles three main types of characters:
+* Regular Enemies (dogs, samurai, and slimes)
+* Boss Characters(different types of powerful enemies)
+* NPCs(merchants who can interact with the player)
+* Players (merchants who can interact with the player)
+All these characters are stored in separate collections, making it easy to spawn the right type of character when needed.
+**Level Generation Works**
+  When a new level begins, the world goes through several important steps:
+  * It cleans up the current level by：
+     * Removing all coins and health pickups from the previous level
+     * Making the screen go dark for a smooth transition
+     * Resetting the boss status
+  * Then it builds the new level by:
+    * Choosing a random map from its collection
+    * Placing the player at their starting position
+    * Spaning enemies throughout the level
+    * Placing the boss in the specific location in the boss room
+**Enemy Placement System and Other Boss systems WILL BE INTRODUCE in the Sub role - Map Design Part**
+**Level Progression - How Levels Advance**
+After the player killed the boss. We designed a Portal to let the player enter the next level.
+![alt text](images/jx/portal_enter.png)
+The portal will detect the status that we set for it. when the status `dialog_state = "DefeatBoss"`, then the player can use the `confirm` option on the screen to enter the next [level](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L62).
+![alt text](images/jx/next_level.png)
+When you start a new level:
+    * Your [health](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L75) is restored to maximum 
+    * The [level](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L70) counter goes up
+    * A new random [map](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L27) is chosen
+    * New [enemies and a boss](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L36) are placed in the location of the new map
+    * The [player](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L32) will spawn at the location of the new map
+**Difficulty Scaling**
+* When the level is up, the map will add [more enemies](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L40) based on the level number
+* Maintaining the challenge through strategic [enemy placement](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L42)
+* Keeping boss encounters fresh by choosing a [random boss](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L53) in the boss room
 ## Boss/Enemy Animation and Visual - Xiuyuan Qi
 
 I implemented animation for all five Boss/Enemy.
