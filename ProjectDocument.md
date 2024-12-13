@@ -308,7 +308,7 @@ In addition to the Boss/Enemy Animation and Visual, I implemented all their basi
 
 ### Robot Guard Dog's initial mechanism
 
-Initially, the dog shot its bullet horizontally based on the player's location. James further developed it so that it could shoot directly towards the player.
+Initially, the dog shot its bullet horizontally(either left or right) based on the player's location. James further developed it so that it could shoot directly towards the player.
 
 ![GIF 12-13-2024 9-05-40 AM](https://github.com/user-attachments/assets/352392b6-bf81-4f08-b0db-9a1618a61a57)
 
