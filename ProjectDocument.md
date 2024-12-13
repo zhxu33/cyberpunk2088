@@ -133,7 +133,7 @@ This is a blue `Background` ColorRect used for transitioning between levels, or 
 
 ![alt text](images/jx/image-28.png)
 
-## User Input
+### User Input
 
 The game input is configured in the project's Input Map settings. This currently only supports players with a mouse and keyboard. All inputs are handled in `player.gd` physics process. Inputs are disabled when the Start Screen or Death Screen is open, and re-enabled once the player starts a new game.
 
