@@ -6,9 +6,9 @@ Cyberpunk 2088 is a 2D infinite progression game set in a neon-drenched, dystopi
 
 ## Project Resources
 
-1. [Web-playable version of your game.](https://itch.io/)  
-2. [Trailor](https://youtube.com)  
-3. [Press Kit](https://dopresskit.com/)  
+1. [Web-playable version of your game.](https://zhxu33.itch.io/cyberpunk-2088)  
+2. [Trailor](https://www.youtube.com/watch?v=RgVgY8-F4nA)  
+3. [Press Kit](https://languid-capacity-e83.notion.site/Cyberpunk-2088-15b706d55ba380758870fa84dc694b72)  
 4. [Group Project Google Drive Folder](https://docs.google.com/document/d/12pQWgevDNh7WiyPMqM3151Qtb58PCUFHTxBVsjFJRXc/edit?usp=drive_link).
     4.1 [Group Initial Plan](https://docs.google.com/document/d/1TuI_5MxxG3TNvrD7Z8iwSdKDze4Wr04ZUydlNR9okWQ/edit?usp=sharing).
     4.2 [Group Progress Report](https://docs.google.com/document/d/12pQWgevDNh7WiyPMqM3151Qtb58PCUFHTxBVsjFJRXc/edit?usp=sharing).
@@ -99,9 +99,12 @@ The character system implements:
  * `IdleCommand` handles stopping by zeroing horizontal velocity
  * The commands are bound and unbound through `bind_player_input_commands() and `unbind_player_input_commands()`
 
-** All we did is like what we did in exercise 1**
-** In addition, the enemy's movement and physical system are similar to what we did for the game character（player)**
-** For the camera, we choose the very simplest one which is Exercise 2 Stage 1 - Position Lock. The camera will lock on the character and it is the best and easiest on to let the camera follow the player**
+**All we did is like what we did in exercise 1**
+**In addition, the enemy's movement and physical system are similar to what we did for the game character（player)**
+**For the camera, we choose the very simplest one which is Exercise 2 Stage 1 - Position Lock. The camera will lock on the character and it is the best and easiest on to let the camera follow the player**
+* In the `CameraController` Script, we extend `Camera2D` and the script creates a reference to the player character which is our player.
+* The camera's behavior is straightforward - when the scene starts, it positions itself at the player's location through the `_ready()` function, and then continuously tracks the player's position every frame using the `_process()` function.
+* 
 
 
 ## Animation and Visuals
