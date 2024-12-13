@@ -101,16 +101,23 @@ The character system implements:
 * Maintains the standard gravity system (inherited from Character class)
 * Uses the built-in floor detection for jump mechanics
 * Employs the standard delta-time-based physics processing
-**There are some several custom modifications are implemented for the player (character)**
-  * Custom movement speed system that scales with upgrades: movement_speed = DEFAULT_MOVE_VELOCITY + Stats.upgrades["Movement Speed"]*20
-  * Modified jump velocity that scales with upgrades: jump_velocity = DEFAULT_JUMP_VELOCITY - Stats.upgrades["Jump Power"]*25
+**There are several custom modifications are implemented for the player (character)**
+  * Custom movement speed system that scales with upgrades: `movement_speed = DEFAULT_MOVE_VELOCITY + Stats.upgrades["Movement Speed"]*20`
+  * Modified jump velocity that scales with upgrades: `jump_velocity = DEFAULT_JUMP_VELOCITY - Stats.upgrades["Jump Power"]*25`
+  *  Custom ladder physics that overrides vertical movement: `velocity.y = -movement_speed` when climbing
   * Custom double jump system that:
       * Tracks jump count
       * Only allows additional jumps when falling (velocity.y >= 0)
-  * Limits jumps based on upgrade level: jump_amount <= Stats.upgrades["Double Jump"]
+  * Limits jumps based on upgrade level: `jump_amount <= Stats.upgrades["Double Jump"]`
+**In our custom movements scripts we have:**
+ * `MoveLeftCommand` and `MoveRightCommand` handle horizontal movement by directly setting velocity.x
+ * `JumpCommand` controls vertical movement by setting velocity.y
+ * `IdleCommand` handles stopping by zeroing horizontal velocity
+ * The commands are bound and unbound through `bind_player_input_commands() and `unbind_player_input_commands()`
 
+** All we did is like what we did in exercise 1**
+** In addition, the enemy's movement and physical system are similar to what we did for the game character（player)**
 
-Custom ladder physics that overrides vertical movement: velocity.y = -movement_speed when climbing
 # Sub-Roles
 
 ## Audio
