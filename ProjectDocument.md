@@ -78,18 +78,12 @@ The Interface scene contains a master script [`interface.gd`](https://github.com
 ### Start Screen
 The start screen appears when the player first joins the game. It has a title label and a blue background that fades out over 2 seconds, which transitions into the game map and player. After the blue background fades, the player can press `Start Game` button to begin playing.
 
-![alt text](images/jx/image-21.png)
 ![alt text](images/jx/image.png)
 
 ### Health Bar
 The Health Bar is displayed on the top center of the screen canvas. It contains  a `ProgressBar` node, which stores the player's `max_health` into Min Value, and player's `health` into value. It contains a `TextureRect` heart icon and label indicating the player's health.
 
 ![alt text](images/jx/image-3.png)
-
-The health bar is in the enemies and boss scenes as an overhead, which becomes visible for 3 seconds after they were damaged by the player. 
-
-![alt text](images/jx/image-5.png)
-![alt text](images/jx/image-4.png)
 
 ### Coin
 The coins are displayed on the top right corner of the screen canvas, which is the game currency used to purchase upgrades. It contains a `TextureRect` coin icon on the left of the value.
@@ -132,6 +126,12 @@ The `UpgradeItem` node contains a upgrade name label, cost label, coin icon, and
 Once the player's health reaches 0, the death screen becomes visible and all inputs are disabled. The user can press a `New Game` button to restart the game from level 0, with all of their upgrades and coins reset. 
 
 ![alt text](images/jx/image-1.png)
+
+
+## Blackout
+This is a blue background used for transitioning between levels, or when starting a new game after death. The background fades in for 0.5 seconds, waits 1 second, and then fades out 1 second during a transition. This is similar to the fade out effect used in the start screen.
+
+![alt text](images/jx/image-27.png)
 
 
 ## User Input
@@ -255,22 +255,36 @@ The character system implements:
 ![alt text](images/jx/image-13.png) 
 ![alt text](images/jx/image-16.png)
 
-### Upgrades
+### Upgrade System
 * Implemented upgrades including `Maximum Health` `Double Jump`, `Movement Speed`, `Jump Power`, `Bullet Count`, `Ricochet`, `Bullet Penetrate`, `Bullet Speed`, `Exploding Attack`, `Attack Damage`, `Attack Speed`, and `Critical Chance`. Each can be upgraded up to level 10 and the cost doubles each time starting from 100 coins. 
 * Added bullet explosion and ricochet upgrades to make the gameplay action more fun. Player can avoid attacks more easily with upgrades like double jump and movement speed.
 
 [![Image from Gyazo](https://i.gyazo.com/edaf8762fc17bc9e4823fc14df061b1b.gif)](https://gyazo.com/edaf8762fc17bc9e4823fc14df061b1b)
 
+### Combat System
+* Added damage indicator for player (red) and enemies (blue), which fades out after 0.5 seconds after being damaged.
+
+![alt text](images/jx/image-26.png)
+![alt text](images/jx/image-25.png)
+
+* The health bar is in the enemies and boss scenes as an overhead, which becomes visible for 3 seconds after they were damaged by the player. 
+
+![alt text](images/jx/image-5.png)
+![alt text](images/jx/image-4.png)
+
 ### Enemy Tweaks
 * Added explosion effect and jump AI to slime self destruction. This makes it more  difficult for the player to get past slimes without killing them.
 
 ![alt text](images/jx/image-24.png)
+
 * Robot dog can launch projectiles directly towards the player (rather than left and right). This makes it more challenging to dodge without sufficient movement speed and double jumps.
 
 ![alt text](images/jx/image-23.png)
+
 * The slime boss spawn small slime enemies at random intervals towards the player which explodes on contact. The small slimes will pile up and the boss fight becomes progressively more difficult overtime.
 
 ![alt text](images/jx/image-22.png)
+
 * The shadow boss launches a slash projectile towards the player at random intervals, which is difficult to dodge without sufficient movement speed and double jumps.
 
 ![alt text](images/jx/image-15.png)
