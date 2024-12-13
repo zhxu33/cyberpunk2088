@@ -212,7 +212,7 @@ I implemented animation for all five Boss/Enemy.
 ![GIF 12-13-2024 7-24-20 AM](https://github.com/user-attachments/assets/d9dabbdf-c37d-45aa-98c3-e4a8189526b0)
 ![GIF 12-13-2024 7-25-51 AM](https://github.com/user-attachments/assets/eff442cd-81e3-41c8-ac07-958d80f610bb)
 
-Hitbox disabled/not disabled needs to be consistent with the animation.
+Hitbox disabled/enabled to be consistent with the animation.
 
 ![GIF 12-13-2024 7-33-34 AM](https://github.com/user-attachments/assets/659df706-c8bf-4cf6-83e3-2e58b4d841bc)
 ![GIF 12-13-2024 7-34-38 AM](https://github.com/user-attachments/assets/4214d2ef-3c93-442b-addf-6831f3f98406)
