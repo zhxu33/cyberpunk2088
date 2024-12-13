@@ -1,21 +1,12 @@
 class_name HitBox
 extends Area2D
 
-var explosion_particle:PackedScene = preload("res://scenes/attacks/explosion.tscn")
 @export var damage:int
 @export var knockback:int
 
 
-
 func _init() -> void:
 	area_entered.connect(_on_area_entered)
-	
-	
-func _explode() -> void:
-	if Stats.upgrades["Exploding Attack"] > 0:
-		var explosion = explosion_particle.instantiate()
-		explosion.global_position = global_position
-		get_tree().current_scene.call_deferred("add_child", explosion)
 		
 
 func _on_area_entered(area:Area2D) -> void:
@@ -33,7 +24,6 @@ func _on_area_entered(area:Area2D) -> void:
 			if randf_range(1, 10) <= Stats.upgrades["Critical Chance"]:
 				crit_factor = 2
 			area.owner.take_damage(damage * crit_factor)
-			_explode()
 		else:
 			# enemy attack
 			area.owner.take_damage(damage)

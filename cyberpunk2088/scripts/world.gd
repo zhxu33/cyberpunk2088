@@ -47,9 +47,8 @@ func _spawn_map():
 		var enemy = enemy_scenes[randi() % enemy_scenes.size()].instantiate()
 		enemy.scale = Vector2(2,2)
 		spawn_point.add_child(enemy)
-		enemy.global_position = spawn_point.global_position
-		enemy.global_position.x += randf_range(-100, 100)
-	
+		enemy.global_position = spawn_point.global_position + Vector2(randf_range(-100, 100), -10)
+		
 	# Spawn Random Boss
 	var boss_spawn: Node = current_map.get_node("BossSpawn")	
 	var boss = boss_scenes[randi() % boss_scenes.size()].instantiate()

@@ -19,3 +19,6 @@ mono_crash.*.json
 
 # ignore all .import files
 *.import
+
+game/
+game.zip
