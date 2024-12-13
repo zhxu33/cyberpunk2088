@@ -2,14 +2,14 @@
 
 ## Introduction ##
 
-Cyberpunk 2088 is a 2D infinite progression game set in a neon-drenched, dystopian city teetering on the edge of chaos. Players take on the role of "W," a fearless mercenary on a mission to overthrow the oppressive Arasaka Corporation, a megacorporation that has plunged society into despair. Combining high-octane combat, endless level progression, and strategic upgrades, the game offers an exhilarating journey through an ever-evolving cyberpunk world. The ultimate goal is to infiltrate Arasaka's towering fortress, a sprawling skyscraper dominating the city skyline. However, upon breaching its inner sanctum, players uncover an unsettling truth: the interior is an infinite, procedurally generated loop, reflecting Arasaka’s mastery over both technology and reality. With dynamic action, engaging enemies, and a gripping narrative, Cyberpunk 2088 immerses players in a world where every battle pushes them closer to uncovering the secrets of a system built to control them. Will you break free or become another cog in the machine?
+Cyberpunk 2088 is a 2D infinite progression game set in a neon-drenched, dystopian city teetering on the edge of chaos. Players take on the role of "W," a fearless mercenary on a mission to overthrow the oppressive Arasaka Corporation, a megacorporation that has plunged society into despair. Combining high-octane combat, endless level progression, and strategic upgrades, the game offers an exhilarating journey through an ever-evolving cyberpunk world. The ultimate goal is to infiltrate Arasaka's towering fortress, a sprawling skyscraper dominating the city skyline. However, upon breaching its inner sanctum, players uncover an unsettling truth: the interior is an infinite, procedurally generated loop, reflecting Arasaka’s mastery over both technology and reality. With dynamic action, engaging enemies, Cyberpunk 2088 immerses players in a world where every battle pushes them closer to uncovering the secrets of a system built to control them. Will you break free or become another cog in the machine?
 
 ## Project Resources
 
 1. [Web-playable version of your game.](https://itch.io/)  
 2. [Trailor](https://youtube.com)  
 3. [Press Kit](https://dopresskit.com/)  
-4. [Group Project Google Drive Folder](https://docs.google.com/document/d/12pQWgevDNh7WiyPMqM3151Qtb58PCUFHTxBVsjFJRXc/edit?usp=drive_link).
+4. [Group Project Google Drive Folder](https://docs.google.com/document/d/12pQWgevDNh7WiyPMqM3151Qtb58PCUFHTxBVsjFJRXc/edit?usp=drive_link).\n
     4.1 [Group Initial Plan](https://docs.google.com/document/d/1TuI_5MxxG3TNvrD7Z8iwSdKDze4Wr04ZUydlNR9okWQ/edit?usp=sharing).
     4.2 [Group Progress Report](https://docs.google.com/document/d/12pQWgevDNh7WiyPMqM3151Qtb58PCUFHTxBVsjFJRXc/edit?usp=sharing).
     4.3 [Tester Comments Image from Final Festival 5 game tester comments](https://drive.google.com/file/d/1tn4Yijyf3Z--mwvjm6qE0DpVtvh7e7A6/view?usp=sharing).
