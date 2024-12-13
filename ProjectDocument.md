@@ -15,8 +15,25 @@
 
 **In this section, explain how the game should be played. Treat this as a manual within a game. Explaining the button mappings and the most optimal gameplay strategy is encouraged.**
 
+**Cyberpunk 2088 is a 2D FPS shooting game that can be upgraded by fighting monsters.**
 
-**Add it here if you did work that should be factored into your grade but does not fit easily into the proscribed roles! Please include links to resources and descriptions of game-related material that does not fit into roles here.**
+| Keyboard operation               | Key |
+|:--------------------------------:|:-----:|
+|Move Right                        |   D  |
+|Move Left                         |   A | 
+|Jump (contain double jump)        |   W & Space  | 
+|Teleport                          |   R (hold)   | 
+|Shooting                          |   Left mouse button  | 
+|Melee attack                      |   Right mouse button | 
+
+**Recommendation of Game playing**
+As the player, you will see an NPC near the spawn location. At the beginning of the first level, you will have 100 coins to upgrade your skill at the NPC store and there are about 12 types of skills you can choose. As the designer, we prefer you to choose Movement speed. After upgrading, the next step is to explore the MAP. On the map, you will kill all the enemies that stop your way and they will drop coins to let you collect and upgrade. When you think you have enough coins, you can press "R" to teleport back to the first NPC you met at the beginning of the game. Then, it's time to upgrade other skills! We don't have any skills for healing the player, but you can collect the heart will might be dropped by enemies. When you explore the map, you will see some other NPC for you to upgrade your skills so DON'T WORRY! Then, when you finally reach the boss room. FIGHT IT and KILL it! Then, get into the portal and you will get into the next level of the game. The HP of the enemy and the damage will increase!! BE CAREFUL!
+
+**Three TYPES OF ENEMIES**
+1. Self-destruct Slim (When you reach the range, they will chase you, and BOOM! PLEASE!! Playe safe and stay in the safe area)
+2. Cyber Ninjia (They are samurai patrolling with electric light knives, be careful not to go near them because their knives will tear you to pieces）
+3. Robot guard dog (Don't worry! They're good enough to stand still but they'll detect you at a distance and want you to fire a cannonball. It's a long way! Please take shelter in time!）
+
 
 # Main Roles #
 
