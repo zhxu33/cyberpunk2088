@@ -43,7 +43,7 @@
 [ext_resource type="PackedScene" uid="uid://d1sbi12akmnlb" path="res://scenes/interactables/portal.tscn" id="41_75fke"]
 [ext_resource type="Script" path="res://scenes/maps/ladder.gd" id="42_dcv7l"]
 [ext_resource type="PackedScene" uid="uid://dlemhiucjnush" path="res://scenes/characters/merchant.tscn" id="43_3wa2x"]
-[ext_resource type="AudioStream" uid="uid://vv8app1pycsy" path="res://assets/audio/bgm_loop_music/default_bgm_choice/DavidKBD - Pink Bloom Pack - 07 - The Hidden One.ogg" id="44_1nsiv"]
+[ext_resource type="AudioStream" uid="uid://5mpl77h5cjjk" path="res://assets/audio/bgm_loop_music/default_bgm_choice/DavidKBD - Pink Bloom Pack - 07 - The Hidden One.ogg" id="44_1nsiv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w1ijh"]
 texture = ExtResource("1_agic8")
@@ -520,7 +520,7 @@ size = Vector2(26, 212)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mhwhv"]
 size = Vector2(23, 317)
 
-[node name="Map" type="Node2D"]
+[node name="Map2" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 light_mask = 3
