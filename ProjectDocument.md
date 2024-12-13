@@ -107,11 +107,11 @@ The portal has two dialog states depending on the status of the boss.
 
 If the boss is dead, the player can proceed to the next level by pressing `Confirm`. 
 
-![alt text](images/jx/image-17.png)
+![alt text](images/jx/image-18.png)
 
 If the boss is alive, pressing `Confirm` will not do anything.
 
-![alt text](images/jx/image-18.png)
+![alt text](images/jx/image-17.png)
 
 
 ### Shop
@@ -138,7 +138,7 @@ This is a blue `Background` ColorRect used for transitioning between levels, or 
 The game input is configured in the project's Input Map settings. This currently only supports players with a mouse and keyboard. All inputs are handled in `player.gd` physics process. Inputs are disabled when the Start Screen or Death Screen is open, and re-enabled once the player starts a new game.
 
 * `move_left`: hold **A** or **Left Arrow** key.
-* `move_right`: hold **D** or *Right Arrow* key.
+* `move_right`: hold **D** or **Right Arrow** key.
 * `jump`: Press **W**, **Space**, or **Up Arrow** key. Also used for double jump and climbing ladders.
 * `ranged_attack`: Hold **Left Click**
 * `meele_attack`: **Right Click**
