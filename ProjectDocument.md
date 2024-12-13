@@ -71,14 +71,14 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## Animation and Visuals
 
-| Resources                        |    |
-|:--------------:|:---------------:|
-|1. [character & NPC](https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art)                      |   7.  |
-|2. [Backgroud](https://free-game-assets.itch.io/free-city-backgrounds-pixel-art).                      |   A | 
-|3. [Tileset](https://free-game-assets.itch.io/free-industrial-zone-tileset-pixel-art).      |   W & Space  | 
-|4. [Protal](https://www.pngall.com/portal-png/download/33556/#google_vignette).                    |   R (hold)   | 
-|5. [Coins](https://www.flaticon.com/free-icon/coin_217802).                         |   Left mouse button  | 
-|6. [Heart](https://reserve.freesvg.org/red-heart-with-black-outline).                     |   Right mouse button | 
+
+|1. [character & NPC](https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art)                      |  
+|2. [Backgroud](https://free-game-assets.itch.io/free-city-backgrounds-pixel-art).                      |  
+|3. [Tileset](https://free-game-assets.itch.io/free-industrial-zone-tileset-pixel-art).      |  
+|4. [Protal](https://www.pngall.com/portal-png/download/33556/#google_vignette).                    |   
+|5. [Coins](https://www.flaticon.com/free-icon/coin_217802).                         | 
+|6. [Heart](https://reserve.freesvg.org/red-heart-with-black-outline).                     |  
+|7. [Weapons and Bullets](https://free-game-assets.itch.io/free-guns-for-cyberpunk-characters-pixel-art).|
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
 ## Game Logic
