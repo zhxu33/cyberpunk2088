@@ -70,22 +70,6 @@ You should replay any **bold text** with your relevant information. Liberally us
 ## Movement/Physics
 
 **Describe the basics of movement and physics in your game. Is it the standard physics model? What did you change or modify? Did you make your movement scripts that do not use the physics system?**
-
-
-## Animation and Visuals
-
-1. [character & NPC](https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art)                      
-2. [Backgroud](https://free-game-assets.itch.io/free-city-backgrounds-pixel-art).                      
-3. [Tileset](https://free-game-assets.itch.io/free-industrial-zone-tileset-pixel-art).      
-4. [Protal](https://www.pngall.com/portal-png/download/33556/#google_vignette).                    
-5. [Coins](https://www.flaticon.com/free-icon/coin_217802).                         
-6. [Heart](https://reserve.freesvg.org/red-heart-with-black-outline).                      
-7. [Weapons and Bullets](https://free-game-assets.itch.io/free-guns-for-cyberpunk-characters-pixel-art).|
-**Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
-
-## Game Logic
-
-**Document the game states and game data you managed and the design patterns you used to complete your task.**
 We contain two essential folders in the script folder: character and command. They include the main movements and any other important physics of the game characters and enemies. 
 
 **Movement is velocity-based, with separate horizontal and vertical components**
@@ -109,7 +93,7 @@ The character system implements:
       * Tracks jump count
       * Only allows additional jumps when falling (velocity.y >= 0)
   * Limits jumps based on upgrade level: `jump_amount <= Stats.upgrades["Double Jump"]`
-**In our custom movements scripts we have:**
+**In our custom movements scripts we use custom movement scripts through the command pattern and they still work within the physics systems:**
  * `MoveLeftCommand` and `MoveRightCommand` handle horizontal movement by directly setting velocity.x
  * `JumpCommand` controls vertical movement by setting velocity.y
  * `IdleCommand` handles stopping by zeroing horizontal velocity
@@ -117,6 +101,23 @@ The character system implements:
 
 ** All we did is like what we did in exercise 1**
 ** In addition, the enemy's movement and physical system are similar to what we did for the game character（player)**
+** For the camera, we choose the very simplest one which is Exercise 2 Stage 1 - Position Lock. The camera will lock on the character and it is the best and easiest on to let the camera follow the player**
+
+
+## Animation and Visuals
+
+1. [character & NPC](https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art)                      
+2. [Backgroud](https://free-game-assets.itch.io/free-city-backgrounds-pixel-art).                      
+3. [Tileset](https://free-game-assets.itch.io/free-industrial-zone-tileset-pixel-art).      
+4. [Protal](https://www.pngall.com/portal-png/download/33556/#google_vignette).                    
+5. [Coins](https://www.flaticon.com/free-icon/coin_217802).                         
+6. [Heart](https://reserve.freesvg.org/red-heart-with-black-outline).                      
+7. [Weapons and Bullets](https://free-game-assets.itch.io/free-guns-for-cyberpunk-characters-pixel-art).|
+**Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
+
+## Game Logic
+
+**Document the game states and game data you managed and the design patterns you used to complete your task.**
 
 # Sub-Roles
 
