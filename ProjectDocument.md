@@ -6,10 +6,16 @@ Cyberpunk 2088 is a 2D infinite progression game set in a neon-drenched, dystopi
 
 ## Project Resources
 
-[Web-playable version of your game.](https://itch.io/)  
-[Trailor](https://youtube.com)  
-[Press Kit](https://dopresskit.com/)  
-[Proposal: make your own copy of the linked doc.](https://docs.google.com/document/d/1qwWCpMwKJGOLQ-rRJt8G8zisCa2XHFhv6zSWars0eWM/edit?usp=sharing)  
+1. [Web-playable version of your game.](https://itch.io/)  
+2. [Trailor](https://youtube.com)  
+3. [Press Kit](https://dopresskit.com/)  
+4. [Group Project Google Drive Folder](https://docs.google.com/document/d/12pQWgevDNh7WiyPMqM3151Qtb58PCUFHTxBVsjFJRXc/edit?usp=drive_link).
+    4.1 [Group Initial Plan](https://docs.google.com/document/d/1TuI_5MxxG3TNvrD7Z8iwSdKDze4Wr04ZUydlNR9okWQ/edit?usp=sharing).
+    4.2 [Group Progress Report](https://docs.google.com/document/d/12pQWgevDNh7WiyPMqM3151Qtb58PCUFHTxBVsjFJRXc/edit?usp=sharing).
+    4.3 [Tester Comments Image from Final Festival 5 game tester comments](https://drive.google.com/file/d/1tn4Yijyf3Z--mwvjm6qE0DpVtvh7e7A6/view?usp=sharing).
+    4.4 [Tester Comments Image from Game Night](https://drive.google.com/file/d/1VrLXNo-Ml2-__yk4NkgFRX27WTnjZDqs/view?usp=sharing).
+    4.5 [Game Night Attendence](https://drive.google.com/file/d/1ugxaDAAzInmYY1SF0_6bfvD0VU_44uEw/view?usp=sharing).
+
 
 ## Gameplay Explanation ##
 
@@ -66,13 +72,13 @@ You should replay any **bold text** with your relevant information. Liberally us
 ## Animation and Visuals
 
 | Resources                        |    |
-|:--------------------------------:|:-----:|
-|1. [character & NPC](https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art)                      |   D  |
+|:--------------:|:---------------:|
+|1. [character & NPC](https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art)                      |   7.  |
 |2. [Backgroud](https://free-game-assets.itch.io/free-city-backgrounds-pixel-art).                      |   A | 
 |3. [Tileset](https://free-game-assets.itch.io/free-industrial-zone-tileset-pixel-art).      |   W & Space  | 
 |4. [Protal](https://www.pngall.com/portal-png/download/33556/#google_vignette).                    |   R (hold)   | 
-|Shooting                          |   Left mouse button  | 
-|Melee attack                      |   Right mouse button | 
+|5. [Coins](https://www.flaticon.com/free-icon/coin_217802).                         |   Left mouse button  | 
+|6. [Heart](https://reserve.freesvg.org/red-heart-with-black-outline).                     |   Right mouse button | 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
 ## Game Logic
