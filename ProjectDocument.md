@@ -1,8 +1,8 @@
 # Cyberpunk 2088 #
 
-## Summary ##
+## Introduction ##
 
-**A paragraph-length pitch for your game.**
+Cyberpunk 2088 is a 2D infinite progression game set in a neon-drenched, dystopian city teetering on the edge of chaos. Players take on the role of "W," a fearless mercenary on a mission to overthrow the oppressive Arasaka Corporation, a megacorporation that has plunged society into despair. Combining high-octane combat, endless level progression, and strategic upgrades, the game offers an exhilarating journey through an ever-evolving cyberpunk world. The ultimate goal is to infiltrate Arasaka's towering fortress, a sprawling skyscraper dominating the city skyline. However, upon breaching its inner sanctum, players uncover an unsettling truth: the interior is an infinite, procedurally generated loop, reflecting Arasaka’s mastery over both technology and reality. With dynamic action, engaging enemies, and a gripping narrative, Cyberpunk 2088 immerses players in a world where every battle pushes them closer to uncovering the secrets of a system built to control them. Will you break free or become another cog in the machine?
 
 ## Project Resources
 
@@ -65,8 +65,14 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ## Animation and Visuals
 
-**List your assets, including their sources and licenses.**
-
+| Resources                        |    |
+|:--------------------------------:|:-----:|
+|1. [character & NPC](https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art)                      |   D  |
+|2. [Backgroud](https://free-game-assets.itch.io/free-city-backgrounds-pixel-art).                      |   A | 
+|3. [Tileset](https://free-game-assets.itch.io/free-industrial-zone-tileset-pixel-art).      |   W & Space  | 
+|4. [Protal](https://www.pngall.com/portal-png/download/33556/#google_vignette).                    |   R (hold)   | 
+|Shooting                          |   Left mouse button  | 
+|Melee attack                      |   Right mouse button | 
 **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
 ## Game Logic
