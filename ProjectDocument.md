@@ -2,7 +2,7 @@
 
 ## Introduction ##
 
-Cyberpunk 2088 is a 2D infinite progression game set in a neon-drenched, dystopian city teetering on the edge of chaos. Players take on the role of "W," a fearless mercenary on a mission to overthrow the oppressive Arasaka Corporation, a megacorporation that has plunged society into despair. Combining high-octane combat, endless level progression, and strategic upgrades, the game offers an exhilarating journey through an ever-evolving cyberpunk world. The ultimate goal is to infiltrate Arasaka's towering fortress, a sprawling skyscraper dominating the city skyline. However, upon breaching its inner sanctum, players uncover an unsettling truth: the interior is an infinite, procedurally generated loop, reflecting Arasaka’s mastery over both technology and reality. With dynamic action, and engaging enemies, Cyberpunk 2088 immerses players in a world where every battle pushes them closer to uncovering the secrets of a system built to control them. Will you break free or become another cog in the machine?
+Cyberpunk 2088 is a 2D infinite progression game set in a neon-drenched, dystopian city teetering on the edge of chaos. Players take on the role of "W," a fearless mercenary on a mission to overthrow the oppressive Arasaka Corporation, a megacorporation that has plunged society into despair. Combining high-octane combat, endless level progression, and strategic upgrades, the game offers an exhilarating journey through an ever-evolving cyberpunk world. The ultimate goal is to infiltrate Arasaka's towering fortress, a sprawling skyscraper dominating the city skyline. However, upon breaching its inner sanctum, players uncover an unsettling truth: the interior is an infinite, procedurally generated loop, reflecting Arasaka’s mastery over both technology and reality. With dynamic action and engaging enemies, Cyberpunk 2088 immerses players in a world where every battle pushes them closer to uncovering the secrets of a system built to control them. Will you break free or become another cog in the machine?
 
 ## Project Resources
 
@@ -138,7 +138,7 @@ The character system implements:
 
 **Summarize the key findings from your gameplay tests.**
 
-## Narrative Design
+## Map Design/Map Mechanism
 
 **Document how the narrative is present in the game via assets, gameplay systems, and gameplay.** 
 
