@@ -71,13 +71,14 @@ The `Interface` scene is placed directly under the root node `World`, where othe
 
 Each UI element is placed under a control node, where I assign Anchor Presets so that the positioning is responsive and works with different screen sizes. The screen resolution only defaults to 1920x1080 for now, but the plan was to add mobile support if we had more time.
 
-[![Image from Gyazo](https://i.gyazo.com/4ddbca212ad2fded252b730ede3a843d.gif)](https://gyazo.com/4ddbca212ad2fded252b730ede3a843d)
+![alt text](images/jx/image-20.png)
 
 The Interface scene contains a master script [`interface.gd`](https://github.com/zhxu33/cyberpunk2088/blob/main/cyberpunk2088/scripts/interface/interface.gd) which handles all UI interactions. I set up [`stats.gd`](https://github.com/zhxu33/cyberpunk2088/blob/main/cyberpunk2088/scripts/global/stats.gd) which contains autoload global variables including coins, level, health, max_health, and upgrades. This is accessed in the interface to display player statuses.
 
 ### Start Screen
 The start screen appears when the player first joins the game. It has a title label and a blue background that fades out over 2 seconds, which transitions into the game map and player. After the blue background fades, the player can press `Start Game` button to begin playing.
 
+![alt text](images/jx/image-21.png)
 ![alt text](images/jx/image.png)
 
 ### Health Bar
@@ -158,7 +159,7 @@ The player can use meele attack by `Right Click` with the mouse.
 The player can return to spawn by holding `R` for 1 second.
 
 ### tp_cheat
-The player can teleport to the direction of their mouse by pressing `T`. This is used for testing purposes.\
+The player can teleport to the direction of their mouse by pressing `T`. This is used for testing purposes.
 
 
 ## Movement/Physics
@@ -255,18 +256,15 @@ The character system implements:
 ### Upgrades
 * Implemented upgrades including `Maximum Health` `Double Jump`, `Movement Speed`, `Jump Power`, `Bullet Count`, `Ricochet`, `Bullet Penetrate`, `Bullet Speed`, `Exploding Attack`, `Attack Damage`, `Attack Speed`, and `Critical Chance`. Each can be upgraded up to level 10 and the cost doubles each time starting from 100 coins. 
 * Added bullet explosion and ricochet upgrades to make the gameplay action more fun. Player can avoid attacks more easily with upgrades like double jump and movement speed.
-<a href="https://gyazo.com/67acc07b9a36a5a233eeba535b3731fc"><img src="https://i.gyazo.com/67acc07b9a36a5a233eeba535b3731fc.gif" alt="Image from Gyazo" width="1369.6"/></a>
+[![Image from Gyazo](https://i.gyazo.com/edaf8762fc17bc9e4823fc14df061b1b.gif)](https://gyazo.com/edaf8762fc17bc9e4823fc14df061b1b)
 
 ### Enemy Tweaks
-* Added explosion effect and jump AI to slime self destruction. This makes it more  difficult for the player to get past the slime without killing it.
-<a href="https://gyazo.com/150b1484f988af2d9b8e015fcba2de12"><img src="https://i.gyazo.com/150b1484f988af2d9b8e015fcba2de12.gif" alt="Image from Gyazo" width="486.4"/></a>
-
+* Added explosion effect and jump AI to slime self destruction. This makes it more  difficult for the player to get past slimes without killing them.
+![alt text](images/jx/image-24.png)
 * Robot dog can launch projectiles directly towards the player (rather than left and right). This makes it more challenging to dodge without sufficient movement speed and double jumps.
-<a href="https://gyazo.com/3b74cd804b35b839a46b4170a86b6a80"><img src="https://i.gyazo.com/3b74cd804b35b839a46b4170a86b6a80.gif" alt="Image from Gyazo" width="678.4"/></a>
-
+![alt text](images/jx/image-23.png)
 * The slime boss spawn small slime enemies at random intervals towards the player which explodes on contact. The small slimes will pile up and the boss fight becomes progressively more difficult overtime.
-<a href="https://gyazo.com/50b0d034c3503eeed8f2717b27a0cb4f"><img src="https://i.gyazo.com/50b0d034c3503eeed8f2717b27a0cb4f.gif" alt="Image from Gyazo" width="1176"/></a>
-
+![alt text](images/jx/image-22.png)
 * The shadow boss launches a slash projectile towards the player at random intervals, which is difficult to dodge without sufficient movement speed and double jumps.
 ![alt text](images/jx/image-15.png)
 * Other minor changes like enemy stats/speed, rewards, hitbox tweaks to ensure smooth game progression and balance.
