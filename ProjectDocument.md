@@ -76,7 +76,7 @@ Each UI element is placed under a control node, where I assign Anchor Presets so
 The Interface scene contains a master script [`interface.gd`](https://github.com/zhxu33/cyberpunk2088/blob/main/cyberpunk2088/scripts/interface/interface.gd) which handles all UI interactions. I set up [`stats.gd`](https://github.com/zhxu33/cyberpunk2088/blob/main/cyberpunk2088/scripts/global/stats.gd) which contains autoload global variables including coins, level, health, max_health, and upgrades. This is accessed in the interface to display player statuses.
 
 ### Start Screen
-The start screen appears when the player first joins the game. It has a title label and a blue background that fades out over 2 seconds, which transitions into the game map and player. After the blue background fades, the player can press `Start Game` button to begin playing.
+The start screen appears when the player first joins the game. It has a `Title` label and a blue back that fades out over 2 seconds, which transitions into the game map and player. After the blue background fades, the player can press `Start Game` button to begin playing.
 
 ![alt text](images/jx/image-27.png)
 
@@ -86,7 +86,7 @@ The Health Bar is displayed on the top center of the screen canvas. It contains 
 ![alt text](images/jx/image-3.png)
 
 ### Coin
-The coins are displayed on the top right corner of the screen canvas, which is the game currency used to purchase upgrades. It contains a `TextureRect` coin icon on the left of the value.
+The coins are displayed on the top right corner of the screen canvas, which is the game currency used to purchase upgrades. It contains a coin `TextureRect` icon on the left of the value.
 
 ![alt text](images/jx/image-6.png)
 
@@ -97,25 +97,25 @@ The level label is displayed on the top left corner of the screen canvas, indica
 ![alt text](images/jx/image-9.png)
 
 ### Dialogue
-The dialogue is displayed on the bottom center of the screen canvas. It contains a title label, text description label, `cancel`, and a `confirm` button. Pressing the cancel button will always close the dialog without doing anything.
+The dialogue is displayed on the bottom center of the screen canvas. It contains a `Title` label, `Text` description label, `Cancel`, and a `Confirm` button. Pressing the cancel button will always close the dialog without doing anything.
 
-The Merchant Biker has a dialogue where pressing `confirm` will open up the shop UI.
+The Merchant Biker has a dialogue where pressing `Confirm` will open up the shop UI.
 
 ![alt text](images/jx/image-10.png)
 
 The portal has two dialog states depending on the status of the boss.
 
-If the boss is dead, the player can proceed to the next level by pressing `confirm`. 
+If the boss is dead, the player can proceed to the next level by pressing `Confirm`. 
 
 ![alt text](images/jx/image-17.png)
 
-If the boss is alive, pressing `confirm` will not do anything.
+If the boss is alive, pressing `Confirm` will not do anything.
 
 ![alt text](images/jx/image-18.png)
 
 
 ### Shop
-The shop opens after pressing `confirm` on the Biker dialogue. There is a `close` button on the top right corner which is used to exit the shop. It has a `title` "Upgrades" and contains a `GridContainer` inside a `ScrollContainer` which is designed to format the `UpgradeItem` node automatically, and adds a scroll wheel incase the shop interface isn't big enough to fit all upgrades.
+The shop opens after pressing `Confirm` on the Biker dialogue. There is a `Close` button on the top right corner which is used to exit the shop. It has a `Title` "Upgrades" and contains a `GridContainer` inside a `ScrollContainer` which is designed to format the `UpgradeItem` node automatically, and adds a scroll wheel incase the shop interface isn't big enough to fit all upgrades.
 
 The `UpgradeItem` node contains a upgrade name label, cost label, coin icon, and a button with transparent black background which can be clicked on to upgrade. In the interface script, `UpgradeItem` node is cloned based on the available upgrades in `stats.gd` and placed under the `GridContainer` to be formatted automatically.
 
@@ -143,7 +143,7 @@ The game input is configured in the project's Input Map settings. This currently
 * `ranged_attack`: Hold **Left Click**
 * `meele_attack`: **Right Click**
 * `return`: Hold **R** for 1 second to teleport back to spawn.
-* `tp_cheat`: Press `T` to teleport to the direction of mouse. Used for testing purposes.
+* `tp_cheat`: Press **R** to teleport to the direction of mouse. Used for testing purposes.
 
 ![alt text](images/jx/image-11.png)
 
