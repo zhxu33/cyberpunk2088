@@ -76,7 +76,7 @@ Each UI element is placed under a control node, where I assign Anchor Presets so
 The Interface scene contains a master script [`interface.gd`](https://github.com/zhxu33/cyberpunk2088/blob/main/cyberpunk2088/scripts/interface/interface.gd) which handles all UI interactions. I set up [`stats.gd`](https://github.com/zhxu33/cyberpunk2088/blob/main/cyberpunk2088/scripts/global/stats.gd) which contains autoload global variables including `coins`, `level`, `health`, `max_health,` and `upgrades`. This is accessed in the interface to display player statuses.
 
 ### Start Screen
-The start screen appears when the player first joins the game. It has a `Title` label and a blue back that fades out over 2 seconds, which transitions into the game map and player. After the blue background fades, the player can press `Start Game` button to begin playing.
+The start screen appears when the player first joins the game. It has a `Title` label and a blue `Background` ColorRect that fades out over 2 seconds, which transitions into the game map and player. After the blue background fades, the player can press Start Game `Button` to begin playing.
 
 ![alt text](images/jx/image-27.png)
 
@@ -123,13 +123,13 @@ The `UpgradeItem` node contains a  upgrade name `Label`, `Cost` label, `CoinIcon
 
 
 ### Death Screen
-Once the player's health reaches 0, the death screen becomes visible and all inputs are disabled. The user can press a `New Game` button to restart the game from level 0, with all of their upgrades and coins reset. 
+Once the player's health reaches 0, the death screen becomes visible and all inputs are disabled. It contains a Game Over `Title` label and a New Game `Button` to restart the game from level 0 with all upgrades and coins reset. 
 
 ![alt text](images/jx/image-1.png)
 
 
 ### Blackout
-This is a blue background used for transitioning between levels, or when starting a new game after death. The background fades in for 0.5 seconds, waits 1 second, and then fades out 1 second during a transition.
+This is a blue `Background` ColorRect used for transitioning between levels, or when starting a new game after death. The background fades in for 0.5 seconds, waits 1 second, and then fades out 1 second during a transition.
 
 ![alt text](images/jx/image-28.png)
 
