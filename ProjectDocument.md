@@ -247,24 +247,31 @@ The character system implements:
 
 ### Progression System
 * Added random map and enemies generation. The number of enemies increase (`num_spawns + level * num_spawns / 10`) and has higher health after each level. Enemy spawns are placed around the map to ensure full coverage. A spawn can generate more than one enemy with a position offset to avoid overlap.
+
 ![alt text](images/jx/image-14.png)
 * Enemies and boss have a fixed damage, but their health increases after each level. The `formula is 100 + 50 * level` for enemies, and bosses have 5 times the amount of health as enemies.
 * Added coins and health restore drops to provide a better incentive for the player to kill enemies. The base coin reward is `20 + 10 * level` for enemies. Health drop has a 20% of dropping from any enemy, which restores 10% of the player's max health. Bosses drop 5 times the amount of enemy coin rewards, and has a guaranteed chance of dropping 5 health restores.
+
 ![alt text](images/jx/image-13.png) 
 ![alt text](images/jx/image-16.png)
 
 ### Upgrades
 * Implemented upgrades including `Maximum Health` `Double Jump`, `Movement Speed`, `Jump Power`, `Bullet Count`, `Ricochet`, `Bullet Penetrate`, `Bullet Speed`, `Exploding Attack`, `Attack Damage`, `Attack Speed`, and `Critical Chance`. Each can be upgraded up to level 10 and the cost doubles each time starting from 100 coins. 
 * Added bullet explosion and ricochet upgrades to make the gameplay action more fun. Player can avoid attacks more easily with upgrades like double jump and movement speed.
+
 [![Image from Gyazo](https://i.gyazo.com/edaf8762fc17bc9e4823fc14df061b1b.gif)](https://gyazo.com/edaf8762fc17bc9e4823fc14df061b1b)
 
 ### Enemy Tweaks
 * Added explosion effect and jump AI to slime self destruction. This makes it more  difficult for the player to get past slimes without killing them.
+
 ![alt text](images/jx/image-24.png)
 * Robot dog can launch projectiles directly towards the player (rather than left and right). This makes it more challenging to dodge without sufficient movement speed and double jumps.
+
 ![alt text](images/jx/image-23.png)
 * The slime boss spawn small slime enemies at random intervals towards the player which explodes on contact. The small slimes will pile up and the boss fight becomes progressively more difficult overtime.
+
 ![alt text](images/jx/image-22.png)
 * The shadow boss launches a slash projectile towards the player at random intervals, which is difficult to dodge without sufficient movement speed and double jumps.
+
 ![alt text](images/jx/image-15.png)
 * Other minor changes like enemy stats/speed, rewards, hitbox tweaks to ensure smooth game progression and balance.
