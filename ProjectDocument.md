@@ -9,7 +9,7 @@ Cyberpunk 2088 is a 2D infinite progression game set in a neon-drenched, dystopi
 1. [Web-playable version of your game.](https://zhxu33.itch.io/cyberpunk-2088)  
 2. [Trailor](https://www.youtube.com/watch?v=RgVgY8-F4nA)  
 3. [Press Kit](https://languid-capacity-e83.notion.site/Cyberpunk-2088-15b706d55ba380758870fa84dc694b72)  
-4. [Group Project Google Drive Folder](https://docs.google.com/document/d/12pQWgevDNh7WiyPMqM3151Qtb58PCUFHTxBVsjFJRXc/edit?usp=drive_link).
+4. [Group Project Google Drive Folder](https://drive.google.com/drive/folders/1R5iv0R0Rx2gkmcWxXha3Wvq6lbOll6oC?usp=drive_link).
     4.1 [Group Initial Plan](https://docs.google.com/document/d/1TuI_5MxxG3TNvrD7Z8iwSdKDze4Wr04ZUydlNR9okWQ/edit?usp=sharing).
     4.2 [Group Progress Report](https://docs.google.com/document/d/12pQWgevDNh7WiyPMqM3151Qtb58PCUFHTxBVsjFJRXc/edit?usp=sharing).
     4.3 [Tester Comments Image from Final Festival 5 game tester comments](https://drive.google.com/file/d/1tn4Yijyf3Z--mwvjm6qE0DpVtvh7e7A6/view?usp=sharing).
