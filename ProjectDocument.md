@@ -301,3 +301,37 @@ I picked these five enemies and bosses because they all have a strong cyberpunk 
 * The shadow boss launches a slash projectile towards the player at random intervals, which is difficult to dodge without sufficient movement speed and double jumps.
 
 ![alt text](images/jx/image-15.png)
+
+## Boss/Enemy Initial Mechanism and Design - Xiuyuan Qi
+
+In addition to the Boss/Enemy Animation and Visual, I implemented all their basic functionalities.
+
+### Robot Guard Dog's initial mechanism
+
+Initially, the dog shot its bullet horizontally based on the player's location. James further developed it so that it could shoot directly towards the player.
+
+![GIF 12-13-2024 9-05-40 AM](https://github.com/user-attachments/assets/352392b6-bf81-4f08-b0db-9a1618a61a57)
+
+### Self-destructive Slime's initial mechanism
+
+Just like the final mechanism you play, it was also player-detected and exploded with damage to the player. And it was easier to avoid the blast damage than the present one. We buffed it because it needs to be fitted with what a self-destructive slime looks like.
+
+![GIF 12-13-2024 9-11-06 AM](https://github.com/user-attachments/assets/2b9444ba-e46e-4ba6-942b-38264bcc406c)
+
+### Cyber Samurai's initial/final mechanism
+
+Cyber Samurai will chase the player after Raycast2D collides with the player. It is really fast and kills you if you don't kill it first.
+
+![GIF 12-13-2024 9-29-59 AM](https://github.com/user-attachments/assets/21ee807c-3998-46de-bb01-8ac3852a8e45)
+
+### Boss from exercise 1 initial mechanism
+
+I transplanted the boss that appeared in Exercise 1 here and used Zixuan's boss fight code to complete the initial boss fight design.
+
+![GIF 12-13-2024 9-36-52 AM](https://github.com/user-attachments/assets/3edb776f-71ad-48dd-aa97-26e0cf2c0d15)
+
+### Boss Slime's initial mechanism
+
+It chased the player after the player triggered the boss fight. It could only melee attack the player. James further implemented the feature that can throw small self-destructive slime.
+
+![GIF 12-13-2024 9-45-28 AM](https://github.com/user-attachments/assets/11dd032d-c4f5-414b-bac9-81dc5b2a0433)
