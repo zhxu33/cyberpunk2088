@@ -181,10 +181,7 @@ The character system implements:
 
 **All we did is like what we did in exercise 1**
 **In addition, the enemy's movement and physical system are similar to what we did for the game character（player)**
-**For the camera, we choose the very simplest one which is Exercise 2 Stage 1 - Position Lock. The camera will lock on the character and it is the best and easiest on to let the camera follow the player**
-* In the `CameraController` Script, we extend `Camera2D` and the script creates a reference to the player character which is our player.
-* The camera's behavior is straightforward - when the scene starts, it positions itself at the player's location through the `_ready()` function, and then continuously tracks the player's position every frame using the `_process()` function.
-* 
+
 
 
 ## Animation and Visuals
@@ -227,9 +224,18 @@ All these characters are stored in separate collections, making it easy to spawn
 **Enemy Placement System and Other Boss systems WILL BE INTRODUCE in the Sub role - Map Design Part**
 **Level Progression - How Levels Advance**
 After the player killed the boss. We designed a Portal to let the player enter the next level.
+
+
 ![alt text](images/jx/portal_enter.png)
+
+
 The portal will detect the status that we set for it. when the status `dialog_state = "DefeatBoss"`, then the player can use the `confirm` option on the screen to enter the next [level](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L62).
+
+
 ![alt text](images/jx/next_level.png)
+
+
+
 When you start a new level:
     * Your [health](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L75) is restored to maximum 
     * The [level](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L70) counter goes up
@@ -240,6 +246,16 @@ When you start a new level:
 * When the level is up, the map will add [more enemies](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L40) based on the level number
 * Maintaining the challenge through strategic [enemy placement](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L42)
 * Keeping boss encounters fresh by choosing a [random boss](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L53) in the boss room
+
+**Game Logic - Camera**
+
+![alt text](images/jx/camera_movement.gif)
+
+For the camera, we choose the very simplest one which is Exercise 2 Stage 1 - Position Lock. The camera will lock on the character and it is the best and easiest on to let the camera follow the player
+* In the `CameraController` Script, we extend `Camera2D` and the script creates a reference to the player character which is our player.
+* The [camera's behavior](https://github.com/zhxu33/cyberpunk2088/blob/894d764ef305ac81cdd574179f14bcebaae50e42/cyberpunk2088/scripts/camera/camera_controller.gd#L1) is straightforward - when the scene starts, it positions itself at the player's location through the `_ready()` function, and then continuously tracks the player's position every frame using the `_process()` function.
+
+
 ## Boss/Enemy Animation and Visual - Xiuyuan Qi
 
 I implemented animation for all five Boss/Enemy.
