@@ -64,7 +64,7 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 ### User Interface
 
-The `Interface` scene is placed directly under the root node `World`, where other scripts can easily access and manipulate the UI. The scene contains a `CanvasLayer`, which contains all of the game UI elements including `StartScreen`, `Health`, `Coins`, `Level`, `Dialogue`, `Shop`, `EndScreen`, and `Blackout`.
+The `Interface` scene is placed directly under the root node `World`, where other scripts can easily access and manipulate the UI. The scene contains a `Canvas` layer, which contains all of the game UI elements including `StartScreen`, `Health`, `Coins`, `Level`, `Dialogue`, `Shop`, `EndScreen`, and `Blackout`.
 
 ![alt text](images/jx/image-8.png)
 ![alt text](images/jx/image-7.png)
@@ -73,7 +73,7 @@ Each UI element is placed under a control node, where I assign Anchor Presets so
 
 ![alt text](images/jx/image-20.png)
 
-The Interface scene contains a master script [`interface.gd`](https://github.com/zhxu33/cyberpunk2088/blob/main/cyberpunk2088/scripts/interface/interface.gd) which handles all UI interactions. I set up [`stats.gd`](https://github.com/zhxu33/cyberpunk2088/blob/main/cyberpunk2088/scripts/global/stats.gd) which contains autoload global variables including coins, level, health, max_health, and upgrades. This is accessed in the interface to display player statuses.
+The Interface scene contains a master script [`interface.gd`](https://github.com/zhxu33/cyberpunk2088/blob/main/cyberpunk2088/scripts/interface/interface.gd) which handles all UI interactions. I set up [`stats.gd`](https://github.com/zhxu33/cyberpunk2088/blob/main/cyberpunk2088/scripts/global/stats.gd) which contains autoload global variables including `coins`, `level`, `health`, `max_health,` and `upgrades`. This is accessed in the interface to display player statuses.
 
 ### Start Screen
 The start screen appears when the player first joins the game. It has a `Title` label and a blue back that fades out over 2 seconds, which transitions into the game map and player. After the blue background fades, the player can press `Start Game` button to begin playing.
@@ -81,23 +81,23 @@ The start screen appears when the player first joins the game. It has a `Title` 
 ![alt text](images/jx/image-27.png)
 
 ### Health Bar
-The Health Bar is displayed on the top center of the screen canvas. It contains  a `ProgressBar` node, which stores the player's `max_health` into Min Value, and player's `health` into value. It contains a `TextureRect` heart icon and label indicating the player's health.
+The Health Bar is displayed on the center top of the screen `Canvas`. It contains a `ProgressBar` node, which stores the player's `max_health` into Min Value, and player's `health` into value. It contains a `TextureRect` heart icon and `Label` indicating the player's health.
 
 ![alt text](images/jx/image-3.png)
 
 ### Coin
-The coins are displayed on the top right corner of the screen canvas, which is the game currency used to purchase upgrades. It contains a coin `TextureRect` icon on the left of the value.
+The coins are displayed on the top right corner of the screen `Canvas`, which is the game currency used to purchase upgrades. It contains a coin `TextureRect` icon on the left of the `Label` value.
 
 ![alt text](images/jx/image-6.png)
 
 
 ### Level
-The level label is displayed on the top left corner of the screen canvas, indicating the current difficulty of the game.
+The level `Label` is displayed on the top left corner of the screen canvas, indicating the current difficulty of the game.
 
 ![alt text](images/jx/image-9.png)
 
 ### Dialogue
-The dialogue is displayed on the bottom center of the screen canvas. It contains a `Title` label, `Text` description label, `Cancel`, and a `Confirm` button. Pressing the cancel button will always close the dialog without doing anything.
+The dialogue is displayed on the center bottom of the screen `Canvas`. It contains a `Title` label, `Text` description label, `Cancel`, and a `Confirm` button. Pressing the cancel button will always close the dialog without doing anything.
 
 The Merchant Biker has a dialogue where pressing `Confirm` will open up the shop UI.
 
@@ -117,7 +117,7 @@ If the boss is alive, pressing `Confirm` will not do anything.
 ### Shop
 The shop opens after pressing `Confirm` on the Biker dialogue. There is a `Close` button on the top right corner which is used to exit the shop. It has a `Title` "Upgrades" and contains a `GridContainer` inside a `ScrollContainer` which is designed to format the `UpgradeItem` node automatically, and adds a scroll wheel incase the shop interface isn't big enough to fit all upgrades.
 
-The `UpgradeItem` node contains a upgrade name label, cost label, coin icon, and a button with transparent black background which can be clicked on to upgrade. In the interface script, `UpgradeItem` node is cloned based on the available upgrades in `stats.gd` and placed under the `GridContainer` to be formatted automatically.
+The `UpgradeItem` node contains a  upgrade name `Label`, `Cost` label, `CoinIcon`, and a `Button` with transparent black background which can be clicked on to upgrade. In the interface script, `UpgradeItem` node is cloned based on the available `upgrades` in `stats.gd` and placed under the `GridContainer`.
 
 ![alt text](images/jx/image-19.png)
 
@@ -234,7 +234,7 @@ The character system implements:
 * Added random map and enemies generation. The number of enemies increase (`num_spawns + level * num_spawns / 10`) and has higher health after each level. Enemy spawns are placed around the map to ensure full coverage. A spawn can generate more than one enemy with a position offset to avoid overlap.
 
 ![alt text](images/jx/image-14.png)
-* Enemies and boss have a fixed damage, but their health increases after each level. The `formula is 100 + 50 * level` for enemies, and bosses have 5 times the amount of health as enemies.
+* Enemies and boss have a fixed damage, but their health increases after each level. The formula is `100 + 50 * level` for enemies, and bosses have 5 times the amount of health as enemies.
 * Added coins and health restore drops to provide a better incentive for the player to kill enemies. The base coin reward is `20 + 10 * level` for enemies. Health drop has a 20% of dropping from any enemy, which restores 10% of the player's max health. Bosses drop 5 times the amount of enemy coin rewards, and has a guaranteed chance of dropping 5 health restores.
 
 ![alt text](images/jx/image-13.png) 
