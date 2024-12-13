@@ -271,6 +271,3 @@ The character system implements:
 ![alt text](images/jx/image-22.png)
 
 * The shadow boss launches a slash projectile towards the player at random intervals, which is difficult to dodge without sufficient movement speed and double jumps.
-
-![alt text](images/jx/image-15.png)
-* Other minor changes like enemy stats/speed, rewards, hitbox tweaks to ensure smooth game progression and balance.
