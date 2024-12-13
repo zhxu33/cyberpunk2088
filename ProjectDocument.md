@@ -78,7 +78,7 @@ The Interface scene contains a master script [`interface.gd`](https://github.com
 ### Start Screen
 The start screen appears when the player first joins the game. It has a title label and a blue background that fades out over 2 seconds, which transitions into the game map and player. After the blue background fades, the player can press `Start Game` button to begin playing.
 
-![alt text](images/jx/image.png)
+![alt text](images/jx/image-27.png)
 
 ### Health Bar
 The Health Bar is displayed on the top center of the screen canvas. It contains  a `ProgressBar` node, which stores the player's `max_health` into Min Value, and player's `health` into value. It contains a `TextureRect` heart icon and label indicating the player's health.
@@ -128,39 +128,24 @@ Once the player's health reaches 0, the death screen becomes visible and all inp
 ![alt text](images/jx/image-1.png)
 
 
-## Blackout
-This is a blue background used for transitioning between levels, or when starting a new game after death. The background fades in for 0.5 seconds, waits 1 second, and then fades out 1 second during a transition. This is similar to the fade out effect used in the start screen.
+### Blackout
+This is a blue background used for transitioning between levels, or when starting a new game after death. The background fades in for 0.5 seconds, waits 1 second, and then fades out 1 second during a transition.
 
-![alt text](images/jx/image-27.png)
-
+![alt text](images/jx/image-28.png)
 
 ## User Input
 
-The game input is configured in the project's Input Map settings. This currently only supports players with a mouse and keyboard. All inputs are handled in `player.gd` physics process. All inputs are disabled when the Start Screen or Death Screen is open, and re-enabled once the player starts a new game.
+The game input is configured in the project's Input Map settings. This currently only supports players with a mouse and keyboard. All inputs are handled in `player.gd` physics process. Inputs are disabled when the Start Screen or Death Screen is open, and re-enabled once the player starts a new game.
+
+* `move_left`: hold **A** or **Left Arrow** key.
+* `move_right`: hold **D** or *Right Arrow* key.
+* `jump`: Press **W**, **Space**, or **Up Arrow** key. Also used for double jump and climbing ladders.
+* `ranged_attack`: Hold **Left Click**
+* `meele_attack`: **Right Click**
+* `return`: Hold **R** for 1 second to teleport back to spawn.
+* `tp_cheat`: Press `T` to teleport to the direction of mouse. Used for testing purposes.
 
 ![alt text](images/jx/image-11.png)
-
-### move_left
-The player can move left by holding `A` or `Left Arrow` key.
-
-### move_right
-The player can move right by holding `D` or `Right Arrow` key.
-
-### jump
-The player can jump using `W`, `Space`, or `Up Arrow` keys. The `jump` input is also used for double jump and climbing ladders.
-
-### ranged_attack
-The player can use ranged attack by holding `Left Click` with the mouse.
-
-### meele_attack
-The player can use meele attack by `Right Click` with the mouse.
-
-### return
-The player can return to spawn by holding `R` for 1 second.
-
-### tp_cheat
-The player can teleport to the direction of their mouse by pressing `T`. This is used for testing purposes.
-
 
 ## Movement/Physics
 
@@ -255,14 +240,14 @@ The character system implements:
 ![alt text](images/jx/image-13.png) 
 ![alt text](images/jx/image-16.png)
 
-### Upgrade System
+### Upgrades
 * Implemented upgrades including `Maximum Health` `Double Jump`, `Movement Speed`, `Jump Power`, `Bullet Count`, `Ricochet`, `Bullet Penetrate`, `Bullet Speed`, `Exploding Attack`, `Attack Damage`, `Attack Speed`, and `Critical Chance`. Each can be upgraded up to level 10 and the cost doubles each time starting from 100 coins. 
 * Added bullet explosion and ricochet upgrades to make the gameplay action more fun. Player can avoid attacks more easily with upgrades like double jump and movement speed.
 
 [![Image from Gyazo](https://i.gyazo.com/edaf8762fc17bc9e4823fc14df061b1b.gif)](https://gyazo.com/edaf8762fc17bc9e4823fc14df061b1b)
 
 ### Combat System
-* Added damage indicator for player (red) and enemies (blue), which fades out after 0.5 seconds after being damaged.
+* Added damage indicator for player (red) and enemies (blue), which fades out over 1 second after being damaged.
 
 ![alt text](images/jx/image-26.png)
 ![alt text](images/jx/image-25.png)
