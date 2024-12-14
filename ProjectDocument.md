@@ -379,7 +379,7 @@ Any action that what player will do based on a command, we contained in the play
 **Enemy and Player Placement System and Other Boss systems WILL BE INTRODUCE in the Sub role - Map Design Part**
 
 
-**Teleport Logic**
+**Portal Teleport Logic**
 
 After the player killed the boss. We designed a Portal to let the player enter the next level.
 
@@ -389,7 +389,11 @@ The portal will detect the status that we set for it. when the status `dialog_st
 
 ![alt text](images/jx/next_level.png)
 
+**Teleport Logic**
 
+![alt text](images/jx/tp.gif)
+
+The player can press `R` to back to the spawn position
 
 **Level Progression - How Levels Advance**
 **Map Level Generation Works**
@@ -546,7 +550,7 @@ To better plan and deploy different decorative modules, the ladder model was uni
 
 ![alt text](images/jx/boss_spawn.png)
 
-In the `[world.gd](https://github.com/zhxu33/cyberpunk2088/blob/6cb0dcf6951d72ab7f50c95bf30a00266151a5d8/cyberpunk2088/scripts/world.gd#L32)`,
+In the [world.gd](https://github.com/zhxu33/cyberpunk2088/blob/6cb0dcf6951d72ab7f50c95bf30a00266151a5d8/cyberpunk2088/scripts/world.gd#L36)
 
 * Each level has exactly one boss enemy
 * The boss is placed in the boss area by the `BossSpawn node`
@@ -556,6 +560,9 @@ In the `[world.gd](https://github.com/zhxu33/cyberpunk2088/blob/6cb0dcf6951d72ab
 ![alt text](images/jx/player_spawn.png)
 
 * No matter whether the player is `died` or `teleported back to spawn`, the `player spawn node` location will be the place the player comes out
+
+**NPC**
+The NPC will directly show up on the map and we put multiple NPC at different locations of the map to let the player update their skills.
 
 ## Press Kit and Trailer - siwei Tan (siwtan@ucdavis.edu)
 
