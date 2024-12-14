@@ -470,7 +470,15 @@ Haoyuan (Aaron) Shan - Map Design/MapMechanism
 James Xu - Game Feel
 Xiuyuan Qi - Boss/Enemy Initial Mechanism and Design
 
-## Audio - siwei Tan (siwtan@ucdavis.edu) & Zixuan Weng 
+## Game tester - Zixuan Weng (zxweng@ucdavis.edu)
+As tester myself, I just game the game once and once again and report bugs or improvement point to my groupmate. If you're reading this, you've discovered the cheat feature that you can use T button to flash to your mouse. But beside this, it's valubale to mention other tester's comment of us. 
+- Both professor and testers mention that our dog is too dark, which is difficult to discover them in also dark background. (we will find some more fashion dogs)
+- When SlimeBoss overlaps you and spawn slime boomer, the game may crash.
+- The doublejump is counterintuitive. (It is designed that player can only multi jump when character drop, so you need to control timing. Maybe not a good design)
+- Melee attack is useless. (It's true, the enemy Ninja's melee attack can kill you in seconds if you dare to approach him)
+- The difficulty level might be too high for intro player. (Yes there are dark souls player in our team)
+The slime bug is fixed, I hope you enjoy this game! (when other problems remained temporarily)
+## Audio - siwei Tan (siwtan@ucdavis.edu) & Zixuan Weng (zxweng@ucdavis.edu)
 Siwei Tan Role: Providing most of the  audio assets:
 - [background musics](https://davidkbd-itch-io.translate.goog/pink-bloom-synthwave-music-pack?_x_tr_sl=en&_x_tr_tl=zh-CN&_x_tr_hl=zh-CN&_x_tr_pto=sc)
 - [palyer hurt sound effect](https://www.zapsplat.com/music/female-grunt-in-pain-breathy-as-if-reacting-to-an-impact/)
