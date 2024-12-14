@@ -161,7 +161,7 @@ Besides most of the audio assets, including:
 
 - [gun shots & dog shooting laser sound effect](https://shapeforms.itch.io/shapeforms-audio-free-sfx)
 
-## User Interface and Input - James Xu
+## User Interface and Input - James Xu (zhcxu@ucdavis.edu)
 
 ### User Interface
 
@@ -306,10 +306,67 @@ The character system implements:
 **World Management**
 The game [world](https://github.com/zhxu33/cyberpunk2088/blob/8d7a970efad04fd0dad5144f9eb6f5c1f833ce91/cyberpunk2088/scripts/world.gd#L1) is designed as a system of sub-systems providing for various aspects of the gameplay. Fundamentally, the world is the maps, enemies, bosses, and NPCs that go into making up the whole game.
 **Map Generation System**
+<<<<<<< HEAD
 Randomly selectable are [two principal maps](https://github.com/zhxu33/cyberpunk2088/blob/1f936a282df19a1f0fc453156f62eb676ab69458/cyberpunk2088/scripts/world.gd#L27), which the world keeps; one can be selected for a new level. These maps already exist in the memory when the game begins and so can be accessed immediately when required.
+=======
+Randomly selectable are [two principal maps](https://github.com/zhxu33/cyberpunk2088/blob/1f936a282df19a1f0fc453156f62eb676ab69458/cyberpunk2088/scripts/world.gd#L27), which the world keeps; one can be selected for a new level. These maps already exist in the memory when the game begins and so can be accessed immediately when required. 
+
+>>>>>>> 81ec3e0f309466364ae6f062b1ae5164551ef586
 ![alt text](images/jx/preload_map.png)
+
 **Character Management**
 The world handles three main types of characters:
+<<<<<<< HEAD
+=======
+* Regular Enemies (dogs, samurai, and slimes)
+* Boss Characters(different types of powerful enemies)
+* NPCs(merchants who can interact with the player)
+* Players (merchants who can interact with the player)
+All these characters are stored in separate collections, making it easy to spawn the right type of character when needed.
+**Character Management**
+The world handles three main types of characters:
+* Regular Enemies (dogs, samurai, and slimes)
+* Boss Characters(different types of powerful enemies)
+* NPCs(merchants who can interact with the player)
+* Players (merchants who can interact with the player)
+All these characters are stored in separate collections, making it easy to spawn the right type of character when needed.
+
+### Player (Character)
+
+![alt text](images/jx/player_folder.png)
+
+Any action that what player will do based on a command, we contained in the player's folder, but the main instructions are still written in the `player.gd`. 
+
+**Combat System**: The player features a dual-combat system with both ranged and melee capabilities.
+* [Ranged Combat](https://github.com/zhxu33/cyberpunk2088/blob/c7eeb37dbb8d9666f9e0dbcc4e84a139000d0612/cyberpunk2088/scripts/characters/player.gd#L74):
+  * When a player wants to use a `ranged attack` by pushing the key `mouse left button`, first the game would consider the cooldown_elapsed of the player's shot. If it has, the player fires a ranged attack on the enemies.
+     * **Cooldown System**:
+     * Base cooldown: 0.75 seconds
+     * Reduced by Attack Speed upgrades (0.05s per level)
+     * Tracked by cooldown_elapsed counter
+   
+![alt text](images/jx/shooting.gif)
+
+
+* [Melee Combat](https://github.com/zhxu33/cyberpunk2088/blob/c7eeb37dbb8d9666f9e0dbcc4e84a139000d0612/cyberpunk2088/scripts/characters/player.gd#L101):
+  * The melee system works similarly but has a longer waiting period - about 1.6 times longer than ranged attacks. When the player presses the `mouse right button`, the game checks if enough time has passed (using cooldown_elapsed2), then performs the melee attack if you're ready. This makes melee attacks slower but potentially more powerful than ranged attacks.
+
+![alt text](images/jx/melleattack.gif)
+
+
+* [Damage System Explanation](https://github.com/zhxu33/cyberpunk2088/blob/c7eeb37dbb8d9666f9e0dbcc4e84a139000d0612/cyberpunk2088/scripts/characters/player.gd#L118)
+   * When the character takes damage, several things happen in sequence:
+      * First, the game checks if the player's already dead - if yes, no more damage is taken
+      * If the player's alive, it creates floating damage numbers above your character showing how much damage you took
+      * Your health drops to zero or below
+
+**Reset and Death Explanation**
+* This system handles both what 
+
+**Enemy and Player Placement System and Other Boss systems WILL BE INTRODUCE in the Sub role - Map Design Part**
+**Level Progression - How Levels Advance**
+After the player killed the boss. We designed a Portal to let the player enter the next level.
+>>>>>>> 81ec3e0f309466364ae6f062b1ae5164551ef586
 
 - Regular Enemies (dogs, samurai, and slimes)
 - Boss Characters(different types of powerful enemies)
@@ -337,11 +394,35 @@ The portal will detect the status that we set for it. when the status `dialog_st
 
 ![alt text](images/jx/next_level.png)
 
+<<<<<<< HEAD
 When you start a new level:
 _ Your [health](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L75) is restored to maximum
 _ The [level](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L70) counter goes up
 _ A new random [map](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L27) is chosen
 _ New [enemies and a boss](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L36) are placed in the location of the new map \* The [player](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L32) will spawn at the location of the new map
+=======
+
+
+**Map Level Generation Works**
+  When a new level begins, the world goes through several important steps:
+  * It cleans up the current level by：
+     * Removing all coins and health pickups from the previous level
+     * Making the screen go dark for a smooth transition
+     * Resetting the boss status
+  * Then it builds the new level by:
+    * Choosing a random map from its collection
+    * Placing the player at their starting position
+    * Spaning enemies throughout the level
+    * Placing the boss in the specific location in the boss room
+
+When you start a new level:
+* Your [health](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L75) is restored to maximum 
+* The [level](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L70) counter goes up
+* A new random [map](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L27) is chosen
+* New [enemies and a boss](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L36) are placed in the location of the new map
+* The [player](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L32) will spawn at the location of the new map
+    
+>>>>>>> 81ec3e0f309466364ae6f062b1ae5164551ef586
 **Difficulty Scaling**
 
 - When the level is up, the map will add [more enemies](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L40) based on the level number
@@ -361,27 +442,27 @@ For the camera, we choose the very simplest one which is Exercise 2 Stage 1 - Po
 
 I implemented animation for all five Boss/Enemy.
 
-![GIF 12-13-2024 7-15-06 AM](https://github.com/user-attachments/assets/72424857-e56a-4d0c-bc79-171110b13e0d)
-![GIF 12-13-2024 7-18-47 AM](https://github.com/user-attachments/assets/57a17660-6cc6-4772-bfa1-63fda31513ee)
-![GIF 12-13-2024 7-20-45 AM](https://github.com/user-attachments/assets/c7eaf1e7-2f5d-4f1b-96b8-636bfa0fa4ff)
-![GIF 12-13-2024 7-24-20 AM](https://github.com/user-attachments/assets/d9dabbdf-c37d-45aa-98c3-e4a8189526b0)
-![GIF 12-13-2024 7-25-51 AM](https://github.com/user-attachments/assets/eff442cd-81e3-41c8-ac07-958d80f610bb)
+![alt text](images/xyq/gif01.gif)
+![alt text](images/xyq/gif02.gif)
+![alt text](images/xyq/gif03.gif)
+![alt text](images/xyq/gif04.gif)
+![alt text](images/xyq/gif05.gif)
 
 Hitbox disabled/enabled to be consistent with the animation.
 
-![GIF 12-13-2024 7-33-34 AM](https://github.com/user-attachments/assets/659df706-c8bf-4cf6-83e3-2e58b4d841bc)
-![GIF 12-13-2024 7-34-38 AM](https://github.com/user-attachments/assets/4214d2ef-3c93-442b-addf-6831f3f98406)
-![GIF 12-13-2024 7-37-24 AM](https://github.com/user-attachments/assets/f52b7e13-08ba-4ec0-9407-5ec9fa329fb6)
+![alt text](images/xyq/gif06.gif)
+![alt text](images/xyq/gif07.gif)
+![alt text](images/xyq/gif08.gif)
 
 Collision shape that triggers Enemy moves/Boss fight begins.
 
-![GIF 12-13-2024 7-40-12 AM](https://github.com/user-attachments/assets/9ecde3f1-8017-4509-8fa6-b18073f80646)
-![GIF 12-13-2024 7-43-04 AM](https://github.com/user-attachments/assets/2e8384d6-e0e5-469d-9e1a-68ef5322c38a)
-![GIF 12-13-2024 7-45-48 AM](https://github.com/user-attachments/assets/100b9d8d-b025-49e8-91e6-5e9faee087f2)
+![alt text](images/xyq/gif09.gif)
+![alt text](images/xyq/gif10.gif)
+![alt text](images/xyq/gif11.gif)
 
 RayCast2D that triggers samurai to chase the player:
 
-![GIF 12-13-2024 7-54-35 AM](https://github.com/user-attachments/assets/309272a4-4f5a-47be-961a-9486e53a0d58)
+![alt text](images/xyq/gif12.gif)
 
 I picked these five enemies and bosses because they all have a strong cyberpunk feel that matches our game’s style. They look futuristic, their animations are smooth, and they just feel right for the world we’ve built. Each one brings its own kind of energy, so when you face them, it feels intense and exciting. They are everything I hoped for when I pictured the perfect enemies for our game.
 
@@ -411,7 +492,7 @@ I picked these five enemies and bosses because they all have a strong cyberpunk 
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
-## Game Feel and Polish - James Xu
+## Game Feel and Polish - James Xu (zhcxu@ucdavis.edu)
 
 ### Progression System
 
@@ -470,28 +551,28 @@ In addition to the Boss/Enemy Animation and Visual, I implemented all their basi
 
 Initially, the dog shot its bullet horizontally(either left or right) based on the player's location. James further developed it so that it could shoot directly towards the player.
 
-![GIF 12-13-2024 9-05-40 AM](https://github.com/user-attachments/assets/352392b6-bf81-4f08-b0db-9a1618a61a57)
+![alt text](images/xyq/gif13.gif)
 
 ### Self-destructive Slime's initial mechanism
 
 Just like the final mechanism you play, it was also player-detected and exploded with damage to the player. And it was easier to avoid the blast damage than the present one. We buffed it because it needs to be fitted with what a self-destructive slime looks like.
 
-![GIF 12-13-2024 9-11-06 AM](https://github.com/user-attachments/assets/2b9444ba-e46e-4ba6-942b-38264bcc406c)
+![alt text](images/xyq/gif14.gif)
 
 ### Cyber Samurai's initial/final mechanism
 
 Cyber Samurai will chase the player after Raycast2D collides with the player. It is really fast and kills you if you don't kill it first.
 
-![GIF 12-13-2024 9-29-59 AM](https://github.com/user-attachments/assets/21ee807c-3998-46de-bb01-8ac3852a8e45)
+![alt text](images/xyq/gif15.gif)
 
 ### Boss from exercise 1 initial mechanism
 
 I transplanted the boss that appeared in Exercise 1 here and used Zixuan's boss fight code to complete the initial boss fight design.
 
-![GIF 12-13-2024 9-36-52 AM](https://github.com/user-attachments/assets/3edb776f-71ad-48dd-aa97-26e0cf2c0d15)
+![alt text](images/xyq/gif16.gif)
 
 ### Boss Slime's initial mechanism
 
 It chased the player after the player triggered the boss fight. It could only melee attack the player. James further implemented the feature that can throw small self-destructive slime.
 
-![GIF 12-13-2024 9-45-28 AM](https://github.com/user-attachments/assets/11dd032d-c4f5-414b-bac9-81dc5b2a0433)
+![alt text](images/xyq/gif17.gif)
