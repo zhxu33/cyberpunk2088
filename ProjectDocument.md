@@ -46,17 +46,11 @@ As the player, you will see an NPC near the spawn location. At the beginning of 
 2. The Death of Brighter from Exercise 1.
 
 # Main Roles
-
-Your goal is to relate the work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
-
-Below is a template for you to highlight items of your work. These provide the evidence needed for your work to be evaluated. Try to have at least four such descriptions. They will be assessed on the quality of the underlying system and how they are linked to course content.
-
-_Short Description_ - Long description of your work item that includes how it is relevant to topics discussed in class. [link to evidence in your repository](https://github.com/dr-jam/ECS189L/edit/project-description/ProjectDocumentTemplate.md)
-
-Here is an example:  
-_Procedural Terrain_ - The game's background consists of procedurally generated terrain produced with Perlin noise. The game can modify this terrain at run-time via a call to its script methods. The intent is to allow the player to modify the terrain. This system is based on the component design pattern and the procedural content generation portions of the course. [The PCG terrain generation script](https://github.com/dr-jam/CameraControlExercise/blob/513b927e87fc686fe627bf7d4ff6ff841cf34e9f/Obscura/Assets/Scripts/TerrainGenerator.cs#L6).
-
-You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
+* Siwei Tan -	Producer
+* Zixuan Weng	- player's Movement/Physics + Animation and Visuals
+* Haoyuan (Aaron) Shan - Game Logic
+* James Xu - User Interface and Input
+* Xiuyuan Qi - Boss and enemy mechanism, Animation and Visuals
 
 ## Producer - Siwei Tan(siwtan@ucdavis.edu)
 
@@ -69,9 +63,9 @@ As the producer, I ensured consistent communication within the team through a st
 - set up daily to-do lists to members on discord to keep track of their progress.
 
 
-## Cyberpunk 2088 Project Timeline
+### Cyberpunk 2088 Project Timeline
 
-### Week 1: Initial Planning
+#### Week 1: Initial Planning
 
 **Tasks:**
 
@@ -81,7 +75,7 @@ As the producer, I ensured consistent communication within the team through a st
 - Draft level procudeures and game mechanics map.
 
 
-### Week 2: Prototyping
+#### Week 2: Prototyping
 
 **Tasks:**
 
@@ -91,7 +85,7 @@ As the producer, I ensured consistent communication within the team through a st
 - Playable prototype with basic mechanics.
 - Updated progress report.
 
-### Week 3: Core Systems and UI Development
+#### Week 3: Core Systems and UI Development
 
 **Tasks:**
 
@@ -104,7 +98,7 @@ As the producer, I ensured consistent communication within the team through a st
 - Functional UI linked to gameplay.
 - Initial enemy prototypes implemented.
 
-### Week 4: Level and Sound Design
+#### Week 4: Level and Sound Design
 
 **Tasks:**
 
@@ -117,7 +111,7 @@ As the producer, I ensured consistent communication within the team through a st
 - Initial map pool and assets ready.
 - Complete audio system integrated.
 
-### Week 5: Testing, Feedback, and Final Polish
+#### Week 5: Testing, Feedback, and Final Polish
 
 **Tasks:**
 
@@ -130,7 +124,7 @@ As the producer, I ensured consistent communication within the team through a st
 - Final playable version.
 - Press kit and trailer ready.
 
-## Incharge of the compose of intial plan and progress report:
+### Incharge of the compose of intial plan and progress report:
 
 - [Group Initial Plan](https://docs.google.com/document/d/1TuI_5MxxG3TNvrD7Z8iwSdKDze4Wr04ZUydlNR9okWQ/edit?usp=sharing).
 - [Group Progress Report](https://docs.google.com/document/d/12pQWgevDNh7WiyPMqM3151Qtb58PCUFHTxBVsjFJRXc/edit?usp=sharing).
@@ -242,7 +236,7 @@ The game input is configured in the project's Input Map settings. This currently
 
 ![alt text](images/jx/image-11.png)
 
-## Movement/Physics
+## Player's Movement/Physics + Animation and Visuals - Zixuan Weng(zxweng@ucdavis.edu)
 
 **Describe the basics of movement and physics in your game. Is it the standard physics model? What did you change or modify? Did you make your movement scripts that do not use the physics system?**
 We contain two essential folders in the script folder: character and command. They include the main movements and any other important physics of the game characters and enemies.
@@ -278,24 +272,6 @@ The character system implements:
 
 **All we did is like what we did in exercise 1**
 **In addition, the enemy's movement and physical system are similar to what we did for the game character（player)**
-
-## Animation and Visuals (Resources & Credit)
-
-1. [character & NPC](https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art)
-2. [Backgroud](https://free-game-assets.itch.io/free-city-backgrounds-pixel-art).
-3. [Tileset](https://free-game-assets.itch.io/free-industrial-zone-tileset-pixel-art).
-4. [Protal](https://www.pngall.com/portal-png/download/33556/#google_vignette).
-5. [Coins](https://www.flaticon.com/free-icon/coin_217802).
-6. [Heart](https://reserve.freesvg.org/red-heart-with-black-outline).
-7. [Weapons and Bullets](https://free-game-assets.itch.io/free-guns-for-cyberpunk-characters-pixel-art).|
-8. [Dog](https://vivicat.itch.io/robot-dog-sprite-sheet)
-9. [Samurai](https://gabry-corti.itch.io/cyberpunk-samurai)
-10. [Teleport Spawn Image](https://pngtree.com/freepng/blue-magic-teleportation-array_6552993.html)
-11. [Boss Death of Bringer](https://clembod.itch.io/bringer-of-death-free)
-12. [Character Gun](https://free-game-assets.itch.io/free-guns-pack-2-for-main-characters-pixel-art)
-13. [Bullet/Projectile](https://free-game-assets.itch.io/free-guns-pack-2-for-main-characters-pixel-art)
-14. slime (special thanks for our slime sprites animation: Wu Jiaen, jiaewu20@student.scad.edu)
-
 
 ## Game Logic - Aaron Shan (shyshan@ucdavis.edu)
 
@@ -495,6 +471,12 @@ I picked these five enemies and bosses because they all have a strong cyberpunk 
 
 # Sub-Roles
 
+Zixuan Weng -	Gameplay Testing + audio
+Siwei Tan	- Press Kit and Trailer
+Haoyuan (Aaron) Shan - Map Design/MapMechanism
+James Xu - Game Feel
+Xiuyuan Qi - Boss/Enemy Initial Mechanism and Design
+
 ## Audio - siwei Tan (siwtan@ucdavis.edu) & Zixuan Weng 
 
 <!-- **List your assets, including their sources and licenses.**
@@ -681,3 +663,20 @@ It chased the player after the player triggered the boss fight. It could only me
 ![alt text](images/xyq/gif17.gif)
 
 Boss Slime has a boss fight trigger area, which is controlled by [this code](https://github.com/zhxu33/cyberpunk2088/blob/3082f675c2a3b2b0ea0513b0edef301f7bf62ea9/cyberpunk2088/scripts/characters/boss_slime.gd#L120C1-L123C23). It has an attack timer that [every 2 seconds](https://github.com/zhxu33/cyberpunk2088/blob/3082f675c2a3b2b0ea0513b0edef301f7bf62ea9/cyberpunk2088/scripts/characters/boss_slime.gd#L126C1-L127C18) it attacks the player. It will always [face](https://github.com/zhxu33/cyberpunk2088/blob/3082f675c2a3b2b0ea0513b0edef301f7bf62ea9/cyberpunk2088/scripts/characters/boss_slime.gd#L82) and [chase](https://github.com/zhxu33/cyberpunk2088/blob/3082f675c2a3b2b0ea0513b0edef301f7bf62ea9/cyberpunk2088/scripts/characters/boss_slime.gd#L97) the player after the boss fight triggers.
+
+## Source of most Animation and Visuals (Resources & Credit)
+
+1. [character & NPC](https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art)
+2. [Backgroud](https://free-game-assets.itch.io/free-city-backgrounds-pixel-art).
+3. [Tileset](https://free-game-assets.itch.io/free-industrial-zone-tileset-pixel-art).
+4. [Protal](https://www.pngall.com/portal-png/download/33556/#google_vignette).
+5. [Coins](https://www.flaticon.com/free-icon/coin_217802).
+6. [Heart](https://reserve.freesvg.org/red-heart-with-black-outline).
+7. [Weapons and Bullets](https://free-game-assets.itch.io/free-guns-for-cyberpunk-characters-pixel-art).|
+8. [Dog](https://vivicat.itch.io/robot-dog-sprite-sheet)
+9. [Samurai](https://gabry-corti.itch.io/cyberpunk-samurai)
+10. [Teleport Spawn Image](https://pngtree.com/freepng/blue-magic-teleportation-array_6552993.html)
+11. [Boss Death of Bringer](https://clembod.itch.io/bringer-of-death-free)
+12. [Character Gun](https://free-game-assets.itch.io/free-guns-pack-2-for-main-characters-pixel-art)
+13. [Bullet/Projectile](https://free-game-assets.itch.io/free-guns-pack-2-for-main-characters-pixel-art)
+14. slime (special thanks for our slime sprites animation: Wu Jiaen, jiaewu20@student.scad.edu)
