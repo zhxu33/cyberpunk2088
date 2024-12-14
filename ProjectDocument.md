@@ -276,7 +276,7 @@ The character system implements:
 **All we did is like what we did in exercise 1**
 **In addition, the enemy's movement and physical system are similar to what we did for the game character（player)**
 
-## Animation and Visuals
+## Animation and Visuals (Resources & Credit)
 
 1. [character & NPC](https://free-game-assets.itch.io/free-3-cyberpunk-sprites-pixel-art)
 2. [Backgroud](https://free-game-assets.itch.io/free-city-backgrounds-pixel-art).
@@ -494,9 +494,18 @@ Zixuan Weng Role: Implementing the audio system.
 
 **Summarize the key findings from your gameplay tests.**
 
-## Map Design/Map Mechanism
+## Map Design/Map Mechanism - Aaron Shan (shyshan@ucdavis.edu)
+This part is the hardest part of the art design work for our group. I draw the map and do many deletions and updates  for each map then we get our final version of `[map_one.tscn](cyberpunk2088/scenes/maps/map_one.tscn)` and `[map_two.tscn](cyberpunk2088/scenes/maps/map_two.tscn)`
+While the map as a whole looks complex, there will always be a way for the player to explore the boss's house.
+Through the process of designing the map, I used the [tileset](https://free-game-assets.itch.io/free-industrial-zone-tileset-pixel-art) for the design.
 
-**Document how the narrative is present in the game via assets, gameplay systems, and gameplay.**
+**Map1 and Map2 Buidling Structure**
+
+![alt text](images/jx/map_struction.png)
+
+I chose to spread the elements to different layers `TileMapLayer`, `TileMapLayer2`, and `TileMapLayer3`so that we have a clear version of what elements we need to put on so that there will be no elements hidden.
+
+
 
 ## Press Kit and Trailer - siwei Tan (siwtan@ucdavis.edu)
 
