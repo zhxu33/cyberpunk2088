@@ -60,7 +60,7 @@ You should replay any **bold text** with your relevant information. Liberally us
 
 **Describe the steps you took in your role as producer. Typical items include group scheduling mechanisms, links to meeting notes, descriptions of team logistics problems with their resolution, project organization tools (e.g., timelines, dependency/task tracking, Gantt charts, etc.), and repository management methodology.**
 
-## User Interface and Input - James Xu
+## User Interface and Input - James Xu (zhcxu@ucdavis.edu)
 
 ### User Interface
 
@@ -354,7 +354,7 @@ I picked these five enemies and bosses because they all have a strong cyberpunk 
 
 **Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
 
-## Game Feel and Polish - James Xu
+## Game Feel and Polish - James Xu (zhcxu@ucdavis.edu)
 
 ### Progression System
 * Added random map and enemies generation. The number of enemies increase (`num_spawns + level * num_spawns / 10`) and has higher health after each level. Enemy spawns are placed around the map to ensure full coverage. A spawn can generate more than one enemy with a position offset to avoid overlap.
