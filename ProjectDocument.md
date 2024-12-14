@@ -505,7 +505,30 @@ Through the process of designing the map, I used the [tileset](https://free-game
 
 I chose to spread the elements to different layers `TileMapLayer`, `TileMapLayer2`, and `TileMapLayer3`so that we have a clear version of what elements we need to put on so that there will be no elements hidden.
 
+![alt text](images/jx/element_map.png)
 
+These are some elements that I used in the `TileMampLayer` and `TileMapLayer2` in both maps
+
+**Ladder System**
+The ladder system is designed as an Area2D node that detects when the player enters or exits its area, enabling climbing functionality.
+
+![alt text](images/jx/climbing.gif)
+
+When Player Enters Ladder Area:
+* Checks if the entering body is the player
+* Locates the player node in the scene tree
+* Enables ladder-climbing mode for the player
+
+When Player Exists Ladder Area:
+* Detects when the player leaves the ladder area
+* Disables ladder-climbing mode
+* Returns player to normal movement
+
+Interaction with Player Movement:
+* When ladder_on is `true`:
+  * Player can press `jump` to climb up
+  * `Vertical movement` speed is based on player's `movement speed`
+  * Normal gravity can be overcome while climbing.
 
 ## Press Kit and Trailer - siwei Tan (siwtan@ucdavis.edu)
 
