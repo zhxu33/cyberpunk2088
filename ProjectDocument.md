@@ -257,7 +257,7 @@ However, the multi_jump animation is exception. StateMachine is forced to travel
 ![image](https://github.com/user-attachments/assets/ffcb8dfa-9297-49b1-a92b-6deaac6ee497)
 1. In game, player will aim at enemies using the mouse so that the gun should always point toward the mouse. The Gun is the child node of main character and is saved as scene. After setting the position and offset of the gun, the rotation parameter can rotate the gun in an appropriate manner. I code the [_process](https://github.com/zhxu33/cyberpunk2088/blob/27a21bcf4ff273b436af26cfca110025d69dcd36/cyberpunk2088/scripts/battle/weapon.gd#L24) function in weapon scene to automatically adjust rotation. When weapon rotate to other side, the function flip the sprite of gun. When player try to rotate the gun exceeding min_angle and max_angle, the function limit rotation to cloestest limitation.
 2. The Gun scene also hold the [fire](https://github.com/zhxu33/cyberpunk2088/blob/27a21bcf4ff273b436af26cfca110025d69dcd36/cyberpunk2088/scripts/battle/weapon.gd#L43) function that is bind to command of main characters. To make sure the bullet is fired from the correct position and angle, the gun get the position of two childnodes located at both ends of the gun barrel. The bullet is spawned at the front end, and its direction follows the extension of the line from the back end to the front end. This design could work when gun not point toward the mouse immediately.
-3. To avoid the unreasonable situation where the character walks forward while the gun points backward，the facing of main character is determined by the direction of gun. When player's facing is same with moveing direction, the playMode of "run" is forward, but when player's facing is different with moveing direction, the playMode of "run" is backward.  
+3. To avoid the unreasonable situation where the character walks forward while the gun points backward，the facing of main character is determined by the direction of gun. To keep the animation correct, when player's facing is same with moveing direction, the playMode of "run" is forward, but when player's facing is different with moveing direction, the playMode of "run" is backward. The playmode is controled by [_manage_animation_tree_state](https://github.com/zhxu33/cyberpunk2088/blob/27a21bcf4ff273b436af26cfca110025d69dcd36/cyberpunk2088/scripts/characters/player.gd#L137) function I mentioned before.
 ![2024-12-14000452-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/e399b2cb-9915-44d3-bc37-7bbcdca7b09e)
 
 ### HurtBox and HitBox
@@ -471,19 +471,15 @@ James Xu - Game Feel
 Xiuyuan Qi - Boss/Enemy Initial Mechanism and Design
 
 ## Audio - siwei Tan (siwtan@ucdavis.edu) & Zixuan Weng 
-
-<!-- **List your assets, including their sources and licenses.**
-
-**Describe the implementation of your audio system.**
-
-**Document the sound style.** -->
-
 Siwei Tan Role: Providing most of the  audio assets:
-
 - [background musics](https://davidkbd-itch-io.translate.goog/pink-bloom-synthwave-music-pack?_x_tr_sl=en&_x_tr_tl=zh-CN&_x_tr_hl=zh-CN&_x_tr_pto=sc)
 - [palyer hurt sound effect](https://www.zapsplat.com/music/female-grunt-in-pain-breathy-as-if-reacting-to-an-impact/)
 - [slime sound effect](https://uppbeat.io/sfx/slime-impact/13757/34483)
 - [gun shots & dog shooting laser sound effect](https://shapeforms.itch.io/shapeforms-audio-free-sfx)
+ZixuanWeng: Add audio in to game
+- The guiding principle is simple: we aim to find some cyberpunk-style music.
+- The coding method is also simple: the audio is added as a childnode of scene. The [_play](https://github.com/zhxu33/cyberpunk2088/blob/27a21bcf4ff273b436af26cfca110025d69dcd36/cyberpunk2088/scripts/battle/weapon.gd#L55) function you can see everywhere handle the audio playing. Just add _play(THE AUDIO) in correct position, such as "goodbay" in [close_shop](https://github.com/zhxu33/cyberpunk2088/blob/967f998e8bc9f17f72cbc111b4adb0e9430a8812/cyberpunk2088/scripts/interface/interface.gd#L171), everything is fine.
+- For those audios played by enemies, using AudioStreamPlayer2D (When the distance increases, the sound diminishes.）can ensure that player wouldn't hear hundreds of enemies' voice in map at same time. For those audio player should always listen, using AudioStreamPlayer.
 
 
 Zixuan Weng Role: Implementing the audio system.
