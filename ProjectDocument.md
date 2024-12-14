@@ -238,40 +238,33 @@ The game input is configured in the project's Input Map settings. This currently
 
 ## Player's Movement/Physics + Animation and Visuals - Zixuan Weng(zxweng@ucdavis.edu)
 
-**Describe the basics of movement and physics in your game. Is it the standard physics model? What did you change or modify? Did you make your movement scripts that do not use the physics system?**
-We contain two essential folders in the script folder: character and command. They include the main movements and any other important physics of the game characters and enemies.
+### Movement
+I code the movement system of main character. The movement is mostly handled by the default functions in Node CharacterBody2D. We utilize the command pattern learned in exercise 1. At each frame, the _physical_process function triggers different commands to set the velocity. Those Commands can be bind and unbind easily when we don't want player to control the character.
+![image](https://github.com/user-attachments/assets/05f752d5-d461-4b77-ace6-382ca9caa2eb)
+![image](https://github.com/user-attachments/assets/710352f3-ec1c-4aed-b1b6-8d4845de50c0)
+![image](https://github.com/user-attachments/assets/5406ebab-dba0-4a65-805a-c8251a220dc5)
 
-**Movement is velocity-based, with separate horizontal and vertical components**
-The character system implements:
 
-- Left/right movement with constant velocity
-- Jumping mechanics with initial jump velocity
-- Double jump system based on upgrade levels
-- Climbing mechanics on ladders
-- A zero-velocity idle state
 
-**As what we learned from the exercise 1 to exercise 3, our game uses Godot's standard physics model with some customization**
+### Animation
+During movement, the player are expected to play different animations. Those animation is not explicitly triggered by move commands. Instead, A AnimationTree (cooperate with AnimationPlayer (provide action's animation) and AnimatedSprite2D (provide action's Sprite)) is responsible for managing animation based on verious conditions. The AnimationTree use **StateMachine**, each node is an animation in AnimationPlayer, and each arrow means this animation can travel to another in certain **conditions**.
+![image](https://github.com/user-attachments/assets/bd14952d-4b07-4512-b6fc-690b11f6b5f0)  ![image](https://github.com/user-attachments/assets/c749822a-d167-48f2-b073-e33ece0e79d3)  
+Those condition is set by detecting current movement state in [_manage_animation_tree_state](https://github.com/zhxu33/cyberpunk2088/blob/27a21bcf4ff273b436af26cfca110025d69dcd36/cyberpunk2088/scripts/characters/player.gd#L137) function executed each frame. Through correct travel condition, the statemachine can manage main character's animation correctly. 
+One thing to notice that the "climb" animation will travel to "multi_jump", this is to avoid the player climb in air when leaving ladder.
+However, the multi_jump animation is exception. StateMachine is forced to travel to node "multi_jump" when player triger multi_jump, because we want to play the animation for every multi_jump (The main character may have lots of multi_jump), which can be complex if we didn't do so. Also, You may find I explicitly set the PlayMode of "run". This is to cooperate with gun and character direction explained below.
 
-- It uses CharacterBody2D's built-in velocity and physics processing
-- Maintains the standard gravity system (inherited from Character class)
-- Uses the built-in floor detection for jump mechanics
-- Employs the standard delta-time-based physics processing
-  **There are several custom modifications are implemented for the player (character)**
-  - Custom movement speed system that scales with upgrades: `movement_speed = DEFAULT_MOVE_VELOCITY + Stats.upgrades["Movement Speed"]*20`
-  - Modified jump velocity that scales with upgrades: `jump_velocity = DEFAULT_JUMP_VELOCITY - Stats.upgrades["Jump Power"]*25`
-  - Custom ladder physics that overrides vertical movement: `velocity.y = -movement_speed` when climbing
-  - Custom double jump system that:
-    - Tracks jump count
-    - Only allows additional jumps when falling (velocity.y >= 0)
-  - Limits jumps based on upgrade level: `jump_amount <= Stats.upgrades["Double Jump"]`
-    **In our custom movements scripts we use custom movement scripts through the command pattern and they still work within the physics systems:**
-- `MoveLeftCommand` and `MoveRightCommand` handle horizontal movement by directly setting velocity.x
-- `JumpCommand` controls vertical movement by setting velocity.y
-- `IdleCommand` handles stopping by zeroing horizontal velocity
-- The commands are bound and unbound through `bind_player_input_commands() and `unbind_player_input_commands()`
+### Gun
+![image](https://github.com/user-attachments/assets/ffcb8dfa-9297-49b1-a92b-6deaac6ee497)
+1. In game, player will aim at enemies using the mouse so that the gun should always point toward the mouse. The Gun is the child node of main character and is saved as scene. After setting the position and offset of the gun, the rotation parameter can rotate the gun in an appropriate manner. I code the [_process](https://github.com/zhxu33/cyberpunk2088/blob/27a21bcf4ff273b436af26cfca110025d69dcd36/cyberpunk2088/scripts/battle/weapon.gd#L24) function in weapon scene to automatically adjust rotation. When weapon rotate to other side, the function flip the sprite of gun. When player try to rotate the gun exceeding min_angle and max_angle, the function limit rotation to cloestest limitation.
+2. The Gun scene also hold the [fire](https://github.com/zhxu33/cyberpunk2088/blob/27a21bcf4ff273b436af26cfca110025d69dcd36/cyberpunk2088/scripts/battle/weapon.gd#L43) function that is bind to command of main characters. To make sure the bullet is fired from the correct position and angle, the gun get the position of two childnodes located at both ends of the gun barrel. The bullet is spawned at the front end, and its direction follows the extension of the line from the back end to the front end. This design could work when gun not point toward the mouse immediately.
+3. To avoid the unreasonable situation where the character walks forward while the gun points backward，the facing of main character is determined by the direction of gun. When player's facing is same with moveing direction, the playMode of "run" is forward, but when player's facing is different with moveing direction, the playMode of "run" is backward.  
+![2024-12-14000452-ezgif com-video-to-gif-converter](https://github.com/user-attachments/assets/e399b2cb-9915-44d3-bc37-7bbcdca7b09e)
 
-**All we did is like what we did in exercise 1**
-**In addition, the enemy's movement and physical system are similar to what we did for the game character（player)**
+### HurtBox and HitBox
+1. Both Box adjust its position when player change facing.
+2. The player's HitBox is used by melee attack,  The HitBox is usually disabled, but when melee_attack is playing, the Hitbox will be enabled for a short period to cause damage. 
+![image](https://github.com/user-attachments/assets/a402bef2-f540-4275-92ee-76006e69a1fd)  
+3. The HurtBox is universal for both monsters and characters. Only when HitBox detect the area2d with class HurtBox, it try to call take_damage function of the owner of HurtBox to cause damage.
 
 ## Game Logic - Aaron Shan (shyshan@ucdavis.edu)
 
