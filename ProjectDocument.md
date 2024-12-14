@@ -514,21 +514,48 @@ The ladder system is designed as an Area2D node that detects when the player ent
 
 ![alt text](images/jx/climbing.gif)
 
-When Player Enters Ladder Area:
+When Player [Enters](https://github.com/zhxu33/cyberpunk2088/blob/c9b7350efc0d5c5515fb5777547abe46951c3574/cyberpunk2088/scenes/maps/ladder.gd#L9) Ladder Area:
 * Checks if the entering body is the player
 * Locates the player node in the scene tree
 * Enables ladder-climbing mode for the player
 
-When Player Exists Ladder Area:
+When Player [Exists](https://github.com/zhxu33/cyberpunk2088/blob/c9b7350efc0d5c5515fb5777547abe46951c3574/cyberpunk2088/scenes/maps/ladder.gd#L17) Ladder Area:
 * Detects when the player leaves the ladder area
 * Disables ladder-climbing mode
 * Returns player to normal movement
 
-Interaction with Player Movement:
-* When ladder_on is `true`:
+[Interaction](https://github.com/zhxu33/cyberpunk2088/blob/c9b7350efc0d5c5515fb5777547abe46951c3574/cyberpunk2088/scripts/characters/player.gd#L44) with Player Movement:
+* When `ladder_on` is `true`:
   * Player can press `jump` to climb up
-  * `Vertical movement` speed is based on player's `movement speed`
+  * `Vertical movement` speed is based on the player's `movement speed`
   * Normal gravity can be overcome while climbing.
+
+To better plan and deploy different decorative modules, the ladder model was unified in `TileMapLayer3`
+
+**Enemy Spwan and Player Spawn**
+
+![alt text](images/jx/enemy_spawn_node.png)
+
+* The nodes on the images are the enemies's spawn nodes. These are free to move to any different location.
+* By thinking of the difficult level of the game, we delete some spawn nodes and also change some into other location and it will help to avoid enemies spawning at the same location.
+* By the Spawning system, it looks at all possible spawn points in the map
+* Calculates how many enemies should appear based on the current level number
+* Places enemies one by one, making sure not to overcrowd any single area
+
+**Boss**
+
+![alt text](images/jx/boss_spawn.png)
+
+In the `[world.gd](https://github.com/zhxu33/cyberpunk2088/blob/6cb0dcf6951d72ab7f50c95bf30a00266151a5d8/cyberpunk2088/scripts/world.gd#L32)`,
+
+* Each level has exactly one boss enemy
+* The boss is placed in the boss area by the `BossSpawn node`
+
+**Player**
+
+![alt text](images/jx/player_spawn.png)
+
+* No matter whether the player is `died` or `teleported back to spawn`, the `player spawn node` location will be the place the player comes out
 
 ## Press Kit and Trailer - siwei Tan (siwtan@ucdavis.edu)
 
