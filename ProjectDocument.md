@@ -317,6 +317,22 @@ The world handles three main types of characters:
 * Players (merchants who can interact with the player)
 All these characters are stored in separate collections, making it easy to spawn the right type of character when needed.
 
+For a better understanding of the logic of how people control the character and logic of enemies. We use `AnimationTree` to present what action that character needs to bring a  strong game feel.
+
+**For players**
+
+![alt text](images/jx/player_anime.png)
+
+**For samurai**
+
+![alt text](images/jx/samura_anime.png)
+
+**For Dog**
+
+![alt text](images/jx/dog_anime.png)
+
+
+
 
 ### Player (Character)
 
@@ -348,10 +364,18 @@ Any action that what player will do based on a command, we contained in the play
       * Your health drops to zero or below
 
 **[Reset](https://github.com/zhxu33/cyberpunk2088/blob/a14c315e6b9cbfc646fd490656bd3de4e26a7da3/cyberpunk2088/scripts/characters/player.gd#L199) and [Death](https://github.com/zhxu33/cyberpunk2088/blob/a14c315e6b9cbfc646fd490656bd3de4e26a7da3/cyberpunk2088/scripts/characters/player.gd#L130) Explanation**
-* This system handles both what happes
+* This system handles both what happens when you die and how your character gets back into action
+   * When you die:
+      * Player: All the movement and attacks will stop
+      * The player's animations freeze
+      * The death animation plays
+      * The game marks the player as dead and the player can't take more damage
+   * When Resetting:
+      * It clears all temporary states
+      * Turns the animations back on
+      * gets ready for action again.
 
 **Enemy and Player Placement System and Other Boss systems WILL BE INTRODUCE in the Sub role - Map Design Part**
-
 
 
 **Teleport Logic**
