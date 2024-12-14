@@ -10,11 +10,11 @@ Cyberpunk 2088 is a 2D infinite progression game set in a neon-drenched, dystopi
 2. [Trailor](https://www.youtube.com/watch?v=RgVgY8-F4nA)
 3. [Press Kit](https://languid-capacity-e83.notion.site/Cyberpunk-2088-15b706d55ba380758870fa84dc694b72)
 4. [Group Project Google Drive Folder](https://drive.google.com/drive/folders/1R5iv0R0Rx2gkmcWxXha3Wvq6lbOll6oC?usp=drive_link).
-   4.1 [Group Initial Plan](https://docs.google.com/document/d/1TuI_5MxxG3TNvrD7Z8iwSdKDze4Wr04ZUydlNR9okWQ/edit?usp=sharing).
-   4.2 [Group Progress Report](https://docs.google.com/document/d/12pQWgevDNh7WiyPMqM3151Qtb58PCUFHTxBVsjFJRXc/edit?usp=sharing).
-   4.3 [Tester Comments Image from Final Festival 5 game tester comments](https://drive.google.com/file/d/1tn4Yijyf3Z--mwvjm6qE0DpVtvh7e7A6/view?usp=sharing).
-   4.4 [Tester Comments Image from Game Night](https://drive.google.com/file/d/1VrLXNo-Ml2-__yk4NkgFRX27WTnjZDqs/view?usp=sharing).
-   4.5 [Game Night Attendence](https://drive.google.com/file/d/1ugxaDAAzInmYY1SF0_6bfvD0VU_44uEw/view?usp=sharing).
+   * [Group Initial Plan](https://docs.google.com/document/d/1TuI_5MxxG3TNvrD7Z8iwSdKDze4Wr04ZUydlNR9okWQ/edit?usp=sharing).
+   * [Group Progress Report](https://docs.google.com/document/d/12pQWgevDNh7WiyPMqM3151Qtb58PCUFHTxBVsjFJRXc/edit?usp=sharing).
+   * [Tester Comments Image from Final Festival 5 game tester comments](https://drive.google.com/file/d/1tn4Yijyf3Z--mwvjm6qE0DpVtvh7e7A6/view?usp=sharing).
+   * [Tester Comments Image from Game Night](https://drive.google.com/file/d/1VrLXNo-Ml2-__yk4NkgFRX27WTnjZDqs/view?usp=sharing).
+   * [Game Night Attendence](https://drive.google.com/file/d/1ugxaDAAzInmYY1SF0_6bfvD0VU_44uEw/view?usp=sharing).
 
 ## Gameplay Explanation
 
@@ -425,26 +425,39 @@ For the camera, we choose the very simplest one which is Exercise 2 Stage 1 - Po
 I implemented animation for all five Boss/Enemy.
 
 ![alt text](images/xyq/gif01.gif)
+
 ![alt text](images/xyq/gif02.gif)
+
 ![alt text](images/xyq/gif03.gif)
+
 ![alt text](images/xyq/gif04.gif)
+
 ![alt text](images/xyq/gif05.gif)
+
 
 Hitbox disabled/enabled to be consistent with the animation.
 
 ![alt text](images/xyq/gif06.gif)
+
 ![alt text](images/xyq/gif07.gif)
+
 ![alt text](images/xyq/gif08.gif)
+
 
 Collision shape that triggers Enemy moves/Boss fight begins.
 
 ![alt text](images/xyq/gif09.gif)
+
 ![alt text](images/xyq/gif10.gif)
+
 ![alt text](images/xyq/gif11.gif)
+
 
 RayCast2D that triggers samurai to chase the player:
 
+
 ![alt text](images/xyq/gif12.gif)
+
 
 I picked these five enemies and bosses because they all have a strong cyberpunk feel that matches our game’s style. They look futuristic, their animations are smooth, and they just feel right for the world we’ve built. Each one brings its own kind of energy, so when you face them, it feels intense and exciting. They are everything I hoped for when I pictured the perfect enemies for our game.
 
