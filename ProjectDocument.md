@@ -428,7 +428,7 @@ For the camera, we choose the very simplest one which is Exercise 2 Stage 1 - Po
 - In the `CameraController` Script, we extend `Camera2D` and the script creates a reference to the player character which is our player.
 - The [camera's behavior](https://github.com/zhxu33/cyberpunk2088/blob/894d764ef305ac81cdd574179f14bcebaae50e42/cyberpunk2088/scripts/camera/camera_controller.gd#L1) is straightforward - when the scene starts, it positions itself at the player's location through the `_ready()` function, and then continuously tracks the player's position every frame using the `_process()` function.
 
-## Boss/Enemy Animation and Visual - Xiuyuan Qi
+## Boss/Enemy Animation and Visual - Xiuyuan Qi (siwtan@ucdavis.edu)
 
 I implemented animation for all five Boss/Enemy.
 
@@ -624,7 +624,7 @@ The NPC will directly show up on the map and we put multiple NPC at different lo
 
 ![alt text](images/jx/image-15.png)
 
-## Boss/Enemy Initial Mechanism and Design - Xiuyuan Qi
+## Boss/Enemy Initial Mechanism and Design - Xiuyuan Qi (xyqi@ucdavis.edu)
 
 In addition to the Boss/Enemy Animation and Visual, I implemented all their basic functionalities.
 
