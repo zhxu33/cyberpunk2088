@@ -347,14 +347,15 @@ Any action that what player will do based on a command, we contained in the play
       * If the player's alive, it creates floating damage numbers above your character showing how much damage you took
       * Your health drops to zero or below
 
-**Reset and Death Explanation**
-* This system handles both what 
+**[Reset](https://github.com/zhxu33/cyberpunk2088/blob/a14c315e6b9cbfc646fd490656bd3de4e26a7da3/cyberpunk2088/scripts/characters/player.gd#L199) and [Death](https://github.com/zhxu33/cyberpunk2088/blob/a14c315e6b9cbfc646fd490656bd3de4e26a7da3/cyberpunk2088/scripts/characters/player.gd#L130) Explanation**
+* This system handles both what happes
 
 **Enemy and Player Placement System and Other Boss systems WILL BE INTRODUCE in the Sub role - Map Design Part**
 
 
 
 **Teleport Logic**
+
 After the player killed the boss. We designed a Portal to let the player enter the next level.
 
 ![alt text](images/jx/portal_enter.png)
