@@ -210,18 +210,47 @@ The world handles three main types of characters:
 * NPCs(merchants who can interact with the player)
 * Players (merchants who can interact with the player)
 All these characters are stored in separate collections, making it easy to spawn the right type of character when needed.
-**Level Generation Works**
-  When a new level begins, the world goes through several important steps:
-  * It cleans up the current level by：
-     * Removing all coins and health pickups from the previous level
-     * Making the screen go dark for a smooth transition
-     * Resetting the boss status
-  * Then it builds the new level by:
-    * Choosing a random map from its collection
-    * Placing the player at their starting position
-    * Spaning enemies throughout the level
-    * Placing the boss in the specific location in the boss room
-**Enemy Placement System and Other Boss systems WILL BE INTRODUCE in the Sub role - Map Design Part**
+**Character Management **
+The world handles three main types of characters:
+* Regular Enemies (dogs, samurai, and slimes)
+* Boss Characters(different types of powerful enemies)
+* NPCs(merchants who can interact with the player)
+* Players (merchants who can interact with the player)
+All these characters are stored in separate collections, making it easy to spawn the right type of character when needed.
+
+## Player (Character)
+
+![alt text](images/jx/player_folder.png)
+
+Any action that what player will do based on a command, we contained in the player's folder, but the main instructions are still written in the `player.gd`. 
+
+**Combat System**: The player features a dual-combat system with both ranged and melee capabilities.
+* [Ranged Combat](https://github.com/zhxu33/cyberpunk2088/blob/c7eeb37dbb8d9666f9e0dbcc4e84a139000d0612/cyberpunk2088/scripts/characters/player.gd#L74):
+  * When a player wants to use a `ranged attack` by pushing the key `mouse left button`, first the game would consider the cooldown_elapsed of the player's shot. If it has, the player fires a ranged attack on the enemies.
+     * **Cooldown System**:
+     * Base cooldown: 0.75 seconds
+     * Reduced by Attack Speed upgrades (0.05s per level)
+     * Tracked by cooldown_elapsed counter
+   
+![alt text](images/jx/shooting.gif)
+
+
+* [Melee Combat](https://github.com/zhxu33/cyberpunk2088/blob/c7eeb37dbb8d9666f9e0dbcc4e84a139000d0612/cyberpunk2088/scripts/characters/player.gd#L101):
+  * The melee system works similarly but has a longer waiting period - about 1.6 times longer than ranged attacks. When the player presses the `mouse right button`, the game checks if enough time has passed (using cooldown_elapsed2), then performs the melee attack if you're ready. This makes melee attacks slower but potentially more powerful than ranged attacks.
+
+![alt text](images/jx/melleattack.gif)
+
+
+* [Damage System Explanation](https://github.com/zhxu33/cyberpunk2088/blob/c7eeb37dbb8d9666f9e0dbcc4e84a139000d0612/cyberpunk2088/scripts/characters/player.gd#L118)
+   * When the character takes damage, several things happen in sequence:
+      * First, the game checks if the player's already dead - if yes, no more damage is taken
+      * If the player's alive, it creates floating damage numbers above your character showing how much damage you took
+      * Your health drops to zero or below
+
+**Reset and Death Explanation**
+* This system handles both what 
+
+**Enemy and Player Placement System and Other Boss systems WILL BE INTRODUCE in the Sub role - Map Design Part**
 **Level Progression - How Levels Advance**
 After the player killed the boss. We designed a Portal to let the player enter the next level.
 
@@ -236,12 +265,25 @@ The portal will detect the status that we set for it. when the status `dialog_st
 
 
 
+**Map Level Generation Works**
+  When a new level begins, the world goes through several important steps:
+  * It cleans up the current level by：
+     * Removing all coins and health pickups from the previous level
+     * Making the screen go dark for a smooth transition
+     * Resetting the boss status
+  * Then it builds the new level by:
+    * Choosing a random map from its collection
+    * Placing the player at their starting position
+    * Spaning enemies throughout the level
+    * Placing the boss in the specific location in the boss room
+
 When you start a new level:
-    * Your [health](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L75) is restored to maximum 
-    * The [level](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L70) counter goes up
-    * A new random [map](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L27) is chosen
-    * New [enemies and a boss](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L36) are placed in the location of the new map
-    * The [player](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L32) will spawn at the location of the new map
+* Your [health](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L75) is restored to maximum 
+* The [level](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L70) counter goes up
+* A new random [map](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L27) is chosen
+* New [enemies and a boss](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L36) are placed in the location of the new map
+* The [player](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L32) will spawn at the location of the new map
+    
 **Difficulty Scaling**
 * When the level is up, the map will add [more enemies](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L40) based on the level number
 * Maintaining the challenge through strategic [enemy placement](https://github.com/zhxu33/cyberpunk2088/blob/fa4a7e31c05818acc3ac08ec14ac4de9990d9fc3/cyberpunk2088/scripts/world.gd#L42)
