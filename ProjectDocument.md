@@ -285,6 +285,13 @@ The character system implements:
 5. [Coins](https://www.flaticon.com/free-icon/coin_217802).
 6. [Heart](https://reserve.freesvg.org/red-heart-with-black-outline).
 7. [Weapons and Bullets](https://free-game-assets.itch.io/free-guns-for-cyberpunk-characters-pixel-art).|
+8. [Dog](https://vivicat.itch.io/robot-dog-sprite-sheet)
+9. [Samurai](https://gabry-corti.itch.io/cyberpunk-samurai)
+10. [Teleport Spawn Image](https://pngtree.com/freepng/blue-magic-teleportation-array_6552993.html)
+11. [Boss Death of Bringer](https://clembod.itch.io/bringer-of-death-free)
+12. [Character Gun](https://free-game-assets.itch.io/free-guns-pack-2-for-main-characters-pixel-art)
+13. [Bullet/Projectile](https://free-game-assets.itch.io/free-guns-pack-2-for-main-characters-pixel-art)
+14. slime (special thanks for our slime sprites animation: Wu Jiaen, jiaewu20@student.scad.edu)
    **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
 
 ## Game Logic - Aaron Shan (shyshan@ucdavis.edu)
