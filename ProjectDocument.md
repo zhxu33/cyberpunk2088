@@ -296,21 +296,20 @@ The character system implements:
 ## Game Logic - Aaron Shan (shyshan@ucdavis.edu)
 
 **Document the game states and game data you managed and the design patterns you used to complete your task.**
+
 **World Management**
 The game [world](https://github.com/zhxu33/cyberpunk2088/blob/8d7a970efad04fd0dad5144f9eb6f5c1f833ce91/cyberpunk2088/scripts/world.gd#L1) is designed as a system of sub-systems providing for various aspects of the gameplay. Fundamentally, the world is the maps, enemies, bosses, and NPCs that go into making up the whole game.
 **Map Generation System**
-<<<<<<< HEAD
+
 Randomly selectable are [two principal maps](https://github.com/zhxu33/cyberpunk2088/blob/1f936a282df19a1f0fc453156f62eb676ab69458/cyberpunk2088/scripts/world.gd#L27), which the world keeps; one can be selected for a new level. These maps already exist in the memory when the game begins and so can be accessed immediately when required.
-=======
+
 Randomly selectable are [two principal maps](https://github.com/zhxu33/cyberpunk2088/blob/1f936a282df19a1f0fc453156f62eb676ab69458/cyberpunk2088/scripts/world.gd#L27), which the world keeps; one can be selected for a new level. These maps already exist in the memory when the game begins and so can be accessed immediately when required. 
 
->>>>>>> 81ec3e0f309466364ae6f062b1ae5164551ef586
+
 ![alt text](images/jx/preload_map.png)
 
 **Character Management**
 The world handles three main types of characters:
-<<<<<<< HEAD
-=======
 * Regular Enemies (dogs, samurai, and slimes)
 * Boss Characters(different types of powerful enemies)
 * NPCs(merchants who can interact with the player)
@@ -546,6 +545,8 @@ Initially, the dog shot its bullet horizontally(either left or right) based on t
 
 ![alt text](images/xyq/gif13.gif)
 
+The dog's projectile will calculate whether to spawn bullets from the left ProjectileSpawn node or the right ProjectileSpawn node based on the player's position. The script attached to these two nodes gets the dog's [facing direction](https://github.com/zhxu33/cyberpunk2088/blob/81ec3e0f309466364ae6f062b1ae5164551ef586/cyberpunk2088/scripts/characters/enemy_dog.gd#L103) and also passes it to [enemy_dog_bullet.gd](https://github.com/zhxu33/cyberpunk2088/blob/81ec3e0f309466364ae6f062b1ae5164551ef586/cyberpunk2088/scripts/battle/enemy_dog_projectile_spawn.gd#L10). Then, enemy_dog_bullet.gd decides the projectile's [direction, launch speed](https://github.com/zhxu33/cyberpunk2088/blob/81ec3e0f309466364ae6f062b1ae5164551ef586/cyberpunk2088/scripts/battle/emeny_dog_bullet.gd#L33), and the animation's [facing of the projectile](https://github.com/zhxu33/cyberpunk2088/blob/81ec3e0f309466364ae6f062b1ae5164551ef586/cyberpunk2088/scripts/battle/emeny_dog_bullet.gd#L34).
+
 ### Self-destructive Slime's initial mechanism
 
 Just like the final mechanism you play, it was also player-detected and exploded with damage to the player. And it was easier to avoid the blast damage than the present one. We buffed it because it needs to be fitted with what a self-destructive slime looks like.
@@ -558,6 +559,8 @@ Cyber Samurai will chase the player after Raycast2D collides with the player. It
 
 ![alt text](images/xyq/gif15.gif)
 
+Cyber Samurai has two moving patterns: [WANDER state and CHASE state](https://github.com/zhxu33/cyberpunk2088/blob/417b58254fd554b5ff821cac0e089104c34c537e/cyberpunk2088/scripts/characters/enemy.gd#L27). By default, the samurai patrols in its [designate area](https://github.com/zhxu33/cyberpunk2088/blob/417b58254fd554b5ff821cac0e089104c34c537e/cyberpunk2088/scripts/characters/enemy_samurai.gd#L31C2-L32C55). Then, if the player [collides with](https://github.com/zhxu33/cyberpunk2088/blob/417b58254fd554b5ff821cac0e089104c34c537e/cyberpunk2088/scripts/characters/enemy_samurai.gd#L102C2-L106C18) its RayCast, the samurai starts chasing the player. After the [chase timer timeout](https://github.com/zhxu33/cyberpunk2088/blob/417b58254fd554b5ff821cac0e089104c34c537e/cyberpunk2088/scripts/characters/enemy_samurai.gd#L177C1-L180C55), it patrols again in its new designate area. The timer is one-shot, and it reset the timer to whatever seconds you set the timer and chase. The samurai only stops chasing the player after timeout.
+
 ### Boss from exercise 1 initial mechanism
 
 I transplanted the boss that appeared in Exercise 1 here and used Zixuan's boss fight code to complete the initial boss fight design.
@@ -569,3 +572,5 @@ I transplanted the boss that appeared in Exercise 1 here and used Zixuan's boss 
 It chased the player after the player triggered the boss fight. It could only melee attack the player. James further implemented the feature that can throw small self-destructive slime.
 
 ![alt text](images/xyq/gif17.gif)
+
+Boss Slime has a boss fight trigger area, which is controlled by [this code](https://github.com/zhxu33/cyberpunk2088/blob/3082f675c2a3b2b0ea0513b0edef301f7bf62ea9/cyberpunk2088/scripts/characters/boss_slime.gd#L120C1-L123C23). It has an attack timer that [every 2 seconds](https://github.com/zhxu33/cyberpunk2088/blob/3082f675c2a3b2b0ea0513b0edef301f7bf62ea9/cyberpunk2088/scripts/characters/boss_slime.gd#L126C1-L127C18) it attacks the player. It will always [face](https://github.com/zhxu33/cyberpunk2088/blob/3082f675c2a3b2b0ea0513b0edef301f7bf62ea9/cyberpunk2088/scripts/characters/boss_slime.gd#L82) and [chase](https://github.com/zhxu33/cyberpunk2088/blob/3082f675c2a3b2b0ea0513b0edef301f7bf62ea9/cyberpunk2088/scripts/characters/boss_slime.gd#L97) the player after the boss fight triggers.
