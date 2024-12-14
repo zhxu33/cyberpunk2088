@@ -552,6 +552,8 @@ Initially, the dog shot its bullet horizontally(either left or right) based on t
 
 ![alt text](images/xyq/gif13.gif)
 
+The dog's projectile will calculate whether to spawn bullets from the left ProjectileSpawn node or the right ProjectileSpawn node based on the player's position. The script attached to these two nodes gets the dog's [facing direction](https://github.com/zhxu33/cyberpunk2088/blob/81ec3e0f309466364ae6f062b1ae5164551ef586/cyberpunk2088/scripts/characters/enemy_dog.gd#L103) and also passes it to [enemy_dog_bullet.gd](https://github.com/zhxu33/cyberpunk2088/blob/81ec3e0f309466364ae6f062b1ae5164551ef586/cyberpunk2088/scripts/battle/enemy_dog_projectile_spawn.gd#L10). Then, enemy_dog_bullet.gd decides the projectile's [direction, launch speed](https://github.com/zhxu33/cyberpunk2088/blob/81ec3e0f309466364ae6f062b1ae5164551ef586/cyberpunk2088/scripts/battle/emeny_dog_bullet.gd#L33), and the animation's [facing of the projectile](https://github.com/zhxu33/cyberpunk2088/blob/81ec3e0f309466364ae6f062b1ae5164551ef586/cyberpunk2088/scripts/battle/emeny_dog_bullet.gd#L34).
+
 ### Self-destructive Slime's initial mechanism
 
 Just like the final mechanism you play, it was also player-detected and exploded with damage to the player. And it was easier to avoid the blast damage than the present one. We buffed it because it needs to be fitted with what a self-destructive slime looks like.
@@ -563,6 +565,8 @@ Just like the final mechanism you play, it was also player-detected and exploded
 Cyber Samurai will chase the player after Raycast2D collides with the player. It is really fast and kills you if you don't kill it first.
 
 ![alt text](images/xyq/gif15.gif)
+
+Cyber Samurai has two moving patterns: [WANDER state and CHASE state](https://github.com/zhxu33/cyberpunk2088/blob/417b58254fd554b5ff821cac0e089104c34c537e/cyberpunk2088/scripts/characters/enemy.gd#L27). By default, the samurai patrols in its [designate area](https://github.com/zhxu33/cyberpunk2088/blob/417b58254fd554b5ff821cac0e089104c34c537e/cyberpunk2088/scripts/characters/enemy_samurai.gd#L31C2-L32C55). Then, if the player [collides with](https://github.com/zhxu33/cyberpunk2088/blob/417b58254fd554b5ff821cac0e089104c34c537e/cyberpunk2088/scripts/characters/enemy_samurai.gd#L102C2-L106C18) its RayCast, the samurai starts chasing the player. After the [chase timer timeout](https://github.com/zhxu33/cyberpunk2088/blob/417b58254fd554b5ff821cac0e089104c34c537e/cyberpunk2088/scripts/characters/enemy_samurai.gd#L177C1-L180C55), it patrols again in its new designate area. The timer is one-shot, and it reset the timer to whatever seconds you set the timer and chase. The samurai only stops chasing the player after timeout.
 
 ### Boss from exercise 1 initial mechanism
 
