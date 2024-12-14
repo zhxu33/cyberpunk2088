@@ -579,3 +579,5 @@ I transplanted the boss that appeared in Exercise 1 here and used Zixuan's boss 
 It chased the player after the player triggered the boss fight. It could only melee attack the player. James further implemented the feature that can throw small self-destructive slime.
 
 ![alt text](images/xyq/gif17.gif)
+
+Boss Slime has a boss fight trigger area, which is controlled by [this code](https://github.com/zhxu33/cyberpunk2088/blob/3082f675c2a3b2b0ea0513b0edef301f7bf62ea9/cyberpunk2088/scripts/characters/boss_slime.gd#L120C1-L123C23). It has an attack timer that [every 2 seconds](https://github.com/zhxu33/cyberpunk2088/blob/3082f675c2a3b2b0ea0513b0edef301f7bf62ea9/cyberpunk2088/scripts/characters/boss_slime.gd#L126C1-L127C18) it attacks the player. It will always [face](https://github.com/zhxu33/cyberpunk2088/blob/3082f675c2a3b2b0ea0513b0edef301f7bf62ea9/cyberpunk2088/scripts/characters/boss_slime.gd#L82) and [chase](https://github.com/zhxu33/cyberpunk2088/blob/3082f675c2a3b2b0ea0513b0edef301f7bf62ea9/cyberpunk2088/scripts/characters/boss_slime.gd#L97) the player after the boss fight triggers.
