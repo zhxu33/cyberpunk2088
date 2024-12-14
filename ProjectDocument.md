@@ -66,7 +66,6 @@ As the producer, I ensured consistent communication within the team through a st
 - set up daily to-do lists to members on discord to keep track of their progress.
 
 
-
 ## Cyberpunk 2088 Project Timeline
 
 ### Week 1: Initial Planning
@@ -76,10 +75,8 @@ As the producer, I ensured consistent communication within the team through a st
 - Finalize game concept and storyline.
 - Assign team roles and responsibilities.
 - Set up communication channels (Slack, Google Drive, GitHub).
-- Draft initial Gantt chart and project roadmap.
-  **Deliverables:**
-- Initial project plan document.
-- Shared repository structure.
+- Draft level procudeures and game mechanics map.
+
 
 ### Week 2: Prototyping
 
@@ -88,7 +85,6 @@ As the producer, I ensured consistent communication within the team through a st
 - Create basic player movement mechanics.
 - Implement initial game physics and camera system.
 - Build procedural terrain generation prototype.
-  **Deliverables:**
 - Playable prototype with basic mechanics.
 - Updated progress report.
 
@@ -101,7 +97,6 @@ As the producer, I ensured consistent communication within the team through a st
 - Set up upgrade system framework.
 - Design and implement UI components (health bar, coins, dialogue, etc.).
 - Add transitions (start screen, death screen, blackout effects).
-  **Deliverables:**
 - Combat system functional.
 - Functional UI linked to gameplay.
 - Initial enemy prototypes implemented.
@@ -115,7 +110,6 @@ As the producer, I ensured consistent communication within the team through a st
 - Implement environmental storytelling elements.
 - Add background music and sound effects.
 - Implement audio triggers for key gameplay events.
-  **Deliverables:**
 - Fully playable level with progression mechanics.
 - Initial map pool and assets ready.
 - Complete audio system integrated.
@@ -129,17 +123,15 @@ As the producer, I ensured consistent communication within the team through a st
 - Implement final improvements based on feedback.
 - Optimize performance for web version.
 - Create press kit and promotional materials (trailer, screenshots).
-  **Deliverables:**
 - Bug-free stable build.
 - Final playable version.
 - Press kit and trailer ready.
 
-I also incharge of the compose of intial plan and progress report:
+## Incharge of the compose of intial plan and progress report:
 
 - [Group Initial Plan](https://docs.google.com/document/d/1TuI_5MxxG3TNvrD7Z8iwSdKDze4Wr04ZUydlNR9okWQ/edit?usp=sharing).
 - [Group Progress Report](https://docs.google.com/document/d/12pQWgevDNh7WiyPMqM3151Qtb58PCUFHTxBVsjFJRXc/edit?usp=sharing).
 
-Besides, I constantly helping found and solve bugs/git conflicts in the game and make sure the game feel is consistent with the initial plan.
 
 As a Producer, i also take the role of seeking appropriate game assets for the theme and art of the game including:
 
@@ -158,8 +150,9 @@ Besides most of the audio assets, including:
 - [background musics](https://davidkbd-itch-io.translate.goog/pink-bloom-synthwave-music-pack?_x_tr_sl=en&_x_tr_tl=zh-CN&_x_tr_hl=zh-CN&_x_tr_pto=sc)
 - [palyer hurt sound effect](https://www.zapsplat.com/music/female-grunt-in-pain-breathy-as-if-reacting-to-an-impact/)
 - [slime sound effect](https://uppbeat.io/sfx/slime-impact/13757/34483)
-
 - [gun shots & dog shooting laser sound effect](https://shapeforms.itch.io/shapeforms-audio-free-sfx)
+
+Lastly, I constantly helping found and solve bugs/git conflicts in the game and make sure the game feel is consistent with the initial plan.
 
 ## User Interface and Input - James Xu (zhcxu@ucdavis.edu)
 
