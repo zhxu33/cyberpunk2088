@@ -55,7 +55,7 @@ _Procedural Terrain_ - The game's background consists of procedurally generated 
 
 You should replay any **bold text** with your relevant information. Liberally use the template when necessary and appropriate.
 
-## Producer - Siwei Tan
+## Producer - Siwei Tan(siwtan@ucdavis.edu)
 
 <!-- **Describe the steps you took in your role as producer. Typical items include group scheduling mechanisms, links to meeting notes, descriptions of team logistics problems with their resolution, project organization tools (e.g., timelines, dependency/task tracking, Gantt charts, etc.), and repository management methodology.** -->
 
