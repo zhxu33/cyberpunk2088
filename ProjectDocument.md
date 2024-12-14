@@ -260,27 +260,27 @@ For the camera, we choose the very simplest one which is Exercise 2 Stage 1 - Po
 
 I implemented animation for all five Boss/Enemy.
 
-![GIF 12-13-2024 7-15-06 AM](https://github.com/user-attachments/assets/72424857-e56a-4d0c-bc79-171110b13e0d)
-![GIF 12-13-2024 7-18-47 AM](https://github.com/user-attachments/assets/57a17660-6cc6-4772-bfa1-63fda31513ee)
-![GIF 12-13-2024 7-20-45 AM](https://github.com/user-attachments/assets/c7eaf1e7-2f5d-4f1b-96b8-636bfa0fa4ff)
-![GIF 12-13-2024 7-24-20 AM](https://github.com/user-attachments/assets/d9dabbdf-c37d-45aa-98c3-e4a8189526b0)
-![GIF 12-13-2024 7-25-51 AM](https://github.com/user-attachments/assets/eff442cd-81e3-41c8-ac07-958d80f610bb)
+![alt text](images/xyq/gif01.gif)
+![alt text](images/xyq/gif02.gif)
+![alt text](images/xyq/gif03.gif)
+![alt text](images/xyq/gif04.gif)
+![alt text](images/xyq/gif05.gif)
 
 Hitbox disabled/enabled to be consistent with the animation.
 
-![GIF 12-13-2024 7-33-34 AM](https://github.com/user-attachments/assets/659df706-c8bf-4cf6-83e3-2e58b4d841bc)
-![GIF 12-13-2024 7-34-38 AM](https://github.com/user-attachments/assets/4214d2ef-3c93-442b-addf-6831f3f98406)
-![GIF 12-13-2024 7-37-24 AM](https://github.com/user-attachments/assets/f52b7e13-08ba-4ec0-9407-5ec9fa329fb6)
+![alt text](images/xyq/gif06.gif)
+![alt text](images/xyq/gif07.gif)
+![alt text](images/xyq/gif08.gif)
 
 Collision shape that triggers Enemy moves/Boss fight begins.
 
-![GIF 12-13-2024 7-40-12 AM](https://github.com/user-attachments/assets/9ecde3f1-8017-4509-8fa6-b18073f80646)
-![GIF 12-13-2024 7-43-04 AM](https://github.com/user-attachments/assets/2e8384d6-e0e5-469d-9e1a-68ef5322c38a)
-![GIF 12-13-2024 7-45-48 AM](https://github.com/user-attachments/assets/100b9d8d-b025-49e8-91e6-5e9faee087f2)
+![alt text](images/xyq/gif09.gif)
+![alt text](images/xyq/gif10.gif)
+![alt text](images/xyq/gif11.gif)
 
 RayCast2D that triggers samurai to chase the player:
 
-![GIF 12-13-2024 7-54-35 AM](https://github.com/user-attachments/assets/309272a4-4f5a-47be-961a-9486e53a0d58)
+![alt text](images/xyq/gif12.gif)
 
 I picked these five enemies and bosses because they all have a strong cyberpunk feel that matches our game’s style. They look futuristic, their animations are smooth, and they just feel right for the world we’ve built. Each one brings its own kind of energy, so when you face them, it feels intense and exciting. They are everything I hoped for when I pictured the perfect enemies for our game.
 
@@ -364,28 +364,28 @@ In addition to the Boss/Enemy Animation and Visual, I implemented all their basi
 
 Initially, the dog shot its bullet horizontally(either left or right) based on the player's location. James further developed it so that it could shoot directly towards the player.
 
-![GIF 12-13-2024 9-05-40 AM](https://github.com/user-attachments/assets/352392b6-bf81-4f08-b0db-9a1618a61a57)
+![alt text](images/xyq/gif13.gif)
 
 ### Self-destructive Slime's initial mechanism
 
 Just like the final mechanism you play, it was also player-detected and exploded with damage to the player. And it was easier to avoid the blast damage than the present one. We buffed it because it needs to be fitted with what a self-destructive slime looks like.
 
-![GIF 12-13-2024 9-11-06 AM](https://github.com/user-attachments/assets/2b9444ba-e46e-4ba6-942b-38264bcc406c)
+![alt text](images/xyq/gif14.gif)
 
 ### Cyber Samurai's initial/final mechanism
 
 Cyber Samurai will chase the player after Raycast2D collides with the player. It is really fast and kills you if you don't kill it first.
 
-![GIF 12-13-2024 9-29-59 AM](https://github.com/user-attachments/assets/21ee807c-3998-46de-bb01-8ac3852a8e45)
+![alt text](images/xyq/gif15.gif)
 
 ### Boss from exercise 1 initial mechanism
 
 I transplanted the boss that appeared in Exercise 1 here and used Zixuan's boss fight code to complete the initial boss fight design.
 
-![GIF 12-13-2024 9-36-52 AM](https://github.com/user-attachments/assets/3edb776f-71ad-48dd-aa97-26e0cf2c0d15)
+![alt text](images/xyq/gif16.gif)
 
 ### Boss Slime's initial mechanism
 
 It chased the player after the player triggered the boss fight. It could only melee attack the player. James further implemented the feature that can throw small self-destructive slime.
 
-![GIF 12-13-2024 9-45-28 AM](https://github.com/user-attachments/assets/11dd032d-c4f5-414b-bac9-81dc5b2a0433)
+![alt text](images/xyq/gif17.gif)
