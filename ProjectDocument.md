@@ -145,12 +145,6 @@ And specially thanks to my friend Jia'en Wu for drawing the slime animations spr
 
 - [cyber slime composed by Jia'en wu](mailto:jiaewu20@student.scad.edu)
 
-Besides most of the audio assets, including:
-
-- [background musics](https://davidkbd-itch-io.translate.goog/pink-bloom-synthwave-music-pack?_x_tr_sl=en&_x_tr_tl=zh-CN&_x_tr_hl=zh-CN&_x_tr_pto=sc)
-- [palyer hurt sound effect](https://www.zapsplat.com/music/female-grunt-in-pain-breathy-as-if-reacting-to-an-impact/)
-- [slime sound effect](https://uppbeat.io/sfx/slime-impact/13757/34483)
-- [gun shots & dog shooting laser sound effect](https://shapeforms.itch.io/shapeforms-audio-free-sfx)
 
 Lastly, I constantly helping found and solve bugs/git conflicts in the game and make sure the game feel is consistent with the initial plan.
 
@@ -432,13 +426,23 @@ I picked these five enemies and bosses because they all have a strong cyberpunk 
 
 # Sub-Roles
 
-## Audio
+## Audio - siwei Tan (siwtan@ucdavis.edu) & Zixuan Weng 
 
-**List your assets, including their sources and licenses.**
+<!-- **List your assets, including their sources and licenses.**
 
 **Describe the implementation of your audio system.**
 
-**Document the sound style.**
+**Document the sound style.** -->
+
+Siwei Tan Role: Providing most of the  audio assets:
+
+- [background musics](https://davidkbd-itch-io.translate.goog/pink-bloom-synthwave-music-pack?_x_tr_sl=en&_x_tr_tl=zh-CN&_x_tr_hl=zh-CN&_x_tr_pto=sc)
+- [palyer hurt sound effect](https://www.zapsplat.com/music/female-grunt-in-pain-breathy-as-if-reacting-to-an-impact/)
+- [slime sound effect](https://uppbeat.io/sfx/slime-impact/13757/34483)
+- [gun shots & dog shooting laser sound effect](https://shapeforms.itch.io/shapeforms-audio-free-sfx)
+
+
+Zixuan Weng Role: Implementing the audio system.
 
 ## Gameplay Testing
 
@@ -450,11 +454,11 @@ I picked these five enemies and bosses because they all have a strong cyberpunk 
 
 **Document how the narrative is present in the game via assets, gameplay systems, and gameplay.**
 
-## Press Kit and Trailer
+## Press Kit and Trailer - siwei Tan (siwtan@ucdavis.edu)
 
-**Include links to your presskit materials and trailer.**
+- [Press Kit](https://languid-capacity-e83.notion.site/Cyberpunk-2088-15b706d55ba380758870fa84dc694b72) - The press kit includes a brief overview of the game, key features, and gameplay mechanics. It also includes links to download the game, as well as screenshots and promotional images. The press kit is designed to provide journalists and content creators with all the information they need to cover the game, including assets and key details about the game's development and features.
 
-**Describe how you showcased your work. How did you choose what to show in the trailer? Why did you choose your screenshots?**
+- [Trailer](https://www.youtube.com/watch?v=RgVgY8-F4nA) - To show the game, we created a trailer that highlights the game's key features and gameplay. The trailer is designed to be fast-paced and exciting, with a focus on the game's combat and progression systems. The trailer features a mix of gameplay footage and cinematic shots to give viewers a sense of the game's world and atmosphere. The trailer also includes text overlays to highlight key features and upgrades, as well as a call to action to download the game. The trailer is designed to be engaging and informative, with a focus on showcasing the game's unique features and gameplay.
 
 ## Game Feel and Polish - James Xu (zhcxu@ucdavis.edu)
 
