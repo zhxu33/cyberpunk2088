@@ -42,6 +42,9 @@ As the player, you will see an NPC near the spawn location. At the beginning of 
 
 **TWO TYPES OF BOSS**
 
+1. One is the huge Slime and it will throw the small slime at you
+2. The Death of Brighter from Exercise 1.
+
 # Main Roles
 
 Your goal is to relate the work of your role and sub-role in terms of the content of the course. Please look at the role sections below for specific instructions for each role.
@@ -292,7 +295,7 @@ The character system implements:
 12. [Character Gun](https://free-game-assets.itch.io/free-guns-pack-2-for-main-characters-pixel-art)
 13. [Bullet/Projectile](https://free-game-assets.itch.io/free-guns-pack-2-for-main-characters-pixel-art)
 14. slime (special thanks for our slime sprites animation: Wu Jiaen, jiaewu20@student.scad.edu)
-   **Describe how your work intersects with game feel, graphic design, and world-building. Include your visual style guide if one exists.**
+
 
 ## Game Logic - Aaron Shan (shyshan@ucdavis.edu)
 
@@ -394,6 +397,24 @@ The portal will detect the status that we set for it. when the status `dialog_st
 ![alt text](images/jx/tp.gif)
 
 The player can press `R` to back to the spawn position
+
+**[Initiating Teleport](https://github.com/zhxu33/cyberpunk2088/blob/39e225cf583a7a0de27c90455cc1812f1df3b9f5/cyberpunk2088/scripts/characters/player.gd#L51)**
+* When the player presses the return button (and isn't already returning)
+* Creates a visual teleport effect at the player's position
+* Marks the teleport as starting with returning = `true`
+
+**[Canceling Teleport](https://github.com/zhxu33/cyberpunk2088/blob/39e225cf583a7a0de27c90455cc1812f1df3b9f5/cyberpunk2088/scripts/characters/player.gd#L57)**
+* If the player releases the return button during the teleport
+* Removes the teleport effect if it exists
+* Cancels the teleport by setting returning = `false`
+
+**[Completing Teleport](https://github.com/zhxu33/cyberpunk2088/blob/39e225cf583a7a0de27c90455cc1812f1df3b9f5/cyberpunk2088/scripts/characters/player.gd#L63)**
+* If teleport is active and time remaining:
+  * Counts down the return_time (1 second total)
+  * When the timer reaches zero:
+     * Removes teleport effect
+     * Moves player to spawn point
+   
 
 **Level Progression - How Levels Advance**
 **Map Level Generation Works**
